@@ -1,9 +1,9 @@
-//(function() {
+(function() {
 /** @namespace 
 *   @property {object} utils Will have all the jquery alternative utility functions
 *   @property {object} ajax An ajax utility similar to jquery ajax
 */
-dG;
+var dG;
 
 /** constructor function
 *   @constructor 
@@ -886,4 +886,4 @@ dG.iterator = function(arr, callBack, fromTop) {
 
 dG.utils.init.prototype = dG.utils;
 
-//})();
+})();
