@@ -512,19 +512,31 @@ dG.utils = dG.prototype =  {
          * @param {String} payLoad receive arguments. can be accessed inside event callback as this.data<Object>
          */
         on: function(eventName, eventHandler, payLoad) {
-            if (this !== window && this.hasOwnProperty('length') && this.length <= 0) {
-                return this;
-            }
-            this.iterator(this.length ? this : (this.hasOwnProperty('length') && this.length === 0 ? this : [this]), function(_this) {
-                (function(el, eventName, handler, _data) {
-                    _this.data = _data;
-                    if (el.addEventListener) {
-                        el.addEventListener(eventName, handler, false);
-                    } else {
-                        el.attachEvent('on' + eventName, handler);
-                    }
-                })(_this, eventName, eventHandler, payLoad);
-            });
+             var _this = this;
+              if (this !== window && this.hasOwnProperty('length') && this.length <= 0) {
+                  return this;
+              }
+              this.iterator(this.length ? this : (this.hasOwnProperty('length') && this.length === 0 ? this : [this]), function(_this) {
+                  (function(el, eventName, handler, _data) {
+                      this.data = _data;
+                      if(eventName.split(',').length > 1 ) {
+                          dG.iterator(eventName.split(','), function(e){
+                              if (el.addEventListener) {
+                                  el.addEventListener(e, handler, false);
+                              } else {
+                                  el.attachEvent('on' + e, handler);
+                              }
+                          });
+                      }
+                      else {
+                          if (el.addEventListener) {
+                              el.addEventListener(eventName, handler, false);
+                          } else {
+                              el.attachEvent('on' + eventName, handler);
+                          }
+                      }
+                  })(_this, eventName, eventHandler, payLoad);
+               });
             return this;
         },
 
