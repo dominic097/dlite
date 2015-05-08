@@ -583,19 +583,44 @@ dG.utils = dG.prototype =  {
     };
 
 
-dG.utils.init = function(_className, _el) {
-        var _that = [];
+dG.utils.init = function(__, _el) {
+        var _that = [],
+            _selector = [];
+             console.log('s');
 
-        if (_el) {
-            _that = _el.querySelectorAll(_className);
-        } else if (typeof _className === "string") {
-            _that = document.querySelectorAll(_className);
-        } else if (!Array.isArray(_className)) {
-            _that = arguments[0] ? [arguments[0]] : [];
-        } else if (Array.isArray(_className)) {
-            _that = arguments[0] ? arguments[0] : [];
+        if(typeof __ !== "string") {
+            debugger;
+            if (!Array.isArray(__)) {
+                _that = arguments[0] ? [arguments[0]] : [];
+            } else if (Array.isArray(__)) {
+                _that = arguments[0] ? arguments[0] : [];
+            }
+            return [].push.apply(this, _that);
         }
-        return [].push.apply(this, _that);
+        else {
+            debugger;
+            if(__.split(',').length > 1) {
+                _selector = __.split(',');
+            }
+            else {
+                _selector = [__];
+            }
+            dG.iterator(_selector, function(s){
+                if (_el) {
+                    var res = _el.querySelectorAll(s);
+                    if(res.length > 0) {
+                        _that = Array.prototype.slice.call(res).concat(_that);
+                    }
+                } else if (typeof s === "string") {
+                    var res = document.querySelectorAll(s);
+                    if(res.length > 0) {
+                        _that = Array.prototype.slice.call(res).concat(_that);
+                    }
+                   
+                }
+            });
+            return [].push.apply(this, _that);
+        }
     };
 
  /**
