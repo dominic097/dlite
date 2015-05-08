@@ -598,7 +598,6 @@ dG.utils = dG.prototype =  {
 dG.utils.init = function(__, _el) {
         var _that = [],
             _selector = [];
-             console.log('s');
 
         if(typeof __ !== "string") {
             if (!Array.isArray(__)) {
