@@ -601,7 +601,6 @@ dG.utils.init = function(__, _el) {
              console.log('s');
 
         if(typeof __ !== "string") {
-            debugger;
             if (!Array.isArray(__)) {
                 _that = arguments[0] ? [arguments[0]] : [];
             } else if (Array.isArray(__)) {
@@ -610,7 +609,6 @@ dG.utils.init = function(__, _el) {
             return [].push.apply(this, _that);
         }
         else {
-            debugger;
             if(__.split(',').length > 1) {
                 _selector = __.split(',');
             }
