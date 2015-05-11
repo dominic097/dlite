@@ -35,5 +35,22 @@
             }
 
             // e.stopPropagation();
-        });        
+        }); 
+        /**
+        * Get's the ID Attribute of an element
+        * @method getId
+        * @param {Object} DOM Object whose id attribute to return
+        */
+        _tracker.getId = function(el) {
+            return dG(el).attr('id') || false;
+        }
+
+        /**
+        * Get's the ID Attribute of an element
+        * @method getClass
+        * @param {Object} DOM Object whose class attribute to return
+        */
+        _tracker.getClass = function(el) {
+            return dG(el).attr('class') || false;
+        }
 });
