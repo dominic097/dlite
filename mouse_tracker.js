@@ -58,7 +58,7 @@
         * return's the jquery selector's as a string
         * @method getJqueryStr
         */ 
-        _tracker.getJqueryStr = function(el) {
+        _tracker.getJqueryStr =  function(el) {
             debugger;
             console.log('');
             var _this = this,
@@ -88,7 +88,8 @@
                     iterator++;
                 }
 
-                console.log(queryStr.reverse().join(' '));
+                return queryStr.reverse().join(' ');
             }
+        }
         }
 });
