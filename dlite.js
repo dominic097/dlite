@@ -247,11 +247,16 @@ dG.utils = dG.prototype =  {
          * @param {String} _attrName attribute key name
          * @param {String} _attrValue attribute value
          */
-        attr: function(_attrName, _attrValue) {
+        attr: function(_attrName, _attrValue, callBack) {
             var _this = this.hasOwnProperty('length') && this.length > 0 ? this : (this.hasOwnProperty('length') && this.length === 0 ? this : [this]),
                 set = _attrValue && _attrName;
             this.iterator(_this, function(d) {
                 if (set) {
+                   
+                   if(callBack) {
+                      callBack.call(_this);
+                   }
+                   
                     d.setAttribute(_attrName, _attrValue);
                 }
             });
