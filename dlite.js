@@ -249,15 +249,14 @@ dG.utils = dG.prototype =  {
          */
         attr: function(_attrName, _attrValue, callBack) {
             var _this = this.hasOwnProperty('length') && this.length > 0 ? this : (this.hasOwnProperty('length') && this.length === 0 ? this : [this]),
-                set = _attrValue && _attrName;
+                set = _attrValue && _attrName,
+                props = typeof _attrName === 'object' ? _attrName : {'attrName': _attrName, 'attrValue' : _attrValue};
             this.iterator(_this, function(d) {
-                if (set) {
-                   
+                if (set) {                   
                    if(callBack) {
-                      callBack.call(this, _attrName, _attrValue);
-                   }
-                   
-                    d.setAttribute(_attrName, _attrValue);
+                      callBack.call(this, props);
+                   }                   
+                    d.setAttribute(props.attrName, props.attrValue);
                 }
             });
             return set ? this : (this.hasOwnProperty('length') && this.length > 0 && _this.length > 0 ? _this[0].getAttribute(_attrName) : '');
