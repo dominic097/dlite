@@ -92,4 +92,49 @@
             }
         }
         }
+        
+        /**
+        * Genrate jQuery CSS selector for all mouse actions
+        * @method genrateQueryTree
+        */ 
+        _tracker.genrateQueryTree = function() {
+            var _this = this;
+            dG.iterator(Object.keys(_tracker.mouseEvents), function(evt) {
+                if(!_tracker.mouseEvents[evt].hasOwnProperty('jQ')) {
+                    _tracker.mouseEvents[evt]['jQ'] = {};   
+                }
+                dG.iterator(Object.keys(_tracker.mouseEvents[evt]), function(e) {
+                    if(e !== 'jQ') {
+                        var qStr = '',
+                            $qStr;
+                        if($) {
+                            qStr = _this.getJqueryStr(_tracker.mouseEvents[evt][e]);
+                            $qStr = $(qStr);
+                            if($qStr.length > 1) {
+                                dG.iterator($qStr, function(q, i){
+                                    if(q.getAttribute('data-tracker-id') == _tracker.mouseEvents[evt][e].target.getAttribute('data-tracker-id')) {
+                                        _tracker.mouseEvents[evt]['jQ'][e] = {
+                                            'queryStr' : _this.getJqueryStr(_tracker.mouseEvents[evt][e]),
+                                            '__DOM__' :  q
+                                        }
+                                    }
+                                });
+                            }
+                            else {
+                                _tracker.mouseEvents[evt]['jQ'][e] = {
+                                    'queryStr' : _this.getJqueryStr(_tracker.mouseEvents[evt][e]),
+                                    '__DOM__' :  $qStr
+                                }
+                            }
+                        }
+                        else {
+                            _tracker.mouseEvents[evt]['jQ'][e] = {
+                                    'queryStr' : _this.getJqueryStr(_tracker.mouseEvents[evt][e]),
+                                    '__DOM__':  $qStr
+                                }
+                        }
+                    }
+                }); 
+            });
+        }
 });
