@@ -254,7 +254,7 @@ dG.utils = dG.prototype =  {
                 if (set) {
                    
                    if(callBack) {
-                      callBack.call(_this);
+                      callBack.call(this, _attrName, _attrValue);
                    }
                    
                     d.setAttribute(_attrName, _attrValue);
