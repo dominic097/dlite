@@ -35,7 +35,7 @@
             }
 
             // e.stopPropagation();
-        }); 
+        }).attr('data-tracker-id', 'n/a', function(vObj){ vObj.attrValue = dG.random(0, 10000000000, [])}); 
         /**
         * Get's the ID Attribute of an element
         * @method getId
