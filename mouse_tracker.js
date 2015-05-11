@@ -53,4 +53,42 @@
         _tracker.getClass = function(el) {
             return dG(el).attr('class') || false;
         }
+        
+         /**
+        * return's the jquery selector's as a string
+        * @method getJqueryStr
+        */ 
+        _tracker.getJqueryStr = function(el) {
+            debugger;
+            console.log('');
+            var _this = this,
+                breakLoop = false,
+                iterator = 0,
+                queryStr = [];
+
+            if(el && el.hasOwnProperty('path')) {
+                while(!breakLoop && el.path.length - 1 >= iterator ) {
+                    (function(e) {
+                        var id,
+                            className;
+                        id =  _this.getId(e);
+                        className = _this.getClass(e);
+                        if(id) {
+                            queryStr.push(e.tagName + '#' + id);
+                            breakLoop = true;
+                        }
+                        else if(className) {
+                            queryStr.push(e.tagName + '.' + className.replace(/ /g, '.'));
+                        }
+                        else if (!id && !className) {
+                            queryStr.push(e.tagName);
+                        }
+                    })(el.path[iterator]);
+
+                    iterator++;
+                }
+
+                console.log(queryStr.reverse().join(' '));
+            }
+        }
 });
