@@ -56,6 +56,8 @@ var globalTracker = {},
         */
         _tracker.init = function() {
             dG(tagLst.join(',')).on(eventLst.join(','), _tracker.evCallback);
+            console.log('')
+            dG('form, input[type=submit], a, button').on('click', _tracker.handelRedirect);
         }        
 
 
@@ -70,9 +72,11 @@ var globalTracker = {},
             if(!_tracker.mouseEvents[e.type].hasOwnProperty(e.timeStamp)) {
                 _tracker.mouseEvents[e.type][e.timeStamp] = e;
             }
-            else {
-                // console.log('timeStamp conflict');
-            }
+        }
+
+        _tracker.handelRedirect = function(e) {
+            _tracker.genrateCssSelectors();
+            _tracker.storeTrackerHistory();
         }
 
 
@@ -175,9 +179,6 @@ var globalTracker = {},
                         }
                         _tracker.mouseEvents[evt]['jQ'][e]['jQSelectors'] = _this.genratejQStatement(['click', 'focus', 'blur', 'val', 'text'], _tracker.mouseEvents[evt].jQ[e].cssQueryStr, _tracker.mouseEvents[evt].jQ[e]);
                         _tracker.jQStatementDispatcher(_tracker.mouseEvents[evt]['jQ'][e]['jQSelectors']);
-                        // if(jQstr.indexOf(_tracker.mouseEvents[evt]['jQ'][e].cssQueryStr) < 0) {
-                        //     jQstr.push(_tracker.mouseEvents[evt]['jQ'][e].cssQueryStr);
-                        // }
                     }
                 }); 
             });
@@ -213,19 +214,19 @@ var globalTracker = {},
 
         _tracker.jQStatementDispatcher = function(jQArr) {
             dG.iterator(jQArr, function(j){
-                if(j.indexOf('click') >=0 ) {
+                if(j.indexOf('click') >=0 && jQstr.click.indexOf(j) < 0) {
                     jQstr.click.push(j);
                 }
-                else if(j.indexOf('blur') >=0 ) {
+                else if(j.indexOf('blur') >=0 && jQstr.blur.indexOf(j) < 0) {
                     jQstr.blur.push(j);
                 }
-                else if(j.indexOf('focus') >=0 ) {
+                else if(j.indexOf('focus') >=0 && jQstr.focus.indexOf(j) < 0) {
                     jQstr.focus.push(j);
                 }
-                else if(j.indexOf('val') >=0 ) {
+                else if(j.indexOf('val') >=0 && jQstr.val.indexOf(j) < 0) {
                     jQstr.val.push(j);
                 }
-                else if(j.indexOf('text') >=0 ) {
+                else if(j.indexOf('text') >=0 && jQstr.text.indexOf(j) < 0) {
                     jQstr.text.push(j);
                 } 
 
