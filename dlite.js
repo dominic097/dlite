@@ -515,7 +515,7 @@ dG.utils = dG.prototype =  {
                               el.detachEvent('on' + eventName, handler);
                           }
                       }
-                  })(_this, eventName, eventHandler, payLoad);
+                  })(_this, eventName, eventHandler);
             });
             return this;
         },
