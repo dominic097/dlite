@@ -78,7 +78,7 @@
                             breakLoop = true;
                         }
                         else if(className) {
-                            queryStr.push(e.tagName + '.' + className.replace(/ /g, '.'));
+                            queryStr.push(e.tagName + '.' + className.replace( /\s+/g, '.' ));
                         }
                         else if (!id && !className) {
                             queryStr.push(e.tagName);
