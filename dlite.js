@@ -497,12 +497,25 @@ dG.utils = dG.prototype =  {
                 return this;
             }
             this.iterator(this.length ? this : (this.hasOwnProperty('length') && this.length === 0 ? this : [this]), function(_this) {
-                (function(el, eventName, handler) {
-                    if (el.removeEventListener)
-                        el.removeEventListener(eventName, handler);
-                    else
-                        el.detachEvent('on' + eventName, handler);
-                })(_this, eventName, eventHandler);
+               (function(el, eventName, handler, _data) {
+                      this.data = _data;
+                      if(eventName.split(',').length > 1 ) {
+                          dG.iterator(eventName.split(','), function(e){
+                              if (el.removeEventListener) {
+                                  el.removeEventListener(e, handler, false);
+                              } else {
+                                  el.detachEvent('on' + e, handler);
+                              }
+                          });
+                      }
+                      else {
+                          if (el.removeEventListener) {
+                              el.removeEventListener(eventName, handler, false);
+                          } else {
+                              el.detachEvent('on' + eventName, handler);
+                          }
+                      }
+                  })(_this, eventName, eventHandler, payLoad);
             });
             return this;
         },
