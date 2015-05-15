@@ -44,7 +44,6 @@ dG.utils = dG.prototype =  {
          * @method hide
          * @param {Object/Array} selector can be an array of DOM elements or single DOM elements
          */
-
         hide: function() {
 
             this.iterator(this.length ? this : (this.hasOwnProperty('length') && this.length === 0 ? this : [this]), function(_this) {
