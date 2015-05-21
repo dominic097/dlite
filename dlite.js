@@ -6,6 +6,9 @@
 var dG;
 
 /** constructor function
+*   @example
+*   dG('<.selector>')
+*   return dG{Object} with all properties
 *   @constructor 
 *   @param {String} _className className of the element 
 *   @param {Object} _el DOM Object - option argument, if passed then DOM search is made only inside the given document object
