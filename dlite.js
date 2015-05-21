@@ -610,6 +610,12 @@
                 var _this = this.hasOwnProperty('length') && this.length > 0 ? this : (this.hasOwnProperty('length') && this.length === 0 ? this : [this]);
                 return _this.length > 0 ? _this[0].scrollTop : _this;
             }
+        },
+
+
+
+        max: function() {
+
         }
     };
 
