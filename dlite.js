@@ -615,7 +615,18 @@
 
 
         max: function() {
+            var _this = this,
+                __ = [];
+            if (Array.isArray(this) && this.length > 0) {
+                if (arguments.length === 1 attr !== undefined) {
 
+                    return new this.init(__);
+                } else if (argument.length === 2) {
+                    return new this.init(__);
+                } else {
+                    return this;
+                }
+            }
         }
     };
 
