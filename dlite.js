@@ -1,6 +1,5 @@
 (function() {
-
-    "use strict";
+   "use strict";
     /** @namespace 
      *   @property {object} utils Will have all the jquery alternative utility functions
      *   @property {object} ajax An ajax utility similar to jquery ajax
@@ -17,6 +16,39 @@
     };
 
     dG.utils = dG.prototype = {
+
+        /**
+         * Internal function that returns an efficient (for current engines) version
+         * of the passed-in callback, to be repeatedly applied in other dG
+         * functions.
+         * @method optimizeCb
+         * @param {function}
+         * @param {Object}
+         * @param {Number}
+         */
+        optimizeCb: function(func, context, argCount) {
+            switch (argCount == null ? 1 : argCount) {
+                case 1:
+                    return function(value) {
+                        return func.call(context, value);
+                    };
+                case 2:
+                    return function(value, other) {
+                        return func.call(context, value, other);
+                    };
+                case 3:
+                    return function(value, index, collection) {
+                        return func.call(context, value, index, collection);
+                    };
+                case 4:
+                    return function(accumulator, value, index, collection) {
+                        return func.call(context, accumulator, value, index, collection);
+                    };
+            }
+            return function() {
+                return func.apply(context, arguments);
+            };
+        },
 
         /**
          *   An iterator function alternative for foreach
@@ -538,7 +570,7 @@
             }
             this.iterator(this.length ? this : (this.hasOwnProperty('length') && this.length === 0 ? this : [this]), function(_this) {
                 (function(el, eventName, handler, _data) {
-                    this.data = _data;
+                    _this['data'] = _data ? _data : {};
                     if (eventName.split(',').length > 1) {
                         dG.iterator(eventName.split(','), function(e) {
                             if (el.addEventListener) {
@@ -612,13 +644,11 @@
             }
         },
 
-
-
-        max: function() {
+        max: function(attr, fn) {
             var _this = this,
                 __ = [];
             if (Array.isArray(this) && this.length > 0) {
-                if (arguments.length === 1 attr !== undefined) {
+                if (arguments.length === 1 && attr !== undefined) {
 
                     return new this.init(__);
                 } else if (argument.length === 2) {
@@ -627,8 +657,105 @@
                     return this;
                 }
             }
+        },
+
+
+        /**
+        * Sort the object's values by a criterion produced by an callback function or the attr specified
+        * @method sort
+        * @param {Boolean} isAsc
+        * @param {String} dataType
+        * @param {String} attr
+        * @param {function} func 
+        */
+
+        sort: function(isAsc, dataType, attr, func) {
+            var _this = this,
+                __ = this.toArray(),
+                _func,
+                isAsc = isAsc ? isAsc : true,
+                dataType = dataType ? dataType : "string";
+
+            if (attr && typeof attr === "string") {
+                func = function(obj) {
+                    if (obj.hasOwnProperty('getAttribute') && obj.getAttribute(attr)) {
+                        return obj.getAttribute(attr);
+                    } else if (obj[attr]) {
+                        return obj[attr];
+                    }
+                }
+            } else if (attr && typeof attr === "function") {
+                _func = attr;
+            }
+
+            return new this.init(__.sort(_this.__utils__.sortcb(isAsc, dataType, func)));
+
+        },
+
+        toArray: function(clone, sorted) {
+            var _this = this,
+                arr = [];
+            _this.iterator(Object.keys(_this), function(key, index) {
+                if (typeof _this[key] === "object") {
+                    _this[key].key = key;
+                    _this[key].index = _this[key].hasOwnProperty('index') ? _this[key].index : index;
+                    if (clone) { /* To avoid unnecessary call to extend function, if condition handled */
+                        arr[index] = dG.deepExtend({}, _this[key]);
+                    } else {
+                        arr[index] = _this[key];
+                    }
+                }
+            }, true);
+            return sorted ? arr : arr;
+        },
+
+        __utils__: {
+            sortcb: function(isAsc, dataType, cb) {
+
+                if (cb === undefined) {
+                    cb = function(a) {
+                        return a;
+                    }
+                }
+
+                return function(a, b) {
+                    var _a = cb(a),
+                        _b = cb(b),
+                        tempObj = document.createElement('div');
+                    if (dataType === 'currency') {
+                        _a = _a ? parseFloat(_a.toString().replace(/\$|\,/g, ''), 10) : 0;
+                        _b = _b ? parseFloat(_b.toString().replace(/\$|\,/g, ''), 10) : 0;
+                    } else if (dataType === 'number' || dataType === 'int') {
+                        _a = _a ? parseInt(_a, 10) : 0;
+                        _b = _b ? parseInt(_b, 10) : 0;
+                    } else if (dataType === 'float') {
+                        _a = _a ? parseFloat(_a, 10) : 0;
+                        _b = _b ? parseFloat(_b, 10) : 0;
+                    } else if (dataType === 'string' || dataType === 'char') {
+                        _a = _a ? _a.toLowerCase() : '';
+                        _b = _b ? _b.toLowerCase() : '';
+                    } else if (dataType === 'csn') {
+                        _a = _a ? parseFloat(_a.toString().replace(',', '')) : 0;
+                        _b = _b ? parseFloat(_b.toString().replace(',', '')) : 0;
+                    } else if (dataType === 'percentage') {
+                        _a = _a ? parseFloat(_a.toString().replace('%', '')) : 0;
+                        _b = _b ? parseFloat(_b.toString().replace('%', '')) : 0;
+                    } else if (dataType === 'xml') {
+                        tempObj.innerHTML = _a;
+                        _a = tempObj.textContent;
+                        tempObj.innerHTML = _b;
+                        _b = tempObj.textContent;
+                    }
+
+                    if ((!_a || _a === -Infinity) && _a !== 0) {
+                        return 1;
+                    } else if ((!_b || _b === -Infinity) && _b !== 0) {
+                        return -1;
+                    } else return _a === _b ? 0 : isAsc ? ((_a < _b) ? -1 : 1) : ((_a > _b) ? -1 : 1);
+                };
+            }
         }
-    };
+    }
 
 
     dG.utils.init = function(__, _el) {
