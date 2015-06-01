@@ -1,54 +1,67 @@
 (function() {
-   "use strict";
-    /** @namespace 
-     *   @property {object} utils Will have all the jquery alternative utility functions
-     *   @property {object} ajax An ajax utility similar to jquery ajax
-     */
-    var dG;
+    "use strict";
+
+    var d = {},
+        D = {};
 
     /** constructor function
      *   @constructor 
      *   @param {String} _className className of the element 
      *   @param {Object} _el DOM Object - option argument, if passed then DOM search is made only inside the given document object
      */
-    dG = window.dG = function(_className, _el) {
-        return new dG.utils.init(_className, _el);
+    d = window.d = function(_className, _el) {
+        return new d.utils.init(_className, _el);
     };
 
-    dG.utils = dG.prototype = {
+    /** constructor function
+     *   @constructor that can memorize parameter and return faster results
+     *   @param {String} _className className of the element 
+     *   @param {Object} _el DOM Object - option argument, if passed then DOM search is made only inside the given document object
+     */
 
-        /**
-         * Internal function that returns an efficient (for current engines) version
-         * of the passed-in callback, to be repeatedly applied in other dG
-         * functions.
-         * @method optimizeCb
-         * @param {function}
-         * @param {Object}
-         * @param {Number}
-         */
-        optimizeCb: function(func, context, argCount) {
-            switch (argCount == null ? 1 : argCount) {
-                case 1:
-                    return function(value) {
-                        return func.call(context, value);
-                    };
-                case 2:
-                    return function(value, other) {
-                        return func.call(context, value, other);
-                    };
-                case 3:
-                    return function(value, index, collection) {
-                        return func.call(context, value, index, collection);
-                    };
-                case 4:
-                    return function(accumulator, value, index, collection) {
-                        return func.call(context, accumulator, value, index, collection);
-                    };
+    D = window.D = function(_className, _el) {
+
+        var _id;
+
+        if (!D.hasOwnProperty('__cache__')) {
+            D['__cache__'] = {};
+            D.__cache__['uIds'] = [];
+        }
+
+        _id = getUniqueId(_className, _el);
+
+        if (!D.__cache__.hasOwnProperty(_id)) {
+            D.__cache__[_id] = new d.utils.init(_className, _el);
+        }
+
+        return D.__cache__[_id];
+
+        function getUniqueId(clName, elObj) {
+
+            var _str = clName + ':';
+
+            if (elObj) {
+                if (elObj['id']) {
+                    _str += elObj['id'];
+                } else {
+                    var _dId = d.utils.attrGetter.call(elObj, 'dId')
+                    if (_dId) {
+                        _str += d.utils.attrGetter.call(elObj, 'dId');
+                    } else {
+                        var _uniqueId = d.random(0, 1000000000, D.__cache__.uIds);
+                        D.__cache__.uIds.push(_uniqueId);
+                        _str += _uniqueId;
+                        d.utils.attrSetter.call(elObj, 'dId', _uniqueId);
+                    }
+                }
             }
-            return function() {
-                return func.apply(context, arguments);
-            };
-        },
+
+            return _str.replace(/ /g, '');
+        }
+    };
+
+    d.utils = d.prototype = {
+
 
         /**
          *   An iterator function alternative for foreach
@@ -70,6 +83,36 @@
                     callBack(arr[len], len, this);
                     len++;
                 }
+            }
+        },
+
+        /**
+         * Attribute Setter function for DOM Manipulation
+         * @method attrSetter
+         * @param {String} attrName Name of the Attribute to set
+         */
+        attrSetter: function(attrName, atVal) {
+            if (this.setAttribute) {
+                this.setAttribute(attrName, atVal);
+            } else if (this.attr) {
+                this.attr(attrName, atVal);
+            } else if (typeof this === "object") {
+                this[dId] = atVal;
+            }
+        },
+
+        /**
+         * Attribute Getter function for DOM Manipulation
+         * @method attrGetter
+         * @param {String} attrName Name of the Attribute to fetch
+         */
+        attrGetter: function(attrName) {
+            if (this.getAttribute) {
+                return this.getAttribute(attrName);
+            } else if (this.attr) {
+                return this.attr(attrName);
+            } else if (typeof this === "object") {
+                return this[attrName];
             }
         },
 
@@ -287,15 +330,17 @@
                     'attrName': _attrName,
                     'attrValue': _attrValue
                 };
-            this.iterator(_this, function(d) {
+
+            this.iterator(_this, function(el) {
                 if (set) {
                     if (callBack) {
-                        callBack.call(this, props);
+                        callBack.call(el, props);
                     }
-                    d.setAttribute(props.attrName, props.attrValue);
+
+                    _this.attrSetter.call(el, props.attrName, props.attrValue);
                 }
             });
-            return set ? this : (this.hasOwnProperty('length') && this.length > 0 && _this.length > 0 ? _this[0].getAttribute(_attrName) : '');
+            return set ? this : (this.hasOwnProperty('length') && this.length > 0 && _this.length > 0 ? _this.attrGetter.call(_this[0], _attrName) : '');
         },
 
         /**
@@ -462,8 +507,8 @@
             }
             if (_class) {
                 siblings.filter(function(el) {
-                    if (dG(el).hasClass(_class)) {
-                        siblingNode.push(dG(el));
+                    if (d(el).hasClass(_class)) {
+                        siblingNode.push(d(el));
                     }
                 });
                 return siblingNode;
@@ -536,7 +581,7 @@
                 (function(el, eventName, handler, _data) {
                     this.data = _data;
                     if (eventName.split(',').length > 1) {
-                        dG.iterator(eventName.split(','), function(e) {
+                        d.iterator(eventName.split(','), function(e) {
                             if (el.removeEventListener) {
                                 el.removeEventListener(e, handler, false);
                             } else {
@@ -572,7 +617,7 @@
                 (function(el, eventName, handler, _data) {
                     _this['data'] = _data ? _data : {};
                     if (eventName.split(',').length > 1) {
-                        dG.iterator(eventName.split(','), function(e) {
+                        d.iterator(eventName.split(','), function(e) {
                             if (el.addEventListener) {
                                 el.addEventListener(e, handler, false);
                             } else {
@@ -661,13 +706,13 @@
 
 
         /**
-        * Sort the object's values by a criterion produced by an callback function or the attr specified
-        * @method sort
-        * @param {Boolean} isAsc
-        * @param {String} dataType
-        * @param {String} attr
-        * @param {function} func 
-        */
+         * Sort the object's values by a criterion produced by an callback function or the attr specified
+         * @method sort
+         * @param {Boolean} isAsc
+         * @param {String} dataType
+         * @param {String} attr
+         * @param {function} func 
+         */
 
         sort: function(isAsc, dataType, attr, func) {
             var _this = this,
@@ -689,7 +734,6 @@
             }
 
             return new this.init(__.sort(_this.__utils__.sortcb(isAsc, dataType, func)));
-
         },
 
         toArray: function(clone, sorted) {
@@ -700,7 +744,7 @@
                     _this[key].key = key;
                     _this[key].index = _this[key].hasOwnProperty('index') ? _this[key].index : index;
                     if (clone) { /* To avoid unnecessary call to extend function, if condition handled */
-                        arr[index] = dG.deepExtend({}, _this[key]);
+                        arr[index] = d.deepExtend({}, _this[key]);
                     } else {
                         arr[index] = _this[key];
                     }
@@ -710,6 +754,7 @@
         },
 
         __utils__: {
+
             sortcb: function(isAsc, dataType, cb) {
 
                 if (cb === undefined) {
@@ -757,8 +802,7 @@
         }
     }
 
-
-    dG.utils.init = function(__, _el) {
+    d.utils.init = function(__, _el) {
         var _that = [],
             _selector = [];
 
@@ -775,9 +819,9 @@
             } else {
                 _selector = [__];
             }
-            dG.iterator(_selector, function(s) {
+            d.iterator(_selector, function(s) {
                 if (_el) {
-                    var res = _el.querySelectorAll(s);
+                    var res = (_el.querySelectorAll ? _el.querySelectorAll(s) : (_el.find ? _el.find(s) : []));
                     if (res.length > 0) {
                         _that = Array.prototype.slice.call(res).concat(_that);
                     }
@@ -798,7 +842,7 @@
      * @method extend
      * @param {Object} out An Object in which properties of another object will be copied
      */
-    dG.extend = function(out) {
+    d.extend = function(out) {
         // var _iterator = this.iterator;
         out = out || {};
         for (var i = 1; i < arguments.length; i++) {
@@ -806,7 +850,7 @@
             if (!_obj) {
                 continue;
             }
-            dG.iterator(Object.keys(_obj), function(key) {
+            d.iterator(Object.keys(_obj), function(key) {
                 if (_obj.hasOwnProperty(key))
                     out[key] = _obj[key];
             });
@@ -819,7 +863,7 @@
      * @method deepExtend
      * @param {Object} out An Object in which properties of another object will be copied
      */
-    dG.deepExtend = function(out) {
+    d.deepExtend = function(out) {
         var _this = this;
         out = out || {};
         for (var i = 1; i < arguments.length; i++) {
@@ -828,7 +872,7 @@
             if (!obj)
                 continue;
 
-            dG.iterator(Object.keys(obj), function(key) {
+            d.iterator(Object.keys(obj), function(key) {
                 if (obj.hasOwnProperty(key)) {
                     if (typeof obj[key] === 'object' && obj[key] && !obj[key].hasOwnProperty('length'))
                         out[key] = _this.deepExtend(out[key], obj[key]);
@@ -847,7 +891,7 @@
      * @param {Object} proxy An Object in which all the information required to raise ajax request will be passed
      * @param {function} anonymous callback function, option parameter will be used only in defer state.
      */
-    dG.ajax = function(proxy) {
+    d.ajax = function(proxy) {
         var _this = this;
         if (!_this.hasOwnProperty('_xhrRequestPool')) {
             _this['_xhrRequestPool'] = [];
@@ -873,7 +917,7 @@
                 _this.responsePool = {};
             }
 
-            uID = dG.random(0, 1000000000, Object.keys(_this.responsePool));
+            uID = d.random(0, 1000000000, Object.keys(_this.responsePool));
 
             if (!_this.responsePool.hasOwnProperty(uID)) {
                 _this.responsePool[uID] = {};
@@ -885,8 +929,8 @@
             _this.responsePool[uID]['callBack'] = arguments[1] ? arguments[1] : new Function();
             _this.responsePool[uID]['requestStack'] = [];
             _this.responsePool[uID]['deferredResponse'] = true;
-            dG.iterator(proxy, function(_proxy) {
-                var _requestUID = dG.random(0, 1000000000, Object.keys(_this.responsePool));
+            d.iterator(proxy, function(_proxy) {
+                var _requestUID = d.random(0, 1000000000, Object.keys(_this.responsePool));
                 _proxy['uID'] = _requestUID;
                 _this.responsePool[uID]['requestStack'].push(_proxy);
                 _proxy.callBack = function(_response) {
@@ -908,14 +952,14 @@
 
         function _sendRequest(_proxy) {
             var _xhr = getXMLHttpRequest(),
-                _uID = dG.random(0, 1000000000, dG._xhrRequestPoolUID);
+                _uID = d.random(0, 1000000000, d._xhrRequestPoolUID);
             _xhr.onreadystatechange = xhr_success;
             _xhr.open((_proxy.type || 'POST'), (_proxy.url || ''), (_proxy.hasOwnProperty('async') && typeof _proxy.async !== 'undefined' ? _proxy.async : true));
             _xhr.setRequestHeader("Content-Type", 'application/json');
             _xhr['uID'] = _uID;
-            dG._xhrRequestPoolUID.push(_uID);
-            dG._xhrRequestPool.push(_xhr);
-            dG._xhrRequestStack.push(_xhr);
+            d._xhrRequestPoolUID.push(_uID);
+            d._xhrRequestPool.push(_xhr);
+            d._xhrRequestStack.push(_xhr);
 
             if (_proxy.type && _proxy.type.toLowerCase() === 'post') {
                 _xhr.send(JSON.stringify(_proxy.param || {}));
@@ -934,22 +978,22 @@
                     } else {
                         console.log("Response Error...");
                     }
-                } else if (_xhr.status === 200 && dG._xhrRequestPoolUID.indexOf(_xhr.uID) >= 0) {
+                } else if (_xhr.status === 200 && d._xhrRequestPoolUID.indexOf(_xhr.uID) >= 0) {
                     var _response = {};
                     if (_xhr.response && typeof _xhr.response !== "object" && isJsonRepsonse(_xhr.response)) {
                         _response = JSON.parse(_xhr.response);
                     }
                     _proxy.callBack(_response);
-                    dG._xhrRequestPool = dG._xhrRequestPool.filter(function(_x, i) {
+                    d._xhrRequestPool = d._xhrRequestPool.filter(function(_x, i) {
                         if (_x.uID != _xhr.uID) {
                             return _x;
                         }
                     });
                 }
 
-                if (dG._xhrRequestPool.length === 0) {
-                    if (dG.ajax.hasOwnProperty('__end__') && dG.ajax.__end__) {
-                        dG.ajax.__end__();
+                if (d._xhrRequestPool.length === 0) {
+                    if (d.ajax.hasOwnProperty('__end__') && d.ajax.__end__) {
+                        d.ajax.__end__();
                     }
                 }
             }
@@ -978,36 +1022,36 @@
      * @method abort
      * @param {Object} Object xhr Object.
      */
-    dG.ajax.abort = function(xhrToDelete) {
+    d.ajax.abort = function(xhrToDelete) {
         if (xhrToDelete && xhrToDelete.hasOwnProperty('uID')) {
-            dG._xhrRequestPool = dG._xhrRequestPool.filter(function(_xhr, i) {
+            d._xhrRequestPool = d._xhrRequestPool.filter(function(_xhr, i) {
                 if (_xhr.uID == xhrToDelete.uID) {
                     _xhr.abort();
-                    delete dG._xhrRequestPool[i]
+                    delete d._xhrRequestPool[i]
                 } else {
                     return _xhr;
                 }
             });
         } else if (Array.isArray(xhrToDelete) && xhrToDelete.length > 0) {
-            dG.iterator(xhrToDelete, function(_xhr) {
-                dG._xhrRequestPool = dG._xhrRequestPool.filter(function(_x, i) {
+            d.iterator(xhrToDelete, function(_xhr) {
+                d._xhrRequestPool = d._xhrRequestPool.filter(function(_x, i) {
                     if (_x.uID == _xhr.uID) {
                         _x.abort();
-                        delete dG._xhrRequestPool[i]
+                        delete d._xhrRequestPool[i]
                     } else {
                         return _x;
                     }
                 });
             });
         } else {
-            dG.iterator(dG._xhrRequestPool, function(_xhr) {
+            d.iterator(d._xhrRequestPool, function(_xhr) {
                 _xhr.abort();
             });
-            dG._xhrRequestPool = [];
+            d._xhrRequestPool = [];
         }
-        if (dG._xhrRequestPool.length === 0) {
-            if (dG.ajax.hasOwnProperty('__end__') && dG.ajax.__end__) {
-                dG.ajax.__end__();
+        if (d._xhrRequestPool.length === 0) {
+            if (d.ajax.hasOwnProperty('__end__') && d.ajax.__end__) {
+                d.ajax.__end__();
             }
         }
     };
@@ -1017,7 +1061,7 @@
      * @method start
      * @param {Object} __ Callback function to be called on start of / before the first AJAX request.
      */
-    dG.ajax.start = function(__) {
+    d.ajax.start = function(__) {
         if (__) {
             this['__start__'] = __;
         }
@@ -1028,7 +1072,7 @@
      * @method end
      * @param {Object} __ Callback function to be called at the end of the last AJAX request.
      */
-    dG.ajax.end = function(__) {
+    d.ajax.end = function(__) {
         if (__) {
             this['__end__'] = __;
         }
@@ -1041,7 +1085,7 @@
      * @param {Number/Float} max maximum range for genrating random number
      * @param {Array} discard Array of number's to be discarded
      */
-    dG.random = function(min, max, discard) {
+    d.random = function(min, max, discard) {
         if (discard === 'undefined') {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         } else if (discard !== 'undefined' && Array.isArray(discard)) {
@@ -1060,7 +1104,7 @@
      *   @param {function} a callback function which will be called at each iteration
      *   @param {bool} boolean, if passed true then iteration will happen from top to bottom, for false it will be vice versa. Note: bottom to top iteration will be always faster
      **/
-    dG.iterator = function(arr, callBack, fromTop) {
+    d.iterator = function(arr, callBack, fromTop) {
         var len = 0;
         if (!fromTop) {
             len = arr.length;
@@ -1076,6 +1120,6 @@
         }
     };
 
-    dG.utils.init.prototype = dG.utils;
+    d.utils.init.prototype = d.utils;
 
 })();
