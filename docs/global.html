@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Global</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/prettify/prettify.js">
+    </script>
+    <script src="scripts/prettify/lang-css.js">
+    </script>
+    <script type="text/javascript" src="scripts/jQuery.js"></script>
+    <script type="text/javascript" src="../dlite.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -14,5715 +18,1612 @@
 </head>
 
 <body>
-
-<div id="main">
-
-    <h1 class="page-title">dLite</h1>
-
-    
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
+    <div id="main">
+        <h1 class="page-title">Global</h1>
+        <section>
+            <header>
+                <h2>
         
         </h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-        
-    
+            </header>
+            <article>
+                <div class="container-overview">
+                    <dl class="details">
+                    </dl>
+                </div>
+                <h3 class="subsection-title">Methods</h3>
+                <h4 class="name" id="abort"><span class="type-signature"></span>abort<span class="signature">(Object)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    will abort all the pending AJAX request / if the xhr obj is passed only that particular AJAX request will be terminated
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>Object</code></td>
+                            <td class="type">
+                                <span class="param-type">Object</span>
+                            </td>
+                            <td class="description last">xhr Object.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line1018">line 1018</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="addClass"><span class="type-signature"></span>addClass<span class="signature">(selector, className)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to add Class to the respective DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>className</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">class name to be added</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line146">line 146</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="after"><span class="type-signature"></span>after<span class="signature">(selector, htmlString)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to append an HTML String after the current element as a sibling
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>htmlString</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">HTML String needed to be appended</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line213">line 213</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="ajax"><span class="type-signature"></span>ajax<span class="signature">(proxy, anonymous)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to raise AJAX request. This AJAX utility will also support defer call's.
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>proxy</code></td>
+                            <td class="type">
+                                <span class="param-type">Object</span>
+                            </td>
+                            <td class="description last">An Object in which all the information required to raise ajax request will be passed</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>anonymous</code></td>
+                            <td class="type">
+                                <span class="param-type">function</span>
+                            </td>
+                            <td class="description last">callback function, option parameter will be used only in defer state.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line886">line 886</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="append"><span class="type-signature"></span>append<span class="signature">(selector, _el)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to append an HTML DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>_el</code></td>
+                            <td class="type">
+                                <span class="param-type">Object</span>
+                            </td>
+                            <td class="description last">DOM Object needed to be appended</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line442">line 442</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="attr"><span class="type-signature"></span>attr<span class="signature">(selector, _attrName, _attrValue)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to set or get an attribute for the DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>_attrName</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">attribute key name</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>_attrValue</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">attribute value</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line317">line 317</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="attrGetter"><span class="type-signature"></span>attrGetter<span class="signature">(attrName)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Attribute Getter function for DOM Manipulation
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>attrName</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">Name of the Attribute to fetch</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line102">line 102</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="attrSetter"><span class="type-signature"></span>attrSetter<span class="signature">(attrName)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Attribute Setter function for DOM Manipulation
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>attrName</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">Name of the Attribute to set</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line87">line 87</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="before"><span class="type-signature"></span>before<span class="signature">(selector, htmlString)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to append an HTML String before the current element as a sibling
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>htmlString</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">HTML String needed to be appended</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line236">line 236</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="children"><span class="type-signature"></span>children<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to get the children of a parent
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">DOM element or first entity of array element</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line259">line 259</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="clone"><span class="type-signature"></span>clone<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to clone the DOM Object
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">DOM element or first entity of array element</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line277">line 277</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="css"><span class="type-signature"></span>css<span class="signature">(selector, _classRule)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to set css properties
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>_classRule</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/String</span>
+                            </td>
+                            <td class="description last">Object to apply multiple styles or string to apply particular style. NOTE: value should be in "px" and javaScript style property notation should be used.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line544">line 544</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="deepExtend"><span class="type-signature"></span>deepExtend<span class="signature">(out)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to merge two or more Objects. NOTE: to performe deepExtend use extend function for improved performance
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>out</code></td>
+                            <td class="type">
+                                <span class="param-type">Object</span>
+                            </td>
+                            <td class="description last">An Object in which properties of another object will be copied</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line859">line 859</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="empty"><span class="type-signature"></span>empty<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to remove the children of the selected DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line303">line 303</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="end"><span class="type-signature"></span>end<span class="signature">(__)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    AJAX callback function. will be called at the end of all AJAX request is made. part of AJAX life cycle.
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>__</code></td>
+                            <td class="type">
+                                <span class="param-type">Object</span>
+                            </td>
+                            <td class="description last">Callback function to be called at the end of the last AJAX request.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line1068">line 1068</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="extend"><span class="type-signature"></span>extend<span class="signature">(out)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to merge two or more Objects. NOTE: will not do deep extend instead use deepExtend function\
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>out</code></td>
+                            <td class="type">
+                                <span class="param-type">Object</span>
+                            </td>
+                            <td class="description last">An Object in which properties of another object will be copied</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line838">line 838</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="find"><span class="type-signature"></span>find<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to find an HTML element using css selector
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line286">line 286</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="hasClass"><span class="type-signature"></span>hasClass<span class="signature">(selector, _className)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to check the presence of class
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>_className</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">class name to be validated against</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line196">line 196</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="hide"><span class="type-signature"></span>hide<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to hiding DOM by making display property as "none"
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line117">line 117</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="html"><span class="type-signature"></span>html<span class="signature">(selector, htmlString)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function that set/get HTML string of the appropriate DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">DOM element or first entity of array element</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>htmlString</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">if passed HTML string will be set to the selected DOM</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line344">line 344</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="iterator"><span class="type-signature"></span>iterator<span class="signature">(arr, a, boolean,)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    An iterator function alternative for foreach
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>arr</code></td>
+                            <td class="type">
+                                <span class="param-type">array</span>
+                            </td>
+                            <td class="description last">list of elements to iterate</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>a</code></td>
+                            <td class="type">
+                                <span class="param-type">function</span>
+                            </td>
+                            <td class="description last">callback function which will be called at each iteration</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>boolean,</code></td>
+                            <td class="type">
+                                <span class="param-type">bool</span>
+                            </td>
+                            <td class="description last">if passed true then iteration will happen from top to bottom, for false it will be vice versa. Note: bottom to top iteration will be always faster</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line1098">line 1098</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="iterator"><span class="type-signature"></span>iterator<span class="signature">(arr, a, boolean,)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    An iterator function alternative for foreach
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>arr</code></td>
+                            <td class="type">
+                                <span class="param-type">array</span>
+                            </td>
+                            <td class="description last">list of elements to iterate</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>a</code></td>
+                            <td class="type">
+                                <span class="param-type">function</span>
+                            </td>
+                            <td class="description last">callback function which will be called at each iteration</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>boolean,</code></td>
+                            <td class="type">
+                                <span class="param-type">bool</span>
+                            </td>
+                            <td class="description last">if passed true then iteration will happen from top to bottom, for false it will be vice versa. Note: bottom to top iteration will be always faster</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line64">line 64</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="left"><span class="type-signature"></span>left<span class="signature">(selector, argument[0)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to get or set scroll Left Prop
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>argument[0</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">type of event</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line656">line 656</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="off"><span class="type-signature"></span>off<span class="signature">(selector, eventName, eventHandler)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to remove event listener
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>eventName</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">type of event</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>eventHandler</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">function ref</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line567">line 567</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="off"><span class="type-signature"></span>off<span class="signature">(selector, eventName, eventHandler, payLoad)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to add event listener
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>eventName</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">type of event</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>eventHandler</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">event callback function</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>payLoad</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">receive arguments. can be accessed inside event callback as this.data
+                                <object></object>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line601">line 601</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="outerHeight"><span class="type-signature"></span>outerHeight<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function that return offsetHeight of DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">DOM element or first entity of array element</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line383">line 383</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="outerWidth"><span class="type-signature"></span>outerWidth<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function that return offsetHeight of DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">DOM element or first entity of array element</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line399">line 399</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="parent"><span class="type-signature"></span>parent<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function that return parent of the DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">DOM element or first entity of array element</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line415">line 415</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="parents"><span class="type-signature"></span>parents<span class="signature">(wrapper, pClassName)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function which will return an array of parent node, parent className also can be passed to get a particular parent node
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>wrapper</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/String</span>
+                            </td>
+                            <td class="description last">DOM element class/DOM Object whose parent node to be found</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>pClassName</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">className of the parent element. To get/check the parent node exist pass the className of the parent Node as an option parameter</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line424">line 424</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="prepend"><span class="type-signature"></span>prepend<span class="signature">(selector, _el)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to prepend HTML elements
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">DOM element or first entity of array element</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>_el</code></td>
+                            <td class="type">
+                                <span class="param-type">Object</span>
+                            </td>
+                            <td class="description last">DOM Object needed to be prepend</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line463">line 463</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="random"><span class="type-signature"></span>random<span class="signature">(min, max, discard)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Returns an random integer number
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>min</code></td>
+                            <td class="type">
+                                <span class="param-type">Number/Float</span>
+                            </td>
+                            <td class="description last">minimum range for genrating random number</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>max</code></td>
+                            <td class="type">
+                                <span class="param-type">Number/Float</span>
+                            </td>
+                            <td class="description last">maximum range for genrating random number</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>discard</code></td>
+                            <td class="type">
+                                <span class="param-type">Array</span>
+                            </td>
+                            <td class="description last">Array of number's to be discarded</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line1079">line 1079</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="ready"><span class="type-signature"></span>ready<span class="signature">(ready)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    stimulates document ready
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>ready</code></td>
+                            <td class="type">
+                                <span class="param-type">function</span>
+                            </td>
+                            <td class="description last">callback function to be called on document ready state</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line637">line 637</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="remove"><span class="type-signature"></span>remove<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to remove particular DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line477">line 477</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="removeClass"><span class="type-signature"></span>removeClass<span class="signature">(selector, className)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to remove Class
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>className</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">class name to be removed</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line171">line 171</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="show"><span class="type-signature"></span>show<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to show hidden DOM by making display property as "block"
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line133">line 133</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="siblings"><span class="type-signature"></span>siblings<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function that return the siblings of selected DOM
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">DOM element or first entity of array element</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line491">line 491</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="sort"><span class="type-signature"></span>sort<span class="signature">(isAsc, dataType, attr, func)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Sort the object's values by a criterion produced by an callback function or the attr specified
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>isAsc</code></td>
+                            <td class="type">
+                                <span class="param-type">Boolean</span>
+                            </td>
+                            <td class="description last"></td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>dataType</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last"></td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>attr</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last"></td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>func</code></td>
+                            <td class="type">
+                                <span class="param-type">function</span>
+                            </td>
+                            <td class="description last"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line706">line 706</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="start"><span class="type-signature"></span>start<span class="signature">(__)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    AJAX callback function. will be called before any AJAX request is made. part of AJAX life cycle.
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>__</code></td>
+                            <td class="type">
+                                <span class="param-type">Object</span>
+                            </td>
+                            <td class="description last">Callback function to be called on start of / before the first AJAX request.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line1057">line 1057</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="toggleClass"><span class="type-signature"></span>toggleClass<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to toggle class name
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line518">line 518</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="top"><span class="type-signature"></span>top<span class="signature">(selector, argument[0)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to get or set scroll Top Prop
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>argument[0</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">type of event</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line673">line 673</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h4 class="name" id="val"><span class="type-signature"></span>val<span class="signature">(selector, _txt)</span><span class="type-signature"></span></h4>
+                <div class="description">
+                    Helper function to set/get text content
+                </div>
+                <h5>Parameters:</h5>
+                <table class="params">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th class="last">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name"><code>selector</code></td>
+                            <td class="type">
+                                <span class="param-type">Object/Array</span>
+                            </td>
+                            <td class="description last">can be an array of DOM elements or single DOM elements</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><code>_txt</code></td>
+                            <td class="type">
+                                <span class="param-type">String</span>
+                            </td>
+                            <td class="description last">text string to be set</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="details">
+                    <dt class="tag-source">Source:</dt>
+                    <dd class="tag-source">
+                        <ul class="dummy">
+                            <li>
+                                <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line364">line 364</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </article>
+        </section>
     </div>
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    <h4 class="name" id="abort"><span class="type-signature"></span>abort<span class="signature">(Object)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    will abort all the pending AJAX request / if the xhr obj is passed only that particular AJAX request will be terminated
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>Object</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">xhr Object.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line781">line 781</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="addClass"><span class="type-signature"></span>addClass<span class="signature">(selector, className)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to add Class to the respective DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>className</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">class name to be added</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line72">line 72</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="after"><span class="type-signature"></span>after<span class="signature">(selector, htmlString)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to append an HTML String after the current element as a sibling
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>htmlString</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">HTML String needed to be appended</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line139">line 139</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="ajax"><span class="type-signature"></span>ajax<span class="signature">(proxy, anonymous)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to raise AJAX request. This AJAX utility will also support defer call's.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>proxy</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An Object in which all the information required to raise ajax request will be passed</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>anonymous</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">callback function, option parameter will be used only in defer state.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line649">line 649</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="append"><span class="type-signature"></span>append<span class="signature">(selector, _el)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to append an HTML DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>_el</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM Object needed to be appended</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line359">line 359</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="attr"><span class="type-signature"></span>attr<span class="signature">(selector, _attrName, _attrValue)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to set or get an attribute for the DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>_attrName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">attribute key name</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>_attrValue</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">attribute value</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line243">line 243</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="before"><span class="type-signature"></span>before<span class="signature">(selector, htmlString)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to append an HTML String before the current element as a sibling
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>htmlString</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">HTML String needed to be appended</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line162">line 162</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="children"><span class="type-signature"></span>children<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to get the children of a parent
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element or first entity of array element</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line185">line 185</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="clone"><span class="type-signature"></span>clone<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to clone the DOM Object
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element or first entity of array element</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line203">line 203</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="css"><span class="type-signature"></span>css<span class="signature">(selector, _classRule)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to set css properties
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>_classRule</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Object to apply multiple styles or string to apply particular style. NOTE: value should be in "px" and javaScript style property notation should be used.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line461">line 461</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="deepExtend"><span class="type-signature"></span>deepExtend<span class="signature">(out)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to merge two or more Objects. NOTE: to performe deepExtend use extend function for improved performance
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>out</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An Object in which properties of another object will be copied</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line622">line 622</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="empty"><span class="type-signature"></span>empty<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to remove the children of the selected DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line229">line 229</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="end"><span class="type-signature"></span>end<span class="signature">(__)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    AJAX callback function. will be called at the end of all AJAX request is made. part of AJAX life cycle.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>__</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Callback function to be called at the end of the last AJAX request.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line833">line 833</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="extend"><span class="type-signature"></span>extend<span class="signature">(out)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to merge two or more Objects. NOTE: will not do deep extend instead use deepExtend function\
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>out</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An Object in which properties of another object will be copied</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line601">line 601</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="find"><span class="type-signature"></span>find<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to find an HTML element using css selector
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line212">line 212</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="hasClass"><span class="type-signature"></span>hasClass<span class="signature">(selector, _className)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to check the presence of class
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>_className</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">class name to be validated against</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line122">line 122</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="hide"><span class="type-signature"></span>hide<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to hiding DOM by making display property as "none"
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line42">line 42</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="html"><span class="type-signature"></span>html<span class="signature">(selector, htmlString)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function that set/get HTML string of the appropriate DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element or first entity of array element</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>htmlString</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">if passed HTML string will be set to the selected DOM</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line261">line 261</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="iterator"><span class="type-signature"></span>iterator<span class="signature">(arr, a, boolean,)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    An iterator function alternative for foreach
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>arr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">list of elements to iterate</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>a</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">callback function which will be called at each iteration</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>boolean,</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">bool</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">if passed true then iteration will happen from top to bottom, for false it will be vice versa. Note: bottom to top iteration will be always faster</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line863">line 863</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="iterator"><span class="type-signature"></span>iterator<span class="signature">(arr, a, boolean,)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    An iterator function alternative for foreach
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>arr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">list of elements to iterate</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>a</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">callback function which will be called at each iteration</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>boolean,</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">bool</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">if passed true then iteration will happen from top to bottom, for false it will be vice versa. Note: bottom to top iteration will be always faster</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line19">line 19</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="left"><span class="type-signature"></span>left<span class="signature">(selector, argument[0)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to get or set scroll Left Prop
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>argument[0</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">type of event</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line550">line 550</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="off"><span class="type-signature"></span>off<span class="signature">(selector, eventName, eventHandler)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to remove event listener
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>eventName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">type of event</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>eventHandler</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">function ref</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line484">line 484</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="off"><span class="type-signature"></span>off<span class="signature">(selector, eventName, eventHandler, payLoad)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to add event listener
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>eventName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">type of event</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>eventHandler</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">event callback function</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>payLoad</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">receive arguments. can be accessed inside event callback as this.data<Object></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line506">line 506</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="outerHeight"><span class="type-signature"></span>outerHeight<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function that return offsetHeight of DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element or first entity of array element</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line300">line 300</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="outerWidth"><span class="type-signature"></span>outerWidth<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function that return offsetHeight of DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element or first entity of array element</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line316">line 316</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="parent"><span class="type-signature"></span>parent<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function that return parent of the DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element or first entity of array element</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line332">line 332</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="parents"><span class="type-signature"></span>parents<span class="signature">(wrapper, pClassName)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function which will return an array of parent node, parent className also can be passed to get a particular parent node
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>wrapper</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element class/DOM Object whose parent node to be found</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>pClassName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">className of the parent element. To get/check the parent node exist pass the className of the parent Node as an option parameter</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line341">line 341</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="prepend"><span class="type-signature"></span>prepend<span class="signature">(selector, _el)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to prepend HTML elements
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element or first entity of array element</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>_el</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM Object needed to be prepend</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line380">line 380</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="random"><span class="type-signature"></span>random<span class="signature">(min, max, discard)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Returns an random integer number
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>min</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number/Float</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">minimum range for genrating random number</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number/Float</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">maximum range for genrating random number</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discard</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Array of number's to be discarded</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line844">line 844</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="ready"><span class="type-signature"></span>ready<span class="signature">(ready)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    stimulates document ready
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>ready</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">callback function to be called on document ready state</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line531">line 531</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="remove"><span class="type-signature"></span>remove<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to remove particular DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line394">line 394</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="removeClass"><span class="type-signature"></span>removeClass<span class="signature">(selector, className)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to remove Class
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>className</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">class name to be removed</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line97">line 97</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="show"><span class="type-signature"></span>show<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to show hidden DOM by making display property as "block"
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="siblings"><span class="type-signature"></span>siblings<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function that return the siblings of selected DOM
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">DOM element or first entity of array element</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line408">line 408</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="start"><span class="type-signature"></span>start<span class="signature">(__)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    AJAX callback function. will be called before any AJAX request is made. part of AJAX life cycle.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>__</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Callback function to be called on start of / before the first AJAX request.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line822">line 822</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="toggleClass"><span class="type-signature"></span>toggleClass<span class="signature">(selector)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to toggle class name
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line435">line 435</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="top"><span class="type-signature"></span>top<span class="signature">(selector, argument[0)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to get or set scroll Top Prop
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>argument[0</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">type of event</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line567">line 567</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="val"><span class="type-signature"></span>val<span class="signature">(selector, _txt)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Helper function to set/get text context
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>selector</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object/Array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">can be an array of DOM elements or single DOM elements</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>_txt</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">text string to be set</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dlite.js.html">dlite.js</a>, <a href="dlite.js.html#line281">line 281</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-</div>
-
-<nav>
-    <h3><a href="dlite.js.html">dLite<a></h3><ul><li><a href="global.html#abort">abort</a></li><li><a href="global.html#addClass">addClass</a></li><li><a href="global.html#after">after</a></li><li><a href="global.html#ajax">ajax</a></li><li><a href="global.html#append">append</a></li><li><a href="global.html#attr">attr</a></li><li><a href="global.html#before">before</a></li><li><a href="global.html#children">children</a></li><li><a href="global.html#clone">clone</a></li><li><a href="global.html#css">css</a></li><li><a href="global.html#deepExtend">deepExtend</a></li><li><a href="global.html#empty">empty</a></li><li><a href="global.html#end">end</a></li><li><a href="global.html#extend">extend</a></li><li><a href="global.html#find">find</a></li><li><a href="global.html#hasClass">hasClass</a></li><li><a href="global.html#hide">hide</a></li><li><a href="global.html#html">html</a></li><li><a href="global.html#iterator">iterator</a></li><li><a href="global.html#left">left</a></li><li><a href="global.html#off">off</a></li><li><a href="global.html#outerHeight">outerHeight</a></li><li><a href="global.html#outerWidth">outerWidth</a></li><li><a href="global.html#parent">parent</a></li><li><a href="global.html#parents">parents</a></li><li><a href="global.html#prepend">prepend</a></li><li><a href="global.html#random">random</a></li><li><a href="global.html#ready">ready</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeClass">removeClass</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#siblings">siblings</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#toggleClass">toggleClass</a></li><li><a href="global.html#top">top</a></li><li><a href="global.html#val">val</a></li></ul>
+    <nav>
+    <h2><a href="dlite.js.html">dLite</a></h2><ul><li><a href="global.html#abort">abort</a></li><li><a href="global.html#addClass">addClass</a></li><li><a href="global.html#after">after</a></li><li><a href="global.html#ajax">ajax</a></li><li><a href="global.html#append">append</a></li><li><a href="global.html#attr">attr</a></li><li><a href="global.html#attrGetter">attrGetter</a></li><li><a href="global.html#attrSetter">attrSetter</a></li><li><a href="global.html#before">before</a></li><li><a href="global.html#children">children</a></li><li><a href="global.html#clone">clone</a></li><li><a href="global.html#css">css</a></li><li><a href="global.html#deepExtend">deepExtend</a></li><li><a href="global.html#empty">empty</a></li><li><a href="global.html#end">end</a></li><li><a href="global.html#extend">extend</a></li><li><a href="global.html#find">find</a></li><li><a href="global.html#hasClass">hasClass</a></li><li><a href="global.html#hide">hide</a></li><li><a href="global.html#html">html</a></li><li><a href="global.html#iterator">iterator</a></li><li><a href="global.html#left">left</a></li><li><a href="global.html#off">off</a></li><li><a href="global.html#outerHeight">outerHeight</a></li><li><a href="global.html#outerWidth">outerWidth</a></li><li><a href="global.html#parent">parent</a></li><li><a href="global.html#parents">parents</a></li><li><a href="global.html#prepend">prepend</a></li><li><a href="global.html#random">random</a></li><li><a href="global.html#ready">ready</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeClass">removeClass</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#siblings">siblings</a></li><li><a href="global.html#sort">sort</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#toggleClass">toggleClass</a></li><li><a href="global.html#top">top</a></li><li><a href="global.html#val">val</a></li></ul>
 </nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta3</a> on Tue May 05 2015 21:17:04 GMT+0530 (India Standard Time)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+    <br class="clear">
+    <footer>
+        Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta3</a> on Tue May 05 2015 21:17:04 GMT+0530 (India Standard Time)
+    </footer>
+    <script>
+    prettyPrint();
+    console.time('n');
+    d('a', d('#main')).attr('samN');
+    d('a', d('#main')).attr('samN', "sampN");
+    console.timeEnd('n');
+    console.time('e');
+    D('a', d('#main')).attr('samE');
+    D('a', d('#main')).attr('samE', "sampE");
+    console.timeEnd('e');
+    console.time('ee');
+    D('a', D('#main')).attr('samEE');
+    D('a', D('#main')).attr('samEE', "sampEE");
+    console.timeEnd('ee');
+    </script>
+    <script src="scripts/linenumber.js">
+    </script>
 </body>
+
 </html>
