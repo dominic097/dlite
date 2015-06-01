@@ -8,7 +8,7 @@
     </script>
     <script src="scripts/prettify/lang-css.js">
     </script>
-    <script type="text/javascript" src="scripts/jQuery.js"></script>
+    <script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../dlite.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -1601,16 +1601,101 @@
         </section>
     </div>
     <nav>
-    <h2><a href="dlite.js.html">dLite</a></h2><ul><li><a href="global.html#abort">abort</a></li><li><a href="global.html#addClass">addClass</a></li><li><a href="global.html#after">after</a></li><li><a href="global.html#ajax">ajax</a></li><li><a href="global.html#append">append</a></li><li><a href="global.html#attr">attr</a></li><li><a href="global.html#attrGetter">attrGetter</a></li><li><a href="global.html#attrSetter">attrSetter</a></li><li><a href="global.html#before">before</a></li><li><a href="global.html#children">children</a></li><li><a href="global.html#clone">clone</a></li><li><a href="global.html#css">css</a></li><li><a href="global.html#deepExtend">deepExtend</a></li><li><a href="global.html#empty">empty</a></li><li><a href="global.html#end">end</a></li><li><a href="global.html#extend">extend</a></li><li><a href="global.html#find">find</a></li><li><a href="global.html#hasClass">hasClass</a></li><li><a href="global.html#hide">hide</a></li><li><a href="global.html#html">html</a></li><li><a href="global.html#iterator">iterator</a></li><li><a href="global.html#left">left</a></li><li><a href="global.html#off">off</a></li><li><a href="global.html#outerHeight">outerHeight</a></li><li><a href="global.html#outerWidth">outerWidth</a></li><li><a href="global.html#parent">parent</a></li><li><a href="global.html#parents">parents</a></li><li><a href="global.html#prepend">prepend</a></li><li><a href="global.html#random">random</a></li><li><a href="global.html#ready">ready</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeClass">removeClass</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#siblings">siblings</a></li><li><a href="global.html#sort">sort</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#toggleClass">toggleClass</a></li><li><a href="global.html#top">top</a></li><li><a href="global.html#val">val</a></li></ul>
-</nav>
+        <h2><a href="dlite.js.html">dLite</a></h2>
+        <ul>
+            <li><a href="global.html#abort">abort</a></li>
+            <li><a href="global.html#addClass">addClass</a></li>
+            <li><a href="global.html#after">after</a></li>
+            <li><a href="global.html#ajax">ajax</a></li>
+            <li><a href="global.html#append">append</a></li>
+            <li><a href="global.html#attr">attr</a></li>
+            <li><a href="global.html#attrGetter">attrGetter</a></li>
+            <li><a href="global.html#attrSetter">attrSetter</a></li>
+            <li><a href="global.html#before">before</a></li>
+            <li><a href="global.html#children">children</a></li>
+            <li><a href="global.html#clone">clone</a></li>
+            <li><a href="global.html#css">css</a></li>
+            <li><a href="global.html#deepExtend">deepExtend</a></li>
+            <li><a href="global.html#empty">empty</a></li>
+            <li><a href="global.html#end">end</a></li>
+            <li><a href="global.html#extend">extend</a></li>
+            <li><a href="global.html#find">find</a></li>
+            <li><a href="global.html#hasClass">hasClass</a></li>
+            <li><a href="global.html#hide">hide</a></li>
+            <li><a href="global.html#html">html</a></li>
+            <li><a href="global.html#iterator">iterator</a></li>
+            <li><a href="global.html#left">left</a></li>
+            <li><a href="global.html#off">off</a></li>
+            <li><a href="global.html#outerHeight">outerHeight</a></li>
+            <li><a href="global.html#outerWidth">outerWidth</a></li>
+            <li><a href="global.html#parent">parent</a></li>
+            <li><a href="global.html#parents">parents</a></li>
+            <li><a href="global.html#prepend">prepend</a></li>
+            <li><a href="global.html#random">random</a></li>
+            <li><a href="global.html#ready">ready</a></li>
+            <li><a href="global.html#remove">remove</a></li>
+            <li><a href="global.html#removeClass">removeClass</a></li>
+            <li><a href="global.html#show">show</a></li>
+            <li><a href="global.html#siblings">siblings</a></li>
+            <li><a href="global.html#sort">sort</a></li>
+            <li><a href="global.html#start">start</a></li>
+            <li><a href="global.html#toggleClass">toggleClass</a></li>
+            <li><a href="global.html#top">top</a></li>
+            <li><a href="global.html#val">val</a></li>
+        </ul>
+    </nav>
     <br class="clear">
     <footer>
         Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta3</a> on Tue May 05 2015 21:17:04 GMT+0530 (India Standard Time)
     </footer>
+    <script src="scripts/JSLitmus.js">
+    < script src = "scripts/linenumber.js" >
+    </script>
     <script>
     prettyPrint();
-    </script>
-    <script src="scripts/linenumber.js">
+
+    $('a').each(function(i, d) {
+        d.setAttribute('jIndex', parseInt(Math.random(0, 10000000) * 1000));
+    });
+    JSLitmus.test('jQuery selector ', function() {
+        $('a')
+    });
+    JSLitmus.test('dLite selector ', function() {
+        d('a')
+    });
+
+    JSLitmus.test('jQuery selector with set Attr', function() {
+        $('a').attr('sampleAttrjQ', 'sampleVjQ');
+    });
+    JSLitmus.test('dLite selector with set Attr', function() {
+        d('a').attr('sampleAttrjQ', 'sampleVjQ');
+    });
+    JSLitmus.test('jQuery selector with set Attr -> parent Main', function() {
+        $('#main a').attr('sampleAttrjQ', 'sampleVjQ');
+    });
+    JSLitmus.test('dLite selector with set Attr -> parent Main', function() {
+        d('a', '#main').attr('sampleAttrjQ', 'sampleVjQ');
+    });
+    JSLitmus.test('dLite selector with set Attr -> deffer full memo', function() {
+        D('a', D('#main')).attr('sampleAttrjQ', 'sampleVjQ');
+    });
+    JSLitmus.test('jQuery selector sort', function() {
+        $('a').sort(function(a, b) {
+            var an = a.getAttribute('jIndex'),
+                bn = b.getAttribute('jIndex');
+            if (an > bn) {
+                return 1;
+            }
+            if (an < bn) {
+                return -1;
+            }
+            return 0;
+
+        })
+    });
+    JSLitmus.test('dLite selector sort', function() {
+        d('a').sort(true, 'jIndex', 'number');
+    });
     </script>
 </body>
 
