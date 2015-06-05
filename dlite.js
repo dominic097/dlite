@@ -97,7 +97,7 @@
             } else if (this.attr) {
                 this.attr(attrName, atVal);
             } else if (typeof this === "object") {
-                this[dId] = atVal;
+                this[attrName] = atVal;
             }
         },
 
@@ -802,38 +802,104 @@
         }
     }
 
+    // core functionality comes under the 'core namespace'
+    d.core = {};
+
     d.utils.init = function(__, _el) {
         var _that = [],
             _selector = [];
 
+        // check for an Object / Array
         if (typeof __ !== "string") {
+
             if (!Array.isArray(__)) {
                 _that = arguments[0] ? [arguments[0]] : [];
             } else if (Array.isArray(__)) {
                 _that = arguments[0] ? arguments[0] : [];
             }
+
             return [].push.apply(this, _that);
         } else {
+
+            //check for multiple selectors 
             if (__.split(',').length > 1) {
                 _selector = __.split(',');
             } else {
                 _selector = [__];
             }
+
             d.iterator(_selector, function(s) {
                 if (_el) {
-                    var res = (_el.querySelectorAll ? _el.querySelectorAll(s) : (_el.find ? _el.find(s) : []));
+                    var res = (_el.querySelectorAll ? _el.querySelectorAll(s) : (_el.find ? _el.find(s) : [])); //this.selector(s, _el);
                     if (res.length > 0) {
                         _that = Array.prototype.slice.call(res).concat(_that);
                     }
                 } else if (typeof s === "string") {
-                    var res = document.querySelectorAll(s);
+                    var res = document.querySelectorAll(s); //this.selector(s);
                     if (res.length > 0) {
                         _that = Array.prototype.slice.call(res).concat(_that);
                     }
-
                 }
             });
             return [].push.apply(this, _that);
+        }
+    };
+
+    d.utils.selector = function(clStr, domObj) {
+
+        var results = [];
+
+        this.booleans = /^(?:checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped)$/i;
+        this.classX = /^\.((?:\\.|[\w-]|[^\x00-\xa0])+)/g;
+        this.idX = /^#((?:\\.|[\w-]|[^\x00-\xa0])+)/g;
+        this.tag = /^((?:\\.|[\w-]|[^\x00-\xa0])+|[*])/g;
+        this.attr = /^\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\]/g;
+        this.pseudos = /:((?:\\.|[\w-]|[^\x00-\xa0])+)(?:\((('((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)")|((?:\\.|[^\\()[\]]|\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\])*)|.*)\)|)/g;
+        this.nthContext = /^[\x20\t\r\n\f]*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\([\x20\t\r\n\f]*((?:-\d)?\d*)[\x20\t\r\n\f]*\)|)(?=[^-]|$)/i;
+        this.whitespace = /[\x20\t\r\n\f]+/g;
+
+        if (!selector || typeof selector !== "string") {
+            return results;
+        }
+
+        if (nodeType !== 1 && nodeType !== 9) {
+            return [];
+        }
+
+        if (clStr.charAt(0) === "<" && clStr.charAt(clStr.length - 1) === ">" && clStr.length >= 3) {
+
+        } else {
+
+            var sel = tokenize(clStr);
+
+            this.iterator(sel, function(sel, i) {
+                switch (validate(sel)) {
+                    case 'id':
+
+                        break;
+                    case 'class':
+                        break;
+                }
+            }, true);
+        }
+
+        return res;
+
+        function tokenize(cs) {
+            return cs.replace(/ {1,}/g, ' ').split(' ');
+
+        }
+
+        function validate(sel) {
+            //avoid spaces
+            sel.replace(this.whitespace, '');
+
+            return (sel.indexOf('#') === 0 ? 'id' :
+                (sel.indexOf('.') === 0 ? 'class' : false));
+        }
+
+        function getElementById(s, c) {
+            return document.getElementById
         }
     };
 
