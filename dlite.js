@@ -768,12 +768,25 @@
         },
 
         max: function() {
+            var returnEl;
             dArg('max', arguments, function(attr, type, fn){
                var _this = this,
                 __ = this.sortBy(true, type, attr, fn);
                 
-                return __.length > 0 ? new this.init(__[0]) : this;
+                returnEl = __.length > 0 ? new this.init(__[0]) : this;
             },this);
+            return returnEl;
+        },
+        
+        min: function() {
+            var returnEl;
+            dArg('max', arguments, function(attr, type, fn){
+               var _this = this,
+                __ = this.sortBy(false, type, attr, fn);
+                
+                returnEl = __.length > 0 ? new this.init(__[0]) : this;
+            },this);
+            return returnEl;
         },
 
 
