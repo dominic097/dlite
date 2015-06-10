@@ -766,7 +766,16 @@
                 return _this.length > 0 ? _this[0].scrollTop : _this;
             }
         },
-
+    
+        /**
+         * Returns the DOM object which matches the maximum criteria 
+         * @method max
+         * @param {String} attr Name of the DOM Attribute whose value will be maximum
+         * @param {String} type type of Attribute value
+         * @param {String} fn function that returns value of specfic type
+         * @example
+         * d('s').max('attrName');
+         */
         max: function() {
             var returnEl;
             dArg('max', arguments, function(attr, type, fn){
