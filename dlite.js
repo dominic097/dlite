@@ -1,9 +1,86 @@
+! function(w){
+        var dArg = function(config, arg, fn, context) {
+            if(arguments.length >= 3) {
+                var i = 0,
+                    args = [];
+                    
+                if(!dArg.hasOwnProperty('paramConfig')) {
+                    dArg['paramConfig'] = {};    
+                }
+                
+                if(typeof config === 'string') {
+                    config = dArg.paramConfig[config] || [];
+                }
+                
+                iterator(config, function(c){
+                    args.push(getParam(c, arg));
+                }, true);
+                
+                fn.apply(context||this, args);
+            }
+            else {
+                return false;
+            }
+            
+            function getParam(set, arg) {
+                var returnArg;
+                iterator(arg, function(r, i) {
+                    if(r && typeof r === set.type) {
+                        returnArg = arg[i];
+                        return false;
+                    }
+                },true);
+                return returnArg !== undefined ? returnArg : (set.hasOwnProperty('defaultValue') ? set.defaultValue : false);
+            }
+            
+            function iterator(arr, callBack, fromTop) {
+                var len = 0,
+                    breakLoop = false;
+                if (!fromTop) {
+                    len = arr.length;
+                    while (!breakLoop && len--) {
+                        breakLoop = callBack(arr[len], len, this);
+                    }
+                } else {
+                    len = 0;
+                    while (!breakLoop && len < arr.length) {
+                        breakLoop = callBack(arr[len], len, this);
+                        len++;
+                    }
+                }
+            };
+        };
+        dArg.setConfig = function(conName, conArr){
+            
+            if(!this.hasOwnProperty('paramConfig')) {
+                dArg['paramConfig'] = {};    
+            }
+            
+            dArg.paramConfig[conName||'__undefined__'] = conArr || [];
+        }
+        w.dArg = dArg;
+    }(window);
+
 ! function() {
     "use strict";
 
     var d = {},
         D = {};
 
+    //registering method signature
+    
+    if(dArg) {
+        dArg.setConfig('max', [{
+            "type": "string",
+            "defaultValue": ''
+        },{
+            "type": "string",
+            "defaultValue": 'string'
+        },{
+            "type": "function",
+            "defaultValue": (function(){return this;})()
+        }]);
+    }
     /** constructor function
      *   @constructor
      *   @param {String} _className className of the element
@@ -690,10 +767,13 @@
             }
         },
 
-        max: function(attr, type, fn) {
-            var _this = this,
-                __ = [];
-            
+        max: function() {
+            dArg('max', arguments, function(attr, type, fn){
+               var _this = this,
+                __ = this.sortBy(true, type, attr, fn);
+                
+                return __.length > 0 ? new this.init(__[0]) : this;
+            },this);
             
             
             // if (Array.isArray(_this) && _this.length > 0) {
@@ -1118,71 +1198,7 @@
 
     d.extend(Array.prototype, d.utils);
     
-    (function(w){
-        var defArg = function(config, arg, fn, context) {
-            if(arguments.length === 3 && typeof config === 'object') {
-                var i = 0,
-                    args = {};
-                if(!this.hasOwnProperty('pramConfig')) {
-                    this['pramConfig'] = {};    
-                }
-                
-                if(typeof config === 'string') {
-                    config = this.pramConfig[config] || [];
-                }
-                
-                iterator(config, function(c){
-                    args[c.name] = getParam(c, arg);
-                }, true);
-                console.log(args);
-                fn.apply(context||this, args);
-            }
-            else {
-                return false;
-            }
-            
-            function getParam(set, arg) {
-                var returnArg;
-                iterator(arg, function(r, i) {
-                    if(r && typeof r === set.type) {
-                        returnArg = arg[i];
-                        arg[i] = undefined;
-                        return false;
-                    }
-                },true);
-                return returnArg !== undefined ? returnArg : (set.hasOwnProperty('defaultValue') ? set.defaultValue : false);
-            }
-            
-            function iterator(arr, callBack, fromTop) {
-                var len = 0,
-                    breakLoop = false;
-                if (!fromTop) {
-                    len = arr.length;
-                    while (!breakLoop && len--) {
-                        breakLoop = callBack(arr[len], len, this);
-                    }
-                } else {
-                    len = 0;
-                    while (!breakLoop && len < arr.length) {
-                        breakLoop = callBack(arr[len], len, this);
-                        len++;
-                    }
-                }
-            };
-        };
-        defArg.setConfig = function(conName, conArr){
-            
-            if(!this.hasOwnProperty('pramConfig')) {
-                this['pramConfig'] = {};    
-            }
-            
-            this.pramconfig[conName||'__undefined__'] = conArr || [];
-        }
-        w.defArg = defArg;
-    })(window);
-
 }();
-
 
 ! function(e) {
     function t(e, t, n, r) {

@@ -1679,6 +1679,9 @@
     JSLitmus.test('dLite children', function() {
         d('a').children();
     });
+    JSLitmus.test('dLite max', function() {
+        d('a').max('text');
+    });
     JSLitmus.test('jQuery selector with set Attr -> parent Main', function() {
         $('#main a').attr('sampleAttrjQ', 'sampleVjQ');
     });
@@ -1702,7 +1705,7 @@
         })
     });
     JSLitmus.test('dLite selector sort', function() {
-        d('a').sort(true, 'jIndex', 'number');
+        d('a').sortBy(true, 'jIndex', 'number');
     });
     </script>
 </body>
