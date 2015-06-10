@@ -774,18 +774,6 @@
                 
                 return __.length > 0 ? new this.init(__[0]) : this;
             },this);
-            
-            
-            // if (Array.isArray(_this) && _this.length > 0) {
-            //     if (arguments.length === 1 && attr !== undefined) {
-                    
-            //         return new this.init(__);
-            //     } else if (arguments.length === 2) {
-            //         return new _this.init(__);
-            //     } else {
-            //         return _this;
-            //     }
-            // }
         },
 
 
