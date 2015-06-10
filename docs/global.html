@@ -1661,7 +1661,10 @@
         $('a')
     });
     JSLitmus.test('dLite selector ', function() {
-        D('a')
+        d('a')
+    });
+    JSLitmus.test('sizzle selector ', function() {
+        Sizzle('a')
     });
 
     JSLitmus.test('jQuery selector with set Attr', function() {
@@ -1690,7 +1693,6 @@
                 return -1;
             }
             return 0;
-
         })
     });
     JSLitmus.test('dLite selector sort', function() {
