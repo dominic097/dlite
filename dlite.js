@@ -1,4 +1,4 @@
-(function() {
+! function() {
     "use strict";
 
     var d = {},
@@ -71,16 +71,17 @@
          *   @param {bool} boolean, if passed true then iteration will happen from top to bottom, for false it will be vice versa. Note: bottom to top iteration will be always faster
          **/
         iterator: function(arr, callBack, fromTop) {
-            var len = 0;
+           var len = 0,
+            breakLoop = false;
             if (!fromTop) {
                 len = arr.length;
-                while (len--) {
-                    callBack(arr[len], len, this);
+                while (!breakLoop && len--) {
+                    breakLoop = callBack(arr[len], len, this);
                 }
             } else {
                 len = 0;
-                while (len < arr.length) {
-                    callBack(arr[len], len, this);
+                while (!breakLoop && len < arr.length) {
+                    breakLoop = callBack(arr[len], len, this);
                     len++;
                 }
             }
@@ -273,7 +274,7 @@
                         children.unshift(d.children[i]);
                 }
             });
-            return new this.init(children);
+            return children.push.apply(this);
         },
 
         /**
@@ -282,7 +283,7 @@
          * @param {Object/Array} selector DOM element or first entity of array element
          */
         clone: function() {
-            return _this[0] ? _this[0].cloneNode(true) : [];
+            return this[0] ? this[0].cloneNode(true) : [];
         },
 
         /**
@@ -689,19 +690,22 @@
             }
         },
 
-        max: function(attr, fn) {
+        max: function(attr, type, fn) {
             var _this = this,
                 __ = [];
-            if (Array.isArray(_this) && _this.length > 0) {
-                if (arguments.length === 1 && attr !== undefined) {
+            
+            
+            
+            // if (Array.isArray(_this) && _this.length > 0) {
+            //     if (arguments.length === 1 && attr !== undefined) {
                     
-                    return new this.init(__);
-                } else if (argument.length === 2) {
-                    return new _this.init(__);
-                } else {
-                    return _this;
-                }
-            }
+            //         return new this.init(__);
+            //     } else if (arguments.length === 2) {
+            //         return new _this.init(__);
+            //     } else {
+            //         return _this;
+            //     }
+            // }
         },
 
 
@@ -802,9 +806,7 @@
         }
     }
 
-    // core functionality comes under the 'core namespace'
-    d.core = {};
-
+  
     d.utils.init = function(__, _el) {
         var _that = [],
             _selector = [];
@@ -1096,16 +1098,17 @@
      *   @param {bool} boolean, if passed true then iteration will happen from top to bottom, for false it will be vice versa. Note: bottom to top iteration will be always faster
      **/
     d.iterator = function(arr, callBack, fromTop) {
-        var len = 0;
+        var len = 0,
+            breakLoop = false;
         if (!fromTop) {
             len = arr.length;
-            while (len--) {
-                callBack(arr[len], len, this);
+            while (!breakLoop && len--) {
+                breakLoop = callBack(arr[len], len, this);
             }
         } else {
             len = 0;
-            while (len < arr.length) {
-                callBack(arr[len], len, this);
+            while (!breakLoop && len < arr.length) {
+                breakLoop = callBack(arr[len], len, this);
                 len++;
             }
         }
@@ -1114,8 +1117,72 @@
     d.utils.init.prototype = d.utils;
 
     d.extend(Array.prototype, d.utils);
+    
+    (function(w){
+        var defArg = function(config, arg, fn, context) {
+            if(arguments.length === 3 && typeof config === 'object') {
+                var i = 0,
+                    args = {};
+                if(!this.hasOwnProperty('pramConfig')) {
+                    this['pramConfig'] = {};    
+                }
+                
+                if(typeof config === 'string') {
+                    config = this.pramConfig[config] || [];
+                }
+                
+                iterator(config, function(c){
+                    args[c.name] = getParam(c, arg);
+                }, true);
+                console.log(args);
+                fn.apply(context||this, args);
+            }
+            else {
+                return false;
+            }
+            
+            function getParam(set, arg) {
+                var returnArg;
+                iterator(arg, function(r, i) {
+                    if(r && typeof r === set.type) {
+                        returnArg = arg[i];
+                        arg[i] = undefined;
+                        return false;
+                    }
+                },true);
+                return returnArg !== undefined ? returnArg : (set.hasOwnProperty('defaultValue') ? set.defaultValue : false);
+            }
+            
+            function iterator(arr, callBack, fromTop) {
+                var len = 0,
+                    breakLoop = false;
+                if (!fromTop) {
+                    len = arr.length;
+                    while (!breakLoop && len--) {
+                        breakLoop = callBack(arr[len], len, this);
+                    }
+                } else {
+                    len = 0;
+                    while (!breakLoop && len < arr.length) {
+                        breakLoop = callBack(arr[len], len, this);
+                        len++;
+                    }
+                }
+            };
+        };
+        defArg.setConfig = function(conName, conArr){
+            
+            if(!this.hasOwnProperty('pramConfig')) {
+                this['pramConfig'] = {};    
+            }
+            
+            this.pramconfig[conName||'__undefined__'] = conArr || [];
+        }
+        w.defArg = defArg;
+    })(window);
 
-})();
+}();
+
 
 ! function(e) {
     function t(e, t, n, r) {
