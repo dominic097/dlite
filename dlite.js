@@ -5,8 +5,8 @@
         D = {};
 
     /** constructor function
-     *   @constructor 
-     *   @param {String} _className className of the element 
+     *   @constructor
+     *   @param {String} _className className of the element
      *   @param {Object} _el DOM Object - option argument, if passed then DOM search is made only inside the given document object
      */
     d = window.d = function(_className, _el) {
@@ -15,7 +15,7 @@
 
     /** constructor function
      *   @constructor that can memorize parameter and return faster results
-     *   @param {String} _className className of the element 
+     *   @param {String} _className className of the element
      *   @param {Object} _el DOM Object - option argument, if passed then DOM search is made only inside the given document object
      */
 
@@ -605,7 +605,7 @@
          * @method off
          * @param {Object/Array} selector can be an array of DOM elements or single DOM elements
          * @param {String} eventName type of event
-         * @param {String} eventHandler event callback function 
+         * @param {String} eventHandler event callback function
          * @param {String} payLoad receive arguments. can be accessed inside event callback as this.data<Object>
          */
         on: function(eventName, eventHandler, payLoad) {
@@ -692,14 +692,14 @@
         max: function(attr, fn) {
             var _this = this,
                 __ = [];
-            if (Array.isArray(this) && this.length > 0) {
+            if (Array.isArray(_this) && _this.length > 0) {
                 if (arguments.length === 1 && attr !== undefined) {
-
+                    
                     return new this.init(__);
                 } else if (argument.length === 2) {
-                    return new this.init(__);
+                    return new _this.init(__);
                 } else {
-                    return this;
+                    return _this;
                 }
             }
         },
@@ -711,10 +711,10 @@
          * @param {Boolean} isAsc
          * @param {String} dataType
          * @param {String} attr
-         * @param {function} func 
+         * @param {function} func
          */
 
-        sort: function(isAsc, dataType, attr, func) {
+        sortBy: function(isAsc, dataType, attr, func) {
             var _this = this,
                 __ = this.toArray(),
                 _func,
@@ -811,7 +811,6 @@
 
         // check for an Object / Array
         if (typeof __ !== "string") {
-
             if (!Array.isArray(__)) {
                 _that = arguments[0] ? [arguments[0]] : [];
             } else if (Array.isArray(__)) {
@@ -829,65 +828,7 @@
         }
     };
 
-    d.utils.selector = function(clStr, domObj) {
-
-        var results = [];
-
-        this.booleans = /^(?:checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped)$/i;
-        this.classX = /^\.((?:\\.|[\w-]|[^\x00-\xa0])+)/g;
-        this.idX = /^#((?:\\.|[\w-]|[^\x00-\xa0])+)/g;
-        this.tag = /^((?:\\.|[\w-]|[^\x00-\xa0])+|[*])/g;
-        this.attr = /^\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\]/g;
-        this.pseudos = /:((?:\\.|[\w-]|[^\x00-\xa0])+)(?:\((('((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)")|((?:\\.|[^\\()[\]]|\[[\x20\t\r\n\f]*((?:\\.|[\w-]|[^\x00-\xa0])+)(?:[\x20\t\r\n\f]*([*^$|!~]?=)[\x20\t\r\n\f]*(?:'((?:\\.|[^\\'])*)'|"((?:\\.|[^\\"])*)"|((?:\\.|[\w-]|[^\x00-\xa0])+))|)[\x20\t\r\n\f]*\])*)|.*)\)|)/g;
-        this.nthContext = /^[\x20\t\r\n\f]*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\([\x20\t\r\n\f]*((?:-\d)?\d*)[\x20\t\r\n\f]*\)|)(?=[^-]|$)/i;
-        this.whitespace = /[\x20\t\r\n\f]+/g;
-
-        if (!selector || typeof selector !== "string") {
-            return results;
-        }
-
-        if (nodeType !== 1 && nodeType !== 9) {
-            return [];
-        }
-
-        if (clStr.charAt(0) === "<" && clStr.charAt(clStr.length - 1) === ">" && clStr.length >= 3) {
-
-        } else {
-
-            var sel = tokenize(clStr);
-
-            this.iterator(sel, function(sel, i) {
-                switch (validate(sel)) {
-                    case 'id':
-
-                        break;
-                    case 'class':
-                        break;
-                }
-            }, true);
-        }
-
-        return res;
-
-        function tokenize(cs) {
-            return cs.replace(/ {1,}/g, ' ').split(' ');
-
-        }
-
-        function validate(sel) {
-            //avoid spaces
-            sel.replace(this.whitespace, '');
-
-            return (sel.indexOf('#') === 0 ? 'id' :
-                (sel.indexOf('.') === 0 ? 'class' : false));
-        }
-
-        function getElementById(s, c) {
-            return document.getElementById
-        }
-    };
-
-    /**
+   /**
      * Helper function to merge two or more Objects. NOTE: will not do deep extend instead use deepExtend function\
      * @method extend
      * @param {Object} out An Object in which properties of another object will be copied
@@ -1129,7 +1070,7 @@
     };
 
     /**
-     * Returns an random integer number 
+     * Returns an random integer number
      * @method random
      * @param {Number/Float} min minimum range for genrating random number
      * @param {Number/Float} max maximum range for genrating random number
