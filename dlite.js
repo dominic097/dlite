@@ -1,65 +1,70 @@
-! function(w){
-        var dArg = function(config, arg, fn, context) {
-            if(arguments.length >= 3) {
-                var i = 0,
-                    args = [];
-                    
-                if(!dArg.hasOwnProperty('paramConfig')) {
-                    dArg['paramConfig'] = {};    
-                }
-                
-                if(typeof config === 'string') {
-                    config = dArg.paramConfig[config] || [];
-                }
-                
-                iterator(config, function(c){
-                    args.push(getParam(c, arg));
-                }, true);
-                
-                fn.apply(context||this, args);
+! function(w) {
+    var dArg = function(config, arg, fn, context) {
+        if (arguments.length >= 3) {
+            var i = 0,
+                args = [];
+
+            if (!dArg.hasOwnProperty('paramConfig')) {
+                dArg['paramConfig'] = {};
             }
-            else {
-                return false;
+
+            if (typeof config === 'string') {
+                config = dArg.paramConfig[config] || [];
             }
-            
-            function getParam(set, arg) {
-                var returnArg;
-                iterator(arg, function(r, i) {
-                    if(r && typeof r === set.type) {
-                        returnArg = arg[i];
-                        return false;
-                    }
-                },true);
-                return returnArg !== undefined ? returnArg : (set.hasOwnProperty('defaultValue') ? set.defaultValue : false);
-            }
-            
-            function iterator(arr, callBack, fromTop) {
-                var len = 0,
-                    breakLoop = false;
-                if (!fromTop) {
-                    len = arr.length;
-                    while (!breakLoop && len--) {
-                        breakLoop = callBack(arr[len], len, this);
-                    }
-                } else {
-                    len = 0;
-                    while (!breakLoop && len < arr.length) {
-                        breakLoop = callBack(arr[len], len, this);
-                        len++;
-                    }
-                }
-            };
-        };
-        dArg.setConfig = function(conName, conArr){
-            
-            if(!this.hasOwnProperty('paramConfig')) {
-                dArg['paramConfig'] = {};    
-            }
-            
-            dArg.paramConfig[conName||'__undefined__'] = conArr || [];
+
+            iterator(config, function(c) {
+                args.push(getParam(c, arg));
+            }, true);
+
+            return fn.apply(context || this, args);
+        } else {
+            return false;
         }
-        w.dArg = dArg;
-    }(window);
+
+        function getParam(set, arg) {
+            var returnArg;
+            iterator(arg, function(r, i) {
+                if ((set.type === 'object' && typeof r === 'object') || (set.type === 'function' && typeof r === 'function') || (set.type === 'array' && Array.isArray(r)) || (set.type === 'number' && (typeof r === 'number' || !isNaN(r))) || (set.type === 'string' && typeof r === 'string') || (set.type === 'boolean' && typeof r === 'boolean')) {
+                    returnArg = arg[i];
+                    return false;
+                }
+            }, true);
+            return returnArg !== undefined ? returnArg : (set.hasOwnProperty('defaultValue') ? set.defaultValue : false);
+        }
+
+        function iterator(arr, callBack, fromTop) {
+            var len = 0,
+                breakLoop = false;
+            if (!fromTop) {
+                len = arr.length;
+                while (!breakLoop && len--) {
+                    breakLoop = callBack(arr[len], len, this);
+                }
+            } else {
+                len = 0;
+                while (!breakLoop && len < arr.length) {
+                    breakLoop = callBack(arr[len], len, this);
+                    len++;
+                }
+            }
+        };
+    };
+    dArg.setConfig = function(conName, conArr) {
+        if (!this.hasOwnProperty('paramConfig')) {
+            dArg['paramConfig'] = {};
+        }
+
+        if (Array.isArray(conName)) {
+            var len = conName.length;
+            while (len--) {
+                dArg.paramConfig[conName[len].fnSignature] = conName[len].paramValue;
+            }
+        } else {
+            dArg.paramConfig[conName || '__undefined__'] = conArr || [];
+        }
+    }
+    w.dArg = dArg;
+}(window);
 
 ! function() {
     "use strict";
@@ -68,17 +73,39 @@
         D = {};
 
     //registering method signature
-    
-    if(dArg) {
-        dArg.setConfig('max', [{
-            "type": "string",
-            "defaultValue": ''
-        },{
-            "type": "string",
-            "defaultValue": 'string'
-        },{
-            "type": "function",
-            "defaultValue": (function(){return this;})()
+
+    if (dArg) {
+        dArg.setConfig([{
+            "fnSignature": "max",
+            "paramValue": [{
+                "type": "string",
+                "defaultValue": ""
+            }, {
+                "type": "string",
+                "defaultValue": "string"
+            }, {
+                "type": "function",
+                "defaultValue": (function() {
+                    return this;
+                })()
+            }]
+        }, {
+            "fnSignature": "shellSort",
+            "paramValue": [{
+                "type": "array",
+                "defaultValue": []
+            }, {
+                "type": "string",
+                "defaultValue": "tagName"
+            }, {
+                "type": "function",
+                "defaultValue": (function() {
+                    return this;
+                })()
+            }, {
+                "type": "boolean",
+                "defaultValue": true
+            }]
         }]);
     }
     /** constructor function
@@ -137,7 +164,7 @@
         }
     };
 
-    d.utils = d.prototype = {
+    d.utils = D.utils  = d.prototype = {
 
 
         /**
@@ -148,8 +175,8 @@
          *   @param {bool} boolean, if passed true then iteration will happen from top to bottom, for false it will be vice versa. Note: bottom to top iteration will be always faster
          **/
         iterator: function(arr, callBack, fromTop) {
-           var len = 0,
-            breakLoop = false;
+            var len = 0,
+                breakLoop = false;
             if (!fromTop) {
                 len = arr.length;
                 while (!breakLoop && len--) {
@@ -766,7 +793,7 @@
                 return _this.length > 0 ? _this[0].scrollTop : _this;
             }
         },
-    
+
         /**
          * Returns the DOM object which matches the maximum criteria 
          * @method max
@@ -778,23 +805,32 @@
          */
         max: function() {
             var returnEl;
-            dArg('max', arguments, function(attr, type, fn){
-               var _this = this,
-                __ = this.sortBy(true, type, attr, fn);
-                
+            dArg('max', arguments, function(attr, type, fn) {
+                var _this = this,
+                    __ = this.sortBy(true, type, attr, fn);
+
                 returnEl = __.length > 0 ? new this.init(__[0]) : this;
-            },this);
+            }, this);
             return returnEl;
         },
-        
+
+        /**
+         * Returns the DOM object which matches the minimum criteria 
+         * @method max
+         * @param {String} attr Name of the DOM Attribute whose value will be minimum
+         * @param {String} type type of Attribute value
+         * @param {String} fn function that returns value of specfic type
+         * @example
+         * d('s').min('attrName');
+         */
         min: function() {
             var returnEl;
-            dArg('max', arguments, function(attr, type, fn){
-               var _this = this,
-                __ = this.sortBy(false, type, attr, fn);
-                
+            dArg('max', arguments, function(attr, type, fn) {
+                var _this = this,
+                    __ = this.sortBy(false, type, attr, fn);
+
                 returnEl = __.length > 0 ? new this.init(__[0]) : this;
-            },this);
+            }, this);
             return returnEl;
         },
 
@@ -847,6 +883,63 @@
             return sorted ? arr : arr;
         },
 
+        shellSort: function() {
+            var returnEl;
+            dArg('shellSort', arguments, function(arr, attr, fn, isAsc) {
+
+                var h = 1,
+                    isDOMSort = false;
+
+                if (arr.length <= 0) {
+                    arr = this;
+                    isDOMSort = true;
+                }
+
+                while (h < arr.length / 3) {
+                    h = 3 * h + 1;
+                }
+    
+                if(isDOMSort) {
+                    while (h > 0) {
+                        for (var i = h; i < arr.length; i += h) {
+                            for (var n = i; n > 0 && (isAsc ? (getVal(arr[n], attr)  <  getVal(arr[n - h], attr)) : (getVal(arr[n], attr)  >  getVal(arr[n - h], attr))); n -= h) {
+                                var temp = arr[n];
+                                arr[n] = arr[n - h];
+                                arr[n - h] = temp;
+                            }
+                        }
+                        h = --h / 3;
+                    }
+                }
+                else {
+                    while (h > 0) {
+                        for (var i = h; i < arr.length; i += h) {
+                            for (var n = i; n > 0 && arr[n] < arr[n - h]; n -= h) {
+                                var temp = arr[n];
+                                arr[n] = arr[n - h];
+                                arr[n - h] = temp;
+                            }
+                        }
+                        h = --h / 3;
+                    }
+                }
+                
+                
+                
+                function getVal(o, i) {
+                    if(fn) {
+                        return fn.apply(o);
+                    }
+                    else {
+                        return d.utils.attrGetter.call(o, i);//d.attrGetter(i);
+                    }
+                }
+
+               returnEl = arr;
+            }, this);
+            return returnEl;
+        },
+
         __utils__: {
 
             sortcb: function(isAsc, dataType, cb) {
@@ -896,7 +989,7 @@
         }
     }
 
-  
+
     d.utils.init = function(__, _el) {
         var _that = [],
             _selector = [];
@@ -920,7 +1013,7 @@
         }
     };
 
-   /**
+    /**
      * Helper function to merge two or more Objects. NOTE: will not do deep extend instead use deepExtend function\
      * @method extend
      * @param {Object} out An Object in which properties of another object will be copied
@@ -1207,7 +1300,7 @@
     d.utils.init.prototype = d.utils;
 
     d.extend(Array.prototype, d.utils);
-    
+
 }();
 
 ! function(e) {

@@ -1653,6 +1653,13 @@
     </script>
     <script>
     prettyPrint();
+    i = 893475893478523445684589,
+    testArr = [];
+    while(i) {
+    testArr.push(parseInt(i/2));
+    i/=2;
+    }
+    
 
     $('a').each(function(i, d) {
         d.setAttribute('jIndex', parseInt(Math.random(0, 10000000) * 1000));
@@ -1691,7 +1698,7 @@
     JSLitmus.test('dLite selector with set Attr -> deffer full memo', function() {
         D('a', D('#main')).attr('sampleAttrjQ', 'sampleVjQ');
     });
-    JSLitmus.test('jQuery selector sort', function() {
+    JSLitmus.test('jQuery sort using function', function() {
         $('a').sort(function(a, b) {
             var an = a.getAttribute('jIndex'),
                 bn = b.getAttribute('jIndex');
@@ -1704,9 +1711,21 @@
             return 0;
         })
     });
-    JSLitmus.test('dLite selector sort', function() {
-        d('a').sortBy(true, 'jIndex', 'number');
+    JSLitmus.test('dlite sort using function', function() {
+        D('a').shellSort(function() {
+            return  this.getAttribute('jIndex');
+        });
     });
+    JSLitmus.test('dLite sort using attributes', function() {
+        D('a').shellSort('jIndex');
+    });
+    JSLitmus.test('jQuery sort using attributes', function() {
+        $('a').sort('jIndex');
+    });
+    JSLitmus.test('dLite sort using array', function() {
+       D.utils.shellSort(testArr);
+    });
+    
     </script>
 </body>
 
