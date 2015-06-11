@@ -164,7 +164,7 @@
         }
     };
 
-    d.utils = D.utils  = d.prototype = {
+    d.utils = D.utils = d.prototype = {
 
 
         /**
@@ -898,11 +898,11 @@
                 while (h < arr.length / 3) {
                     h = 3 * h + 1;
                 }
-    
-                if(isDOMSort) {
+
+                if (isDOMSort) {
                     while (h > 0) {
                         for (var i = h; i < arr.length; i += h) {
-                            for (var n = i; n > 0 && (isAsc ? (getVal(arr[n], attr)  <  getVal(arr[n - h], attr)) : (getVal(arr[n], attr)  >  getVal(arr[n - h], attr))); n -= h) {
+                            for (var n = i; n > 0 && (isAsc ? (getVal(arr[n], attr) < getVal(arr[n - h], attr)) : (getVal(arr[n], attr) > getVal(arr[n - h], attr))); n -= h) {
                                 var temp = arr[n];
                                 arr[n] = arr[n - h];
                                 arr[n - h] = temp;
@@ -910,8 +910,7 @@
                         }
                         h = --h / 3;
                     }
-                }
-                else {
+                } else {
                     while (h > 0) {
                         for (var i = h; i < arr.length; i += h) {
                             for (var n = i; n > 0 && arr[n] < arr[n - h]; n -= h) {
@@ -923,19 +922,18 @@
                         h = --h / 3;
                     }
                 }
-                
-                
-                
+
+
+
                 function getVal(o, i) {
-                    if(fn) {
+                    if (fn) {
                         return fn.apply(o);
-                    }
-                    else {
-                        return d.utils.attrGetter.call(o, i);//d.attrGetter(i);
+                    } else {
+                        return d.utils.attrGetter.call(o, i); //d.attrGetter(i);
                     }
                 }
 
-               returnEl = arr;
+                returnEl = arr;
             }, this);
             return returnEl;
         },
