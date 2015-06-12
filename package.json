@@ -1,8 +1,25 @@
 {
   "name": "dlite",
-  "description": "lite version of jquery. pure Object Oriented Javascript ",
   "version": "0.0.1",
+  "description": "lite version of jquery. pure Object Oriented Javascript ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x"
+  },
   "engines": {
-    "node": "0.10.x"
-  }
+    "node": "~0.12.X"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dominic097/dlite"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }
