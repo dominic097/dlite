@@ -1,0 +1,11 @@
+/**
+ * Append an HTML String after the current element as a sibling.
+ * @param {String}  htmlString append as siblings.
+ */
+ 
+ function after(htmlString) {
+     
+    //append's and div element as a sibling to the match DOM elements
+    d('<selector>').after('<div></div>');
+    
+ }

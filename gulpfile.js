@@ -3,11 +3,11 @@ var gulp = require('gulp'),
  
 gulp.task('docs', function() {
  
-  gulp.src(['*.js', 'README.md'])
+  gulp.src(['*.js', 'README.md', 'docs/scripts/doxx_sample/*'])
     .pipe(gulpDoxx({
       title: 'dLite',
-      urlPrefix: './doxx_docs'
+      template: 'docs/doxx_template/dLiteDoxx.jade'
     }))
-    .pipe(gulp.dest('./doxx_docs'));
+    .pipe(gulp.dest('docs/doxx_docs'));
  
 });

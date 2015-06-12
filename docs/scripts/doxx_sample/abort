@@ -1,0 +1,18 @@
+/**
+ * Aborts the request if it has already been sent. 'Ajax.end' callback will be triggered if no ajax call pending.
+ * @param      {Object} xhrToDelete dLite XHR object, if specified only the particular ajax call will be aborted.
+ * @param      {Array}  xhrToDelete if xhrToDelete tends to be an Array, then all the XHR(typeof dLite XHR object) call's will be aborted.
+ */
+ 
+ function abort(xhrToDelete) {
+     
+    //xhrToDelete ->  abort's the specific call
+    d.abort(xhrToDelete<Object>);
+    
+    //xhrToDelete -> abort's all the xhr in the Array
+    d.abort(xhrToDelete<Array>);
+    
+    //xhrToDelete -> abort's all the pending ajax call
+    d.abort();
+    
+ }
