@@ -9,6 +9,10 @@
   "dependencies": {
     "express": "~4.9.x"
   },
+  "devDependencies":{
+    "gulp": "*",
+    "gulp-doxx": "*"
+  },
   "engines": {
     "node": "~0.12.X"
   },

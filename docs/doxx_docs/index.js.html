@@ -75,50 +75,28 @@
             <li><a href="index.html">Main</a></li>
             <li><a href="dlite.js.html">dlite.js</a></li>
             <li><a href="gulpfile.js.html">gulpfile.js</a></li>
-            <li><a href="index.js.html">index.js</a></li>
+            <li class="active"><a href="index.js.html">index.js</a></li>
             <li><a href="README.md.html">README.md</a></li>
             <li><a href="abort.html">abort</a></li>
             <li><a href="addClass.html">addClass</a></li>
-            <li class="active"><a href="after.html">after</a></li>
+            <li><a href="after.html">after</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
-              <li><a href="#after"><i class="alert alert-info"></i><span>after</span></a>
-              </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="after">
-            <h1>after</h1>
-            <h5 class="subheader"></h5>
-            <p>
-              <div class="label label-info radius ctx-type">function</div><span>after()</span>
-            </p>
-          </section>
-          <div class="description"><p>Append an HTML String after the current element as a sibling.</p> </div>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th style="width:20%">Option name</th>
-                <th style="width:20%">Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>htmlString</td>
-                <td>String</td>
-                <td>append as siblings.</td>
-              </tr>
-            </tbody>
-          </table>
-          <pre><code class="language-javascript">function after(htmlString) {
-     
-    //append's and div element as a sibling to the match DOM elements
-    d('&lt;selector&gt;').after('&lt;div&gt;&lt;/div&gt;');
-    
- }</code></pre>
+          <div class="description"> </div>
+          <pre><code class="language-javascript">, function(request, response) {
+	console.log(request.url);
+	// response.sendFile(request.url, { root: __dirname + '/docs/doxx_docs' });
+  
+});
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});</code></pre>
         </div>
       </div>
     </div>
