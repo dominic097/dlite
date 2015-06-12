@@ -53,7 +53,7 @@
     </style>
   </head>
   <body data-spy="scroll" data-target=".scrollspy">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top hide">
       <div class="navbar-inner">
         <div class="container"><a class="brand">Doxx</a>
           <div class="nav-collapse collapse">
@@ -90,6 +90,7 @@
           <div class="description"> </div>
           <pre><code class="language-javascript">, function(request, response) {
 	console.log(request.url);
+	response.sendFile(request.url, { root: path.join(__dirname, '/docs/doxx_docs' )});
 	// response.sendFile(request.url, { root: __dirname + '/docs/doxx_docs' });
   
 });
