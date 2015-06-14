@@ -1,0 +1,19 @@
+/**
+ * Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+ * @param {String} _attrName The name of the attribute to get/set.
+ * @param {String} _attrValue The attribute value to set.
+ * @param {Function} A callback function which returns a value to be set
+ */
+ 
+ function attr(_attrName, _attrValue) {     
+
+ 	//get attribute value
+ 	d('<selector>').attr('attrName');    
+
+ 	//set's an attribute 
+    d('<selector>').attr('attrName', 'attrvalue');
+
+	//set's an attribute value by calling a function
+    d('<selector>').attr('attrName', fn);
+
+ }
