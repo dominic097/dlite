@@ -1,0 +1,15 @@
+/**
+ * Returns an random integer number 
+ * @param {Number/Float} min minimum range for genrating random number
+ * @param {Number/Float} max maximum range for genrating random number
+ * @param {Array} discard Array of number's to be discarded
+ */
+ 
+ function random () {   
+
+    //returns an random integer. Eg: 3/4/5/56/....
+    d.random (0, 1000);
+
+    //returns an random integer except the numbers in the descard array. Eg: 356/464/345/536/....
+    d.random (0, 1000, [0 .... 300 <Array of numbers to be discarded>]);
+ }

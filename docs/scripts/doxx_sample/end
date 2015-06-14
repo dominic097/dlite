@@ -1,0 +1,11 @@
+/**
+ * AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.
+ * @param {Function}  Callback function to be called at the end of the last AJAX request.
+ */
+ 
+ function end() {
+     
+     //registering an end callback function. fn will be called at the end of ajax batch process.
+     d.ajax.end(fn);
+    
+ }

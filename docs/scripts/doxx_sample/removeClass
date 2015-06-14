@@ -1,0 +1,11 @@
+/**
+ * remove the specified class(es) to each element in the set of matched elements.
+ * @param {String} className Class Name to be removed, use <space> to add multiple class name's to the matched element.
+ */
+ 
+ function removeClass(className) {
+     
+    //className ->  Class Name to be removed and retuns an array of matching DOM object's
+    d('<selector>').removeClass('clName');
+            
+ }

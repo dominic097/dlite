@@ -1,0 +1,14 @@
+/**
+ * Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.
+ * @param {String} pClassName className of the parent element. To get/check the parent node exist pass the className of the parent Node as an option parameter
+ */
+ 
+ function parents() {
+    
+    //will return all parent node in the form of array upto document element
+    d('<selector>').parent()
+
+    //will return all parent node in the form of array upto element matching the given css selector
+    d('<selector>').parent('css_selector');
+   
+ }

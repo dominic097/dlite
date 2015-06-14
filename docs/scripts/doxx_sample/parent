@@ -1,0 +1,9 @@
+/**
+ * Get the parent of first element in the current set of matched elements.
+ */
+ 
+ function parent() {
+      
+    d('<selector>').parent();
+   
+ }

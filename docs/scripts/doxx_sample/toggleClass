@@ -1,0 +1,10 @@
+/**
+ * Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
+ * @param {String} clName class name to be toggled
+ */
+ 
+ function toggleClass() {
+ 
+    //toggle's class name 'cl'
+    d('<selector>').toggleClass('cl');
+ }

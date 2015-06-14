@@ -707,7 +707,7 @@
 
         /**
          * Helper function to add event listener
-         * @method off
+         * @method on
          * @param {Object/Array} selector can be an array of DOM elements or single DOM elements
          * @param {String} eventName type of event
          * @param {String} eventHandler event callback function
@@ -742,7 +742,7 @@
         },
 
         /**
-         * stimulates document ready
+         * simulates document ready
          * @method ready
          * @param {function} ready callback function to be called on document ready state
          */

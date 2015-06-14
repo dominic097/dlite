@@ -1,0 +1,9 @@
+/**
+ * Remove the set of matched elements from the DOM.
+ */
+ 
+ function remove () {   
+
+    //Remove the set of matched elements from the DOM.
+    d('<selector>').remove()
+ }

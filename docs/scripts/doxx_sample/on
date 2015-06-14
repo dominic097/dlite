@@ -1,0 +1,15 @@
+/**
+ * add an event handler.
+ * @param {String} eventName type of event
+ * @param {String} eventHandler function ref
+ * @param {Object} payLoad arguments can be passed and can be accessed as this .data inside event callback.
+ */
+ 
+ function on() {
+      
+    // add an click event handler of 'h'<callback function>
+    d('<selector>').on('click', h, [additional param...]);
+
+    // add an click and mouseout event handler of 'h'<callback function>
+    d('<selector>').on('click, mouseout', h, [additional param...]);    
+ }	

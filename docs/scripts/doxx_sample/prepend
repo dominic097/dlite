@@ -1,0 +1,9 @@
+/**
+ * prepend an content specified by the parameter, to the end of each element in the set of matched elements.
+ * @param {Object}  DOM Object needed to be appended
+ */
+ 
+ function prepend() {     
+    //append's document fragment to the element 
+    d('<selector>').prepend(domObject);    
+ }

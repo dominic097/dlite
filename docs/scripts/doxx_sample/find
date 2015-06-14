@@ -1,0 +1,13 @@
+/**
+ * Get the descendants of each element in the current set of matched elements, filtered by a selector
+ * @param {String}  selector a css selector
+ */
+ 
+ function find() {
+     
+ 
+    d('<selector1>').find('<selector>');
+
+    retuns an list of matched elements under selector1 elements.
+    
+ }

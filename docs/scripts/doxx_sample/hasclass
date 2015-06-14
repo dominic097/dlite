@@ -1,0 +1,12 @@
+/**
+ * Determine whether any of the matched elements are assigned the given class.
+ * @param {String}  className name of the class to be checked, returns an boolean.
+ */
+ 
+ function hasClass() {
+      
+    d('<selector>').hasClass('className');
+
+    retuns true if there is a match among the filtered elements or false.
+    
+ }

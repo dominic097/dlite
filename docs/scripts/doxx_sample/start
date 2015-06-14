@@ -1,0 +1,11 @@
+/**
+ * AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.
+ * @param {Function}  Callback function to be called at the start of the last AJAX request.
+ */
+ 
+ function start() {
+     
+     //registering an start callback function. fn will be called at the start of ajax batch process.
+     d.ajax.start(fn);
+    
+ }
