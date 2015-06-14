@@ -75,7 +75,7 @@
             <li><a href="index.html">Main</a></li>
             <li><a href="dLite.js.html">dLite.js</a></li>
             <li><a href="README.md.html">README.md</a></li>
-            <li class="active"><a href="abort.html">abort</a></li>
+            <li><a href="abort.html">abort</a></li>
             <li><a href="addClass.html">addClass</a></li>
             <li><a href="after.html">after</a></li>
             <li><a href="ajax.html">ajax</a></li>
@@ -97,7 +97,7 @@
             <li><a href="on.html">on</a></li>
             <li><a href="outerHeight.html">outerHeight</a></li>
             <li><a href="outerWidth.html">outerWidth</a></li>
-            <li><a href="parent.html">parent</a></li>
+            <li class="active"><a href="parent.html">parent</a></li>
             <li><a href="parents.html">parents</a></li>
             <li><a href="prepend.html">prepend</a></li>
             <li><a href="random.html">random</a></li>
@@ -112,52 +112,24 @@
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
-              <li><a href="#abort"><i class="alert alert-info"></i><span>abort</span></a>
+              <li><a href="#parent"><i class="alert alert-info"></i><span>parent</span></a>
               </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="abort">
-            <h1>abort</h1>
+          <section id="parent">
+            <h1>parent</h1>
             <h5 class="subheader"></h5>
             <p>
-              <div class="label label-info radius ctx-type">function</div><span>abort()</span>
+              <div class="label label-info radius ctx-type">function</div><span>parent()</span>
             </p>
           </section>
-          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th style="width:20%">Option name</th>
-                <th style="width:20%">Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>xhrToDelete</td>
-                <td>Object</td>
-                <td>dLite XHR object, if specified only the particular ajax call will be aborted.</td>
-              </tr>
-              <tr>
-                <td>xhrToDelete</td>
-                <td>Array</td>
-                <td>if xhrToDelete tends to be an Array, then all the XHR(typeof dLite XHR object) call's will be aborted.</td>
-              </tr>
-            </tbody>
-          </table>
-          <pre><code class="language-javascript">function abort(xhrToDelete) {
-     
-    //xhrToDelete -&gt;  abort's the specific call
-    d.abort(xhrToDelete&lt;Object&gt;);
-    
-    //xhrToDelete -&gt; abort's all the xhr in the Array
-    d.abort(xhrToDelete&lt;Array&gt;);
-    
-    //xhrToDelete -&gt; abort's all the pending ajax call
-    d.abort();
-    
+          <div class="description"><p>Get the parent of first element in the current set of matched elements.</p> </div>
+          <pre><code class="language-javascript">function parent() {
+      
+    d('&lt;selector&gt;').parent();
+   
  }</code></pre>
         </div>
       </div>
