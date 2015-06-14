@@ -77,25 +77,25 @@
             <li><a href="README.md.html">README.md</a></li>
             <li><a href="abort.html">abort</a></li>
             <li><a href="addClass.html">addClass</a></li>
-            <li class="active"><a href="after.html">after</a></li>
-            <li><a href="ajax.html">ajax</a></li>
+            <li><a href="after.html">after</a></li>
+            <li class="active"><a href="ajax.html">ajax</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
-              <li><a href="#after"><i class="alert alert-info"></i><span>after</span></a>
+              <li><a href="#ajax"><i class="alert alert-info"></i><span>ajax</span></a>
               </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="after">
-            <h1>after</h1>
+          <section id="ajax">
+            <h1>ajax</h1>
             <h5 class="subheader"></h5>
             <p>
-              <div class="label label-info radius ctx-type">function</div><span>after()</span>
+              <div class="label label-info radius ctx-type">function</div><span>ajax()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
+          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br />NOTE: At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -106,18 +106,35 @@
             </thead>
             <tbody>
               <tr>
-                <td>htmlString</td>
-                <td>String</td>
-                <td>append as siblings.</td>
+                <td>proxy</td>
+                <td>Object</td>
+                <td>as an object contains the prop to make ajax request</td>
+              </tr>
+              <tr>
+                <td>proxy</td>
+                <td>Object</td>
+                <td>as an array of proxy object, can be used to make multiple deffered ajax request</td>
               </tr>
             </tbody>
           </table>
-          <pre><code class="language-javascript">function after(htmlString) {
-     
-    //append's and div element as a sibling to the match DOM elements
-    d('&lt;selector&gt;').after('&lt;div&gt;&lt;/div&gt;');
-    
- }</code></pre>
+          <pre><code class="language-javascript">function ajax(proxy) {
+
+	//proxy as an object
+    proxy = {
+    	type: 'GET/POST', //type ajax request
+    	url: '&lt;request url&gt;', //url string
+    	async: true/false //specify is it synchronous request or asynchronous request
+    	error: '&lt;function&gt;' //callback function to handle ajax failure
+    	callBack: '&lt;function&gt;' // a success callback function
+    };
+
+    d.ajax(proxy);
+
+    // proxy as an array for deferred callback 
+    proxy = [{type: 'GET/POST' ...},{type: 'GET/POST' ...}];
+    d.ajax(proxy&lt;array&gt;, success&lt;function&gt;); 
+
+}</code></pre>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ var gulp = require('gulp'),
  
 gulp.task('docs', function() {
  
-  gulp.src(['*.js', 'README.md', 'docs/scripts/doxx_sample/*'])
+  gulp.src(['dLite.js', 'README.md', 'docs/scripts/doxx_sample/*'])
     .pipe(gulpDoxx({
       title: 'dLite',
       template: 'docs/doxx_template/dLiteDoxx.jade'

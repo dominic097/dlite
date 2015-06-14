@@ -1,0 +1,25 @@
+/**
+ * Perform an asynchronous HTTP (Ajax) request.
+ * NOTE: At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.
+ * @param {Object}  proxy as an object contains the prop to make ajax request
+ * @param {Object}  proxy as an array of proxy object, can be used to make multiple deffered ajax request
+ */
+
+function ajax(proxy) {
+
+	//proxy as an object
+    proxy = {
+    	type: 'GET/POST', //type ajax request
+    	url: '<request url>', //url string
+    	async: true/false //specify is it synchronous request or asynchronous request
+    	error: '<function>' //callback function to handle ajax failure
+    	callBack: '<function>' // a success callback function
+    };
+
+    d.ajax(proxy);
+
+    // proxy as an array for deferred callback 
+    proxy = [{type: 'GET/POST' ...},{type: 'GET/POST' ...}];
+    d.ajax(proxy<array>, success<function>); 
+
+}
