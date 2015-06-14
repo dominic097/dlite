@@ -81,28 +81,28 @@
             <li><a href="ajax.html">ajax</a></li>
             <li><a href="append.html">append</a></li>
             <li><a href="attr.html">attr</a></li>
-            <li class="active"><a href="before.html">before</a></li>
+            <li><a href="before.html">before</a></li>
             <li><a href="children.html">children</a></li>
             <li><a href="clone.html">clone</a></li>
             <li><a href="css.html">css</a></li>
-            <li><a href="deepExtend.html">deepExtend</a></li>
+            <li class="active"><a href="deepExtend.html">deepExtend</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
-              <li><a href="#before"><i class="alert alert-info"></i><span>before</span></a>
+              <li><a href="#deepExtend"><i class="alert alert-info"></i><span>deepExtend</span></a>
               </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="before">
-            <h1>before</h1>
+          <section id="deepExtend">
+            <h1>deepExtend</h1>
             <h5 class="subheader"></h5>
             <p>
-              <div class="label label-info radius ctx-type">function</div><span>before()</span>
+              <div class="label label-info radius ctx-type">function</div><span>deepExtend()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -113,16 +113,23 @@
             </thead>
             <tbody>
               <tr>
-                <td>htmlString</td>
-                <td>String</td>
-                <td>append as siblings.</td>
+                <td>des</td>
+                <td>Object</td>
+                <td>destination Object.</td>
+              </tr>
+              <tr>
+                <td>src</td>
+                <td>Object</td>
+                <td>source Object which will be extended to the des<Object>.</td>
               </tr>
             </tbody>
           </table>
-          <pre><code class="language-javascript">function before(htmlString) {
+          <pre><code class="language-javascript">function deepExtend() {
      
-    //append's and div element as a sibling to the match DOM elements
-    d('&lt;selector&gt;').before('&lt;div&gt;&lt;/div&gt;');
+    //to merge one or more object's 
+    d.deepExtend(des, src1, src2, src3, ....);
+
+    retuns an des&lt;Object&gt; with all the properties of src1, src2 ...
     
  }</code></pre>
         </div>
