@@ -1,0 +1,12 @@
+/**
+ * clone the first element in the set of matched elements
+ */
+ 
+ function clone() {
+     
+    d('<selector>').clone();
+
+    //returns the clone of first matching <div> tag
+    d('div').clone();
+    
+ }

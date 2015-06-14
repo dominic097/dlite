@@ -1,0 +1,10 @@
+/**
+ * Get the children of each element in the set of matched elements, optionally filtered by a selector.
+ */
+ 
+ function children() {
+     
+    d('<selector>').children();
+    //returns the children of the matching DOM.
+    
+ }

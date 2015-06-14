@@ -77,26 +77,31 @@
             <li><a href="README.md.html">README.md</a></li>
             <li><a href="abort.html">abort</a></li>
             <li><a href="addClass.html">addClass</a></li>
-            <li class="active"><a href="after.html">after</a></li>
+            <li><a href="after.html">after</a></li>
             <li><a href="ajax.html">ajax</a></li>
             <li><a href="append.html">append</a></li>
+            <li><a href="attr.html">attr</a></li>
+            <li><a href="before.html">before</a></li>
+            <li><a href="children.html">children</a></li>
+            <li><a href="clone.html">clone</a></li>
+            <li class="active"><a href="css.html">css</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
-              <li><a href="#after"><i class="alert alert-info"></i><span>after</span></a>
+              <li><a href="#css"><i class="alert alert-info"></i><span>css</span></a>
               </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="after">
-            <h1>after</h1>
+          <section id="css">
+            <h1>css</h1>
             <h5 class="subheader"></h5>
             <p>
-              <div class="label label-info radius ctx-type">function</div><span>after()</span>
+              <div class="label label-info radius ctx-type">function</div><span>css()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
+          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -107,17 +112,36 @@
             </thead>
             <tbody>
               <tr>
-                <td>htmlString</td>
+                <td>cssObject</td>
+                <td>Object</td>
+                <td>Object to apply multiple styles </td>
+              </tr>
+              <tr>
+                <td>attr</td>
                 <td>String</td>
-                <td>append as siblings.</td>
+                <td>string to apply particular style Eg: 'width', 'margin', 'color' etc..,. </td>
+              </tr>
+              <tr>
+                <td>css</td>
+                <td>String</td>
+                <td>value to be set <br><br> <b>NOTE:</b> value should be in "px" and javaScript style property notation should be used.</td>
               </tr>
             </tbody>
           </table>
-          <pre><code class="language-javascript">function after(htmlString) {
+          <pre><code class="language-javascript">function css() {
      
-    //append's and div element as a sibling to the match DOM elements
-    d('&lt;selector&gt;').after('&lt;div&gt;&lt;/div&gt;');
-    
+    //sets the with of 100px to the matchin elements
+    d('&lt;selector&gt;').css('width', '100');
+
+    //sets the margin-right of 10px to the matchin elements
+    d('&lt;selector&gt;').css('margin-right', '10');
+
+    //sets the margin-right of 10px and width of 100px to the matchin elements
+    d('&lt;selector&gt;').css({
+    	width: 100px,
+    	margin 0 0 10px 0
+	});    
+	
  }</code></pre>
         </div>
       </div>

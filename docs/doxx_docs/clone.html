@@ -76,51 +76,39 @@
             <li><a href="dLite.js.html">dLite.js</a></li>
             <li><a href="README.md.html">README.md</a></li>
             <li><a href="abort.html">abort</a></li>
-            <li class="active"><a href="addClass.html">addClass</a></li>
+            <li><a href="addClass.html">addClass</a></li>
             <li><a href="after.html">after</a></li>
             <li><a href="ajax.html">ajax</a></li>
             <li><a href="append.html">append</a></li>
+            <li><a href="attr.html">attr</a></li>
+            <li><a href="before.html">before</a></li>
+            <li><a href="children.html">children</a></li>
+            <li class="active"><a href="clone.html">clone</a></li>
+            <li><a href="css.html">css</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
-              <li><a href="#addClass"><i class="alert alert-info"></i><span>addClass</span></a>
+              <li><a href="#clone"><i class="alert alert-info"></i><span>clone</span></a>
               </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="addClass">
-            <h1>addClass</h1>
+          <section id="clone">
+            <h1>clone</h1>
             <h5 class="subheader"></h5>
             <p>
-              <div class="label label-info radius ctx-type">function</div><span>addClass()</span>
+              <div class="label label-info radius ctx-type">function</div><span>clone()</span>
             </p>
           </section>
-          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th style="width:20%">Option name</th>
-                <th style="width:20%">Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>className</td>
-                <td>String</td>
-                <td>Class Name to be added, use <space> to add multiple class name's to the matched element.</td>
-              </tr>
-            </tbody>
-          </table>
-          <pre><code class="language-javascript">function addClass(className) {
+          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
+          <pre><code class="language-javascript">function clone() {
      
-    //className -&gt;  Class Name to be added
-    d('&lt;selector&gt;').addClass('clName');
+    d('&lt;selector&gt;').clone();
+
+    //returns the clone of first matching &lt;div&gt; tag
+    d('div').clone();
     
-    //does nothing just reurns an array of matching DOM object's
-    d('&lt;selector&gt;').addClass('clName');
-        
  }</code></pre>
         </div>
       </div>

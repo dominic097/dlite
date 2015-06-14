@@ -1,0 +1,23 @@
+/**
+ * clone the first element in the set of matched elements
+ * @param {Object} cssObject Object to apply multiple styles 
+ * @param {String} attr string to apply particular style Eg: 'width', 'margin', 'color' etc..,. 
+ * @param {String} css value to be set
+ * <br><br> <b>NOTE:</b> value should be in "px" and javaScript style property notation should be used.
+ */
+ 
+ function css() {
+     
+    //sets the with of 100px to the matchin elements
+    d('<selector>').css('width', '100');
+
+    //sets the margin-right of 10px to the matchin elements
+    d('<selector>').css('margin-right', '10');
+
+    //sets the margin-right of 10px and width of 100px to the matchin elements
+    d('<selector>').css({
+    	width: 100px,
+    	margin 0 0 10px 0
+	});    
+	
+ }

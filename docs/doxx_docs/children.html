@@ -79,43 +79,34 @@
             <li><a href="addClass.html">addClass</a></li>
             <li><a href="after.html">after</a></li>
             <li><a href="ajax.html">ajax</a></li>
-            <li class="active"><a href="append.html">append</a></li>
+            <li><a href="append.html">append</a></li>
+            <li><a href="attr.html">attr</a></li>
+            <li><a href="before.html">before</a></li>
+            <li class="active"><a href="children.html">children</a></li>
+            <li><a href="clone.html">clone</a></li>
+            <li><a href="css.html">css</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
-              <li><a href="#append"><i class="alert alert-info"></i><span>append</span></a>
+              <li><a href="#children"><i class="alert alert-info"></i><span>children</span></a>
               </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="append">
-            <h1>append</h1>
+          <section id="children">
+            <h1>children</h1>
             <h5 class="subheader"></h5>
             <p>
-              <div class="label label-info radius ctx-type">function</div><span>append()</span>
+              <div class="label label-info radius ctx-type">function</div><span>children()</span>
             </p>
           </section>
-          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th style="width:20%">Option name</th>
-                <th style="width:20%">Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>DOM</td>
-                <td>Object</td>
-                <td>Object needed to be appended</td>
-              </tr>
-            </tbody>
-          </table>
-          <pre><code class="language-javascript">function append(_el) {     
-    //append's document fragment to the element 
-    d('&lt;selector&gt;').apend(domObject);    
+          <div class="description"><p>Get the children of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
+          <pre><code class="language-javascript">function children() {
+     
+    d('&lt;selector&gt;').children();
+    //returns the children of the matching DOM.
+    
  }</code></pre>
         </div>
       </div>
