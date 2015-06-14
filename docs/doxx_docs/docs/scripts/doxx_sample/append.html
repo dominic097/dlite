@@ -72,23 +72,51 @@
       <div class="row">
         <div class="span3 bs-docs-sidebar">
           <ul class="nav nav-list bs-docs-sidenav affix-top">
-            <li class="active"><a href="index.html">Main</a></li>
+            <li><a href="index.html">Main</a></li>
             <li><a href="dLite.js.html">dLite.js</a></li>
             <li><a href="README.md.html">README.md</a></li>
             <li><a href="abort.html">abort</a></li>
             <li><a href="addClass.html">addClass</a></li>
             <li><a href="after.html">after</a></li>
             <li><a href="ajax.html">ajax</a></li>
-            <li><a href="append.html">append</a></li>
+            <li class="active"><a href="append.html">append</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
+              <li><a href="#append"><i class="alert alert-info"></i><span>append</span></a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="Main"><h1>dlite</h1>
-<p>A simple - yet powerful jQuery alternative, all with pure JS.</p></section>
+          <section id="append">
+            <h1>append</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>append()</span>
+            </p>
+          </section>
+          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DOM</td>
+                <td>Object</td>
+                <td>Object needed to be appended</td>
+              </tr>
+            </tbody>
+          </table>
+          <pre><code class="language-javascript">function append(_el) {     
+    //append's document fragment to the element 
+    d('&lt;selector&gt;').apend(domObject);    
+ }</code></pre>
         </div>
       </div>
     </div>

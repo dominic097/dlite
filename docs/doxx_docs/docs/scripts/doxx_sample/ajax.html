@@ -72,23 +72,70 @@
       <div class="row">
         <div class="span3 bs-docs-sidebar">
           <ul class="nav nav-list bs-docs-sidenav affix-top">
-            <li class="active"><a href="index.html">Main</a></li>
+            <li><a href="index.html">Main</a></li>
             <li><a href="dLite.js.html">dLite.js</a></li>
             <li><a href="README.md.html">README.md</a></li>
             <li><a href="abort.html">abort</a></li>
             <li><a href="addClass.html">addClass</a></li>
             <li><a href="after.html">after</a></li>
-            <li><a href="ajax.html">ajax</a></li>
+            <li class="active"><a href="ajax.html">ajax</a></li>
             <li><a href="append.html">append</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
+              <li><a href="#ajax"><i class="alert alert-info"></i><span>ajax</span></a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <section id="Main"><h1>dlite</h1>
-<p>A simple - yet powerful jQuery alternative, all with pure JS.</p></section>
+          <section id="ajax">
+            <h1>ajax</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>ajax()</span>
+            </p>
+          </section>
+          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>proxy</td>
+                <td>Object</td>
+                <td>as an object contains the prop to make ajax request</td>
+              </tr>
+              <tr>
+                <td>proxy</td>
+                <td>Object</td>
+                <td>as an array of proxy object, can be used to make multiple deffered ajax request</td>
+              </tr>
+            </tbody>
+          </table>
+          <pre><code class="language-javascript">function ajax(proxy) {
+
+	//proxy as an object
+    proxy = {
+    	type: 'GET/POST', //type ajax request
+    	url: '&lt;request url&gt;', //url string
+    	async: true/false //specify is it synchronous request or asynchronous request
+    	error: '&lt;function&gt;' //callback function to handle ajax failure
+    	callBack: '&lt;function&gt;' // a success callback function
+    };
+
+    d.ajax(proxy);
+
+    // proxy as an array for deferred callback 
+    proxy = [{type: 'GET/POST' ...},{type: 'GET/POST' ...}];
+    d.ajax(proxy&lt;array&gt;, success&lt;function&gt;); 
+
+}</code></pre>
         </div>
       </div>
     </div>
