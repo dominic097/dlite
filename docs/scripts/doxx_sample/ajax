@@ -1,6 +1,6 @@
 /**
  * Perform an asynchronous HTTP (Ajax) request.
- * <b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.
+ * <br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.
  * @param {Object}  proxy as an object contains the prop to make ajax request
  * @param {Object}  proxy as an array of proxy object, can be used to make multiple deffered ajax request
  */

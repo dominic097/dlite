@@ -9,5 +9,7 @@ gulp.task('docs', function() {
       template: 'docs/doxx_template/dLiteDoxx.jade'
     }))
     .pipe(gulp.dest('docs/doxx_docs'));
+
+gulp.src('./scripts/doxx_sample/*.html', { base: './' }).pipe(gulp.dest('./doxx_docs'));
  
 });
