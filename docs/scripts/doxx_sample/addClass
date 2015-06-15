@@ -7,11 +7,5 @@
      
 	//className ->  Class Name to be added and retuns an array of matching DOM object's
     d('<selector>').addClass('clName');
-<<<<<<< HEAD
-    
-    //does nothing just reurns an array of matching DOM object's
-    d('<selector>').addClass('clName');
-=======
->>>>>>> 7402a5370e0faba8fa53a78b7cf96f355d3ee9b8
-        
+
  }
