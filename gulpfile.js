@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     concat = require("gulp-concat"),
     clean = require('gulp-clean');
     paths = {
-      sample_doxx: ['./docs/scripts/doxx_sample/'],
+      sample_doxx: ['./docs/scripts/doxx_sample/*'],
       create_docs: ['*.js', 'README.md', 'docs/scripts/doxx_sample/*'],
       des_docs: 'docs/doxx_docs',
       jade_template_doxx: 'docs/doxx_template/dLiteDoxx.jade',
@@ -28,7 +28,7 @@ gulp.task('concat_docs_samples', function() {
     .pipe(gulp.dest('./docs/scripts/doxx_sample/'));
 });
  
-gulp.task('docs', ['move', 'clean'], function() {
+gulp.task('docs', function() {
   gulp.src(paths.create_docs)
     .pipe(gulpDoxx({
       title: 'dLite',
@@ -44,4 +44,4 @@ gulp.task('docs', ['move', 'clean'], function() {
 //   gulp.watch(paths.sample_doxx, ['concat_docs_samples', 'docs', 'move', 'clean']);
 // });
 
-gulp.task('default', ['concat_docs_samples', 'docs']);
+gulp.task('default', ['clean', 'concat_docs_samples', 'docs', 'move']);

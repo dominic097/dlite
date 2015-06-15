@@ -121,6 +121,7 @@
         <div class="span9">
           <div class="description"> </div>
           <pre><code class="language-javascript">],
+      create_docs: ['*.js', 'README.md', 'docs/scripts/doxx_sample/*'],
       des_docs: 'docs/doxx_docs',
       jade_template_doxx: 'docs/doxx_template/dLiteDoxx.jade',
       move_des: 'docs/doxx_docs/',
@@ -144,7 +145,7 @@ gulp.task('concat_docs_samples', function() {
     .pipe(gulp.dest('./docs/scripts/doxx_sample/'));
 });
  
-gulp.task('docs', ['move', 'clean'], function() {
+gulp.task('docs', function() {
   gulp.src(paths.create_docs)
     .pipe(gulpDoxx({
       title: 'dLite',
@@ -160,7 +161,7 @@ gulp.task('docs', ['move', 'clean'], function() {
 //   gulp.watch(paths.sample_doxx, ['concat_docs_samples', 'docs', 'move', 'clean']);
 // });
 
-gulp.task('default', ['concat_docs_samples', 'docs']);</code></pre>
+gulp.task('default', ['clean', 'concat_docs_samples', 'docs', 'move']);</code></pre>
         </div>
       </div>
     </div>

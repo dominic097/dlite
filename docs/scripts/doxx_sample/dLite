@@ -23,11 +23,170 @@
  
  function addClass(className) {
      
-    //className ->  Class Name to be added
+	//className ->  Class Name to be added and retuns an array of matching DOM object's
     d('<selector>').addClass('clName');
+<<<<<<< HEAD
     
     //does nothing just reurns an array of matching DOM object's
     d('<selector>').addClass('clName');
+=======
+>>>>>>> 7402a5370e0faba8fa53a78b7cf96f355d3ee9b8
+        
+ }
+/**
+ * Append an HTML String after each element in the set of matched elements.
+ * @param {String}  htmlString append as siblings.
+ */
+ 
+ function after(htmlString) {
+     
+    //append's and div element as a sibling to the match DOM elements
+    d('<selector>').after('<div></div>');
+    
+ }
+/**
+ * Perform an asynchronous HTTP (Ajax) request.
+ * <br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.
+ * @param {Object}  proxy as an object contains the prop to make ajax request
+ * @param {Object}  proxy as an array of proxy object, can be used to make multiple deffered ajax request
+ */
+
+function ajax(proxy) {
+
+	//proxy as an object
+    proxy = {
+    	type: 'GET/POST', //type ajax request
+    	url: '<request url>', //url string
+    	async: true/false //specify is it synchronous request or asynchronous request
+    	error: '<function>' //callback function to handle ajax failure
+    	callBack: '<function>' // a success callback function
+    };
+
+    d.ajax(proxy);
+
+    // proxy as an array for deferred callback 
+    proxy = [{type: 'GET/POST' ...},{type: 'GET/POST' ...}];
+    d.ajax(proxy<array>, success<function>); 
+
+}
+
+/**
+ * Append an content specified by the parameter, to the end of each element in the set of matched elements.
+ * @param {Object}  DOM Object needed to be appended
+ */
+ 
+ function append(_el) {     
+    //append's document fragment to the element 
+    d('<selector>').apend(domObject);    
+ }
+/**
+ * Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+ * @param {String} _attrName The name of the attribute to get/set.
+ * @param {String} _attrValue The attribute value to set.
+ * @param {Function} A callback function which returns a value to be set
+ */
+ 
+ function attr(_attrName, _attrValue) {     
+
+ 	//get attribute value
+ 	d('<selector>').attr('attrName');    
+
+ 	//set's an attribute 
+    d('<selector>').attr('attrName', 'attrvalue');
+
+	//set's an attribute value by calling a function
+    d('<selector>').attr('attrName', fn);
+
+ }
+/**
+ * Append an HTML String before each element in the set of matched elements.
+ * @param {String}  htmlString append as siblings.
+ */
+ 
+ function before(htmlString) {
+     
+    //append's and div element as a sibling to the match DOM elements
+    d('<selector>').before('<div></div>');
+    
+ }
+/**
+ * Get the children of each element in the set of matched elements, optionally filtered by a selector.
+ */
+ 
+ function children() {
+     
+    d('<selector>').children();
+    //returns the children of the matching DOM.
+    
+ }
+/**
+ * clone the first element in the set of matched elements
+ */
+ 
+ function clone() {
+     
+    d('<selector>').clone();
+
+    //returns the clone of first matching <div> tag
+    d('div').clone();
+    
+ }
+/**
+ * clone the first element in the set of matched elements
+ * @param {Object} cssObject Object to apply multiple styles 
+ * @param {String} attr string to apply particular style Eg: 'width', 'margin', 'color' etc..,. 
+ * @param {String} css value to be set
+ * <br><br> <b>NOTE:</b> value should be in "px" and javaScript style property notation should be used.
+ */
+ 
+ function css() {
+     
+    //sets the with of 100px to the matchin elements
+    d('<selector>').css('width', '100');
+
+    //sets the margin-right of 10px to the matchin elements
+    d('<selector>').css('margin-right', '10');
+
+    //sets the margin-right of 10px and width of 100px to the matchin elements
+    d('<selector>').css({
+    	width: 100px,
+    	margin 0 0 10px 0
+	});    
+	
+ }
+/**
+ * Aborts the request if it has already been sent. 'Ajax.end' callback will be triggered if no ajax call pending.
+ * @param      {Object} xhrToDelete dLite XHR object, if specified only the particular ajax call will be aborted.
+ * @param      {Array}  xhrToDelete if xhrToDelete tends to be an Array, then all the XHR(typeof dLite XHR object) call's will be aborted.
+ */
+ 
+ function abort(xhrToDelete) {
+     
+    //xhrToDelete ->  abort's the specific call
+    d.abort(xhrToDelete<Object>);
+    
+    //xhrToDelete -> abort's all the xhr in the Array
+    d.abort(xhrToDelete<Array>);
+    
+    //xhrToDelete -> abort's all the pending ajax call
+    d.abort();
+    
+ }
+/**
+ * Adds the specified class(es) to each element in the set of matched elements.
+ * @param {String} className Class Name to be added, use <space> to add multiple class name's to the matched element.
+ */
+ 
+ function addClass(className) {
+     
+	//className ->  Class Name to be added and retuns an array of matching DOM object's
+    d('<selector>').addClass('clName');
+<<<<<<< HEAD
+    
+    //does nothing just reurns an array of matching DOM object's
+    d('<selector>').addClass('clName');
+=======
+>>>>>>> 7402a5370e0faba8fa53a78b7cf96f355d3ee9b8
         
  }
 /**
@@ -163,5 +322,563 @@ function ajax(proxy) {
     d.deepExtend(des, src1, src2, src3, ....);
 
     retuns an des<Object> with all the properties of src1, src2 ...
+    
+ }
+/**
+ * Remove all child nodes of the set of matched elements from the DOM.
+ */
+ 
+ function empty() {
+    
+    d('<selector>').empty()
+    
+ }
+/**
+ * AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.
+ * @param {Function}  Callback function to be called at the end of the last AJAX request.
+ */
+ 
+ function end() {
+     
+     //registering an end callback function. fn will be called at the end of ajax batch process.
+     d.ajax.end(fn);
+    
+ }
+/**
+ * Merge the contents of two or more objects together into the first object.
+ * @param {Object}  des destination Object.
+ * @param {Object}  src source Object which will be extended to the des<Object>.
+ */
+ 
+ function extend() {
+     
+    //to merge one or more object's 
+    d.extend(des, src1, src2, src3, ....);
+
+    retuns an des<Object> with all the properties of src1, src2 ...
+    
+ }
+/**
+ * Get the descendants of each element in the current set of matched elements, filtered by a selector
+ * @param {String}  selector a css selector
+ */
+ 
+ function find() {
+     
+ 
+    d('<selector1>').find('<selector>');
+
+    retuns an list of matched elements under selector1 elements.
+    
+ }
+/**
+ * Determine whether any of the matched elements are assigned the given class.
+ * @param {String}  className name of the class to be checked, returns an boolean.
+ */
+ 
+ function hasClass() {
+      
+    d('<selector>').hasClass('className');
+
+    retuns true if there is a match among the filtered elements or false.
+    
+ }
+/**
+ * Hide the matched elements by making display none.
+ */
+ 
+ function hide() {
+      
+    d('<selector>').hide();
+
+    retuns an list of matched element with display none set
+    
+ }
+/**
+ * Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element.
+ */
+ 
+ function left() {
+      
+    d('<selector>').left();
+
+    retuns an horizontal position of the scroll bar
+
+    d('<selector>').left(100);
+
+    sets an horizontal position of the scroll bar to the 100th px
+    
+ }
+/**
+ * Remove an event handler.
+ * @param {String} eventName type of event
+ * @param {String} eventHandler function ref
+ */
+ 
+ function off() {
+      
+    // removes an click event handler of 'h'<callback function>
+    d('<selector>').off('click', h);
+
+    // removes an click and mouseout event handler of 'h'<callback function>
+    d('<selector>').off('click, mouseout', h);    
+ }	
+/**
+ * add an event handler.
+ * @param {String} eventName type of event
+ * @param {String} eventHandler function ref
+ * @param {Object} payLoad arguments can be passed and can be accessed as this .data inside event callback.
+ */
+ 
+ function on() {
+      
+    // add an click event handler of 'h'<callback function>
+    d('<selector>').on('click', h, [additional param...]);
+
+    // add an click and mouseout event handler of 'h'<callback function>
+    d('<selector>').on('click, mouseout', h, [additional param...]);    
+ }	
+/**
+ * Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin.
+ */
+ 
+ function outerHeight() {
+      
+    d('<selector>').outerHeight();
+    //returns an outerHeight the first element in the set of matched elements in px.
+   
+ }
+/**
+ * Get the current computed width for the first element in the set of matched elements, including padding, border, and optionally margin.
+ */
+ 
+ function outerWidth() {
+      
+    d('<selector>').outerWidth();
+    //returns an outerWidth the first element in the set of matched elements in px.
+   
+ }
+/**
+ * Get the parent of first element in the current set of matched elements.
+ */
+ 
+ function parent() {
+      
+    d('<selector>').parent();
+   
+ }
+/**
+ * Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.
+ * @param {String} pClassName className of the parent element. To get/check the parent node exist pass the className of the parent Node as an option parameter
+ */
+ 
+ function parents() {
+    
+    //will return all parent node in the form of array upto document element
+    d('<selector>').parent()
+
+    //will return all parent node in the form of array upto element matching the given css selector
+    d('<selector>').parent('css_selector');
+   
+ }
+/**
+ * prepend an content specified by the parameter, to the end of each element in the set of matched elements.
+ * @param {Object}  DOM Object needed to be appended
+ */
+ 
+ function prepend() {     
+    //append's document fragment to the element 
+    d('<selector>').prepend(domObject);    
+ }
+/**
+ * Returns an random integer number 
+ * @param {Number/Float} min minimum range for genrating random number
+ * @param {Number/Float} max maximum range for genrating random number
+ * @param {Array} discard Array of number's to be discarded
+ */
+ 
+ function random () {   
+
+    //returns an random integer. Eg: 3/4/5/56/....
+    d.random (0, 1000);
+
+    //returns an random integer except the numbers in the descard array. Eg: 356/464/345/536/....
+    d.random (0, 1000, [0 .... 300 <Array of numbers to be discarded>]);
+ }
+/**
+ * stimulates document ready
+ * @param {function} ready callback function to be called on document ready state
+ */
+ 
+ function ready () {   
+
+    //binds an function to the document ready.
+    d(document).ready(fn)
+ }
+/**
+ * Remove the set of matched elements from the DOM.
+ */
+ 
+ function remove () {   
+
+    //Remove the set of matched elements from the DOM.
+    d('<selector>').remove()
+ }
+/**
+ * remove the specified class(es) to each element in the set of matched elements.
+ * @param {String} className Class Name to be removed, use <space> to add multiple class name's to the matched element.
+ */
+ 
+ function removeClass(className) {
+     
+    //className ->  Class Name to be removed and retuns an array of matching DOM object's
+    d('<selector>').removeClass('clName');
+            
+ }
+/**
+ * show the matched hidden elements by making display block.
+ */
+ 
+ function show() {
+      
+    d('<selector>').show();
+
+    retuns an list of matched element with display block set
+    
+ }
+/**
+ * Get the siblings of each element in the set of matched elements, optionally filtered by a selector.
+ * @param {String} clName returns an sibling element matching the class name
+ */
+ 
+ function siblings() {
+     
+    d('<selector>').siblings();
+    //returns the siblings of all the matching DOM.
+
+    d('<selector>').siblings('clName');
+    //returns the siblings element<mathcing the class name description> of all the matching DOM.
+    
+ }
+/**
+ * AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.
+ * @param {Function}  Callback function to be called at the start of the last AJAX request.
+ */
+ 
+ function start() {
+     
+     //registering an start callback function. fn will be called at the start of ajax batch process.
+     d.ajax.start(fn);
+    
+ }
+/**
+ * Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
+ * @param {String} clName class name to be toggled
+ */
+ 
+ function toggleClass() {
+ 
+    //toggle's class name 'cl'
+    d('<selector>').toggleClass('cl');
+ }
+/**
+ * Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element.
+ */
+ 
+ function top() {
+      
+    d('<selector>').top();
+
+    retuns an vertical position of the scroll bar
+
+    d('<selector>').top(100);
+
+    sets an vertical position of the scroll bar to the 100th px
+    
+ }
+/**
+ * Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance
+ * @param {Object}  des destination Object.
+ * @param {Object}  src source Object which will be extended to the des<Object>.
+ */
+ 
+ function deepExtend() {
+     
+    //to merge one or more object's 
+    d.deepExtend(des, src1, src2, src3, ....);
+
+    retuns an des<Object> with all the properties of src1, src2 ...
+    
+ }
+/**
+ * Remove all child nodes of the set of matched elements from the DOM.
+ */
+ 
+ function empty() {
+    
+    d('<selector>').empty()
+    
+ }
+/**
+ * AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.
+ * @param {Function}  Callback function to be called at the end of the last AJAX request.
+ */
+ 
+ function end() {
+     
+     //registering an end callback function. fn will be called at the end of ajax batch process.
+     d.ajax.end(fn);
+    
+ }
+/**
+ * Merge the contents of two or more objects together into the first object.
+ * @param {Object}  des destination Object.
+ * @param {Object}  src source Object which will be extended to the des<Object>.
+ */
+ 
+ function extend() {
+     
+    //to merge one or more object's 
+    d.extend(des, src1, src2, src3, ....);
+
+    retuns an des<Object> with all the properties of src1, src2 ...
+    
+ }
+/**
+ * Get the descendants of each element in the current set of matched elements, filtered by a selector
+ * @param {String}  selector a css selector
+ */
+ 
+ function find() {
+     
+ 
+    d('<selector1>').find('<selector>');
+
+    retuns an list of matched elements under selector1 elements.
+    
+ }
+/**
+ * Determine whether any of the matched elements are assigned the given class.
+ * @param {String}  className name of the class to be checked, returns an boolean.
+ */
+ 
+ function hasClass() {
+      
+    d('<selector>').hasClass('className');
+
+    retuns true if there is a match among the filtered elements or false.
+    
+ }
+/**
+ * Hide the matched elements by making display none.
+ */
+ 
+ function hide() {
+      
+    d('<selector>').hide();
+
+    retuns an list of matched element with display none set
+    
+ }
+/**
+ * Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element.
+ */
+ 
+ function left() {
+      
+    d('<selector>').left();
+
+    retuns an horizontal position of the scroll bar
+
+    d('<selector>').left(100);
+
+    sets an horizontal position of the scroll bar to the 100th px
+    
+ }
+/**
+ * Remove an event handler.
+ * @param {String} eventName type of event
+ * @param {String} eventHandler function ref
+ */
+ 
+ function off() {
+      
+    // removes an click event handler of 'h'<callback function>
+    d('<selector>').off('click', h);
+
+    // removes an click and mouseout event handler of 'h'<callback function>
+    d('<selector>').off('click, mouseout', h);    
+ }	
+/**
+ * add an event handler.
+ * @param {String} eventName type of event
+ * @param {String} eventHandler function ref
+ * @param {Object} payLoad arguments can be passed and can be accessed as this .data inside event callback.
+ */
+ 
+ function on() {
+      
+    // add an click event handler of 'h'<callback function>
+    d('<selector>').on('click', h, [additional param...]);
+
+    // add an click and mouseout event handler of 'h'<callback function>
+    d('<selector>').on('click, mouseout', h, [additional param...]);    
+ }	
+/**
+ * Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin.
+ */
+ 
+ function outerHeight() {
+      
+    d('<selector>').outerHeight();
+    //returns an outerHeight the first element in the set of matched elements in px.
+   
+ }
+/**
+ * Get the current computed width for the first element in the set of matched elements, including padding, border, and optionally margin.
+ */
+ 
+ function outerWidth() {
+      
+    d('<selector>').outerWidth();
+    //returns an outerWidth the first element in the set of matched elements in px.
+   
+ }
+/**
+ * Get the parent of first element in the current set of matched elements.
+ */
+ 
+ function parent() {
+      
+    d('<selector>').parent();
+   
+ }
+/**
+ * Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.
+ * @param {String} pClassName className of the parent element. To get/check the parent node exist pass the className of the parent Node as an option parameter
+ */
+ 
+ function parents() {
+    
+    //will return all parent node in the form of array upto document element
+    d('<selector>').parent()
+
+    //will return all parent node in the form of array upto element matching the given css selector
+    d('<selector>').parent('css_selector');
+   
+ }
+/**
+ * prepend an content specified by the parameter, to the end of each element in the set of matched elements.
+ * @param {Object}  DOM Object needed to be appended
+ */
+ 
+ function prepend() {     
+    //append's document fragment to the element 
+    d('<selector>').prepend(domObject);    
+ }
+/**
+ * Returns an random integer number 
+ * @param {Number/Float} min minimum range for genrating random number
+ * @param {Number/Float} max maximum range for genrating random number
+ * @param {Array} discard Array of number's to be discarded
+ */
+ 
+ function random () {   
+
+    //returns an random integer. Eg: 3/4/5/56/....
+    d.random (0, 1000);
+
+    //returns an random integer except the numbers in the descard array. Eg: 356/464/345/536/....
+    d.random (0, 1000, [0 .... 300 <Array of numbers to be discarded>]);
+ }
+/**
+ * stimulates document ready
+ * @param {function} ready callback function to be called on document ready state
+ */
+ 
+ function ready () {   
+
+    //binds an function to the document ready.
+    d(document).ready(fn)
+ }
+/**
+ * Remove the set of matched elements from the DOM.
+ */
+ 
+ function remove () {   
+
+    //Remove the set of matched elements from the DOM.
+    d('<selector>').remove()
+ }
+/**
+ * remove the specified class(es) to each element in the set of matched elements.
+ * @param {String} className Class Name to be removed, use <space> to add multiple class name's to the matched element.
+ */
+ 
+ function removeClass(className) {
+     
+    //className ->  Class Name to be removed and retuns an array of matching DOM object's
+    d('<selector>').removeClass('clName');
+            
+ }
+/**
+ * show the matched hidden elements by making display block.
+ */
+ 
+ function show() {
+      
+    d('<selector>').show();
+
+    retuns an list of matched element with display block set
+    
+ }
+/**
+ * Get the siblings of each element in the set of matched elements, optionally filtered by a selector.
+ * @param {String} clName returns an sibling element matching the class name
+ */
+ 
+ function siblings() {
+     
+    d('<selector>').siblings();
+    //returns the siblings of all the matching DOM.
+
+    d('<selector>').siblings('clName');
+    //returns the siblings element<mathcing the class name description> of all the matching DOM.
+    
+ }
+/**
+ * AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.
+ * @param {Function}  Callback function to be called at the start of the last AJAX request.
+ */
+ 
+ function start() {
+     
+     //registering an start callback function. fn will be called at the start of ajax batch process.
+     d.ajax.start(fn);
+    
+ }
+/**
+ * Add or remove one or more classes from each element in the set of matched elements, depending on either the class's presence or the value of the state argument.
+ * @param {String} clName class name to be toggled
+ */
+ 
+ function toggleClass() {
+ 
+    //toggle's class name 'cl'
+    d('<selector>').toggleClass('cl');
+ }
+/**
+ * Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element.
+ */
+ 
+ function top() {
+      
+    d('<selector>').top();
+
+    retuns an vertical position of the scroll bar
+
+    d('<selector>').top(100);
+
+    sets an vertical position of the scroll bar to the 100th px
     
  }
