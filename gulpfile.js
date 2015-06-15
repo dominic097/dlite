@@ -31,8 +31,7 @@ gulp.task('concat_docs_samples', function() {
 gulp.task('docs', function() {
   gulp.src(paths.create_doxx)
     .pipe(gulpDoxx({
-      title: 'dLite',
-      template: paths.jade_template_doxx
+      title: 'dLite'
     }))
     .pipe(gulp.dest(paths.des_docs));
  

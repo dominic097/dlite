@@ -3,10 +3,9 @@
   <head>
     <meta name="viewport" content="width=device-width" charset="utf-8">
     <title>dLite</title>
-    <link rel="stylesheet" href="../styles/bootstrap.css">
-    <link rel="stylesheet" href="../styles/bootstrap-responsive.css">
-    <link rel="stylesheet" href="../styles/docs.css">
-    <link rel="stylesheet" href="../styles/docs.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css">
     <style>
       body > .navbar .brand {
         float:left;
@@ -155,6 +154,74 @@
               <li><a href="#clone"><i class="alert alert-info"></i><span>clone</span></a>
               </li>
               <li><a href="#css"><i class="alert alert-info"></i><span>css</span></a>
+              </li>
+              <li><a href="#abort"><i class="alert alert-info"></i><span>abort</span></a>
+              </li>
+              <li><a href="#addClass"><i class="alert alert-info"></i><span>addClass</span></a>
+              </li>
+              <li><a href="#after"><i class="alert alert-info"></i><span>after</span></a>
+              </li>
+              <li><a href="#ajax"><i class="alert alert-info"></i><span>ajax</span></a>
+              </li>
+              <li><a href="#append"><i class="alert alert-info"></i><span>append</span></a>
+              </li>
+              <li><a href="#attr"><i class="alert alert-info"></i><span>attr</span></a>
+              </li>
+              <li><a href="#before"><i class="alert alert-info"></i><span>before</span></a>
+              </li>
+              <li><a href="#children"><i class="alert alert-info"></i><span>children</span></a>
+              </li>
+              <li><a href="#clone"><i class="alert alert-info"></i><span>clone</span></a>
+              </li>
+              <li><a href="#css"><i class="alert alert-info"></i><span>css</span></a>
+              </li>
+              <li><a href="#deepExtend"><i class="alert alert-info"></i><span>deepExtend</span></a>
+              </li>
+              <li><a href="#empty"><i class="alert alert-info"></i><span>empty</span></a>
+              </li>
+              <li><a href="#end"><i class="alert alert-info"></i><span>end</span></a>
+              </li>
+              <li><a href="#extend"><i class="alert alert-info"></i><span>extend</span></a>
+              </li>
+              <li><a href="#find"><i class="alert alert-info"></i><span>find</span></a>
+              </li>
+              <li><a href="#hasClass"><i class="alert alert-info"></i><span>hasClass</span></a>
+              </li>
+              <li><a href="#hide"><i class="alert alert-info"></i><span>hide</span></a>
+              </li>
+              <li><a href="#left"><i class="alert alert-info"></i><span>left</span></a>
+              </li>
+              <li><a href="#off"><i class="alert alert-info"></i><span>off</span></a>
+              </li>
+              <li><a href="#on"><i class="alert alert-info"></i><span>on</span></a>
+              </li>
+              <li><a href="#outerHeight"><i class="alert alert-info"></i><span>outerHeight</span></a>
+              </li>
+              <li><a href="#outerWidth"><i class="alert alert-info"></i><span>outerWidth</span></a>
+              </li>
+              <li><a href="#parent"><i class="alert alert-info"></i><span>parent</span></a>
+              </li>
+              <li><a href="#parents"><i class="alert alert-info"></i><span>parents</span></a>
+              </li>
+              <li><a href="#prepend"><i class="alert alert-info"></i><span>prepend</span></a>
+              </li>
+              <li><a href="#random"><i class="alert alert-info"></i><span>random</span></a>
+              </li>
+              <li><a href="#ready"><i class="alert alert-info"></i><span>ready</span></a>
+              </li>
+              <li><a href="#remove"><i class="alert alert-info"></i><span>remove</span></a>
+              </li>
+              <li><a href="#removeClass"><i class="alert alert-info"></i><span>removeClass</span></a>
+              </li>
+              <li><a href="#show"><i class="alert alert-info"></i><span>show</span></a>
+              </li>
+              <li><a href="#siblings"><i class="alert alert-info"></i><span>siblings</span></a>
+              </li>
+              <li><a href="#start"><i class="alert alert-info"></i><span>start</span></a>
+              </li>
+              <li><a href="#toggleClass"><i class="alert alert-info"></i><span>toggleClass</span></a>
+              </li>
+              <li><a href="#top"><i class="alert alert-info"></i><span>top</span></a>
               </li>
               <li><a href="#deepExtend"><i class="alert alert-info"></i><span>deepExtend</span></a>
               </li>
@@ -359,7 +426,6 @@
               <div class="label label-info radius ctx-type">function</div><span>abort()</span>
             </p>
           </section>
-          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -381,6 +447,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
           <pre><code class="language-javascript">function abort(xhrToDelete) {
      
     //xhrToDelete -&gt;  abort's the specific call
@@ -400,7 +467,6 @@
               <div class="label label-info radius ctx-type">function</div><span>addClass()</span>
             </p>
           </section>
-          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -413,10 +479,11 @@
               <tr>
                 <td>className</td>
                 <td>String</td>
-                <td>Class Name to be added, use <space> to add multiple class name's to the matched element.</td>
+                <td>Class Name to be added, use &lt;space&gt; to add multiple class name's to the matched element.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function addClass(className) {
      
 	//className -&gt;  Class Name to be added and retuns an array of matching DOM object's
@@ -436,7 +503,6 @@
               <div class="label label-info radius ctx-type">function</div><span>after()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -453,6 +519,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function after(htmlString) {
      
     //append's and div element as a sibling to the match DOM elements
@@ -466,7 +533,6 @@
               <div class="label label-info radius ctx-type">function</div><span>ajax()</span>
             </p>
           </section>
-          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -488,6 +554,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <pre><code class="language-javascript">function ajax(proxy) {
 
 	//proxy as an object
@@ -513,7 +580,6 @@
               <div class="label label-info radius ctx-type">function</div><span>append()</span>
             </p>
           </section>
-          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -530,6 +596,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function append(_el) {     
     //append's document fragment to the element 
     d('&lt;selector&gt;').apend(domObject);    
@@ -541,7 +608,6 @@
               <div class="label label-info radius ctx-type">function</div><span>attr()</span>
             </p>
           </section>
-          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -568,6 +634,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
           <pre><code class="language-javascript">function attr(_attrName, _attrValue) {     
 
  	//get attribute value
@@ -587,7 +654,6 @@
               <div class="label label-info radius ctx-type">function</div><span>before()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -604,6 +670,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function before(htmlString) {
      
     //append's and div element as a sibling to the match DOM elements
@@ -647,7 +714,6 @@
               <div class="label label-info radius ctx-type">function</div><span>css()</span>
             </p>
           </section>
-          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -670,10 +736,11 @@
               <tr>
                 <td>css</td>
                 <td>String</td>
-                <td>value to be set <br><br> <b>NOTE:</b> value should be in "px" and javaScript style property notation should be used.</td>
+                <td>value to be set &lt;br&gt;&lt;br&gt; &lt;b&gt;NOTE:&lt;/b&gt; value should be in &quot;px&quot; and javaScript style property notation should be used.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <pre><code class="language-javascript">function css() {
      
     //sets the with of 100px to the matchin elements
@@ -696,7 +763,6 @@
               <div class="label label-info radius ctx-type">function</div><span>abort()</span>
             </p>
           </section>
-          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -718,6 +784,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
           <pre><code class="language-javascript">function abort(xhrToDelete) {
      
     //xhrToDelete -&gt;  abort's the specific call
@@ -737,7 +804,6 @@
               <div class="label label-info radius ctx-type">function</div><span>addClass()</span>
             </p>
           </section>
-          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -750,10 +816,11 @@
               <tr>
                 <td>className</td>
                 <td>String</td>
-                <td>Class Name to be added, use <space> to add multiple class name's to the matched element.</td>
+                <td>Class Name to be added, use &lt;space&gt; to add multiple class name's to the matched element.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function addClass(className) {
      
 	//className -&gt;  Class Name to be added and retuns an array of matching DOM object's
@@ -773,7 +840,6 @@
               <div class="label label-info radius ctx-type">function</div><span>after()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -790,6 +856,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function after(htmlString) {
      
     //append's and div element as a sibling to the match DOM elements
@@ -803,7 +870,6 @@
               <div class="label label-info radius ctx-type">function</div><span>ajax()</span>
             </p>
           </section>
-          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -825,6 +891,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <pre><code class="language-javascript">function ajax(proxy) {
 
 	//proxy as an object
@@ -850,7 +917,6 @@
               <div class="label label-info radius ctx-type">function</div><span>append()</span>
             </p>
           </section>
-          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -867,6 +933,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function append(_el) {     
     //append's document fragment to the element 
     d('&lt;selector&gt;').apend(domObject);    
@@ -878,7 +945,6 @@
               <div class="label label-info radius ctx-type">function</div><span>attr()</span>
             </p>
           </section>
-          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -905,6 +971,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
           <pre><code class="language-javascript">function attr(_attrName, _attrValue) {     
 
  	//get attribute value
@@ -924,7 +991,6 @@
               <div class="label label-info radius ctx-type">function</div><span>before()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -941,6 +1007,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function before(htmlString) {
      
     //append's and div element as a sibling to the match DOM elements
@@ -984,7 +1051,6 @@
               <div class="label label-info radius ctx-type">function</div><span>css()</span>
             </p>
           </section>
-          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1007,10 +1073,11 @@
               <tr>
                 <td>css</td>
                 <td>String</td>
-                <td>value to be set <br><br> <b>NOTE:</b> value should be in "px" and javaScript style property notation should be used.</td>
+                <td>value to be set &lt;br&gt;&lt;br&gt; &lt;b&gt;NOTE:&lt;/b&gt; value should be in &quot;px&quot; and javaScript style property notation should be used.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <pre><code class="language-javascript">function css() {
      
     //sets the with of 100px to the matchin elements
@@ -1033,7 +1100,6 @@
               <div class="label label-info radius ctx-type">function</div><span>abort()</span>
             </p>
           </section>
-          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1055,6 +1121,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
           <pre><code class="language-javascript">function abort(xhrToDelete) {
      
     //xhrToDelete -&gt;  abort's the specific call
@@ -1074,7 +1141,6 @@
               <div class="label label-info radius ctx-type">function</div><span>addClass()</span>
             </p>
           </section>
-          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1087,10 +1153,11 @@
               <tr>
                 <td>className</td>
                 <td>String</td>
-                <td>Class Name to be added, use <space> to add multiple class name's to the matched element.</td>
+                <td>Class Name to be added, use &lt;space&gt; to add multiple class name's to the matched element.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function addClass(className) {
      
 	//className -&gt;  Class Name to be added and retuns an array of matching DOM object's
@@ -1110,7 +1177,6 @@
               <div class="label label-info radius ctx-type">function</div><span>after()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1127,6 +1193,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function after(htmlString) {
      
     //append's and div element as a sibling to the match DOM elements
@@ -1140,7 +1207,6 @@
               <div class="label label-info radius ctx-type">function</div><span>ajax()</span>
             </p>
           </section>
-          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1162,6 +1228,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <pre><code class="language-javascript">function ajax(proxy) {
 
 	//proxy as an object
@@ -1187,7 +1254,6 @@
               <div class="label label-info radius ctx-type">function</div><span>append()</span>
             </p>
           </section>
-          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1204,6 +1270,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function append(_el) {     
     //append's document fragment to the element 
     d('&lt;selector&gt;').apend(domObject);    
@@ -1215,7 +1282,6 @@
               <div class="label label-info radius ctx-type">function</div><span>attr()</span>
             </p>
           </section>
-          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1242,6 +1308,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
           <pre><code class="language-javascript">function attr(_attrName, _attrValue) {     
 
  	//get attribute value
@@ -1261,7 +1328,6 @@
               <div class="label label-info radius ctx-type">function</div><span>before()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1278,6 +1344,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function before(htmlString) {
      
     //append's and div element as a sibling to the match DOM elements
@@ -1321,7 +1388,6 @@
               <div class="label label-info radius ctx-type">function</div><span>css()</span>
             </p>
           </section>
-          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1344,10 +1410,11 @@
               <tr>
                 <td>css</td>
                 <td>String</td>
-                <td>value to be set <br><br> <b>NOTE:</b> value should be in "px" and javaScript style property notation should be used.</td>
+                <td>value to be set &lt;br&gt;&lt;br&gt; &lt;b&gt;NOTE:&lt;/b&gt; value should be in &quot;px&quot; and javaScript style property notation should be used.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <pre><code class="language-javascript">function css() {
      
     //sets the with of 100px to the matchin elements
@@ -1370,7 +1437,6 @@
               <div class="label label-info radius ctx-type">function</div><span>abort()</span>
             </p>
           </section>
-          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1392,6 +1458,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
           <pre><code class="language-javascript">function abort(xhrToDelete) {
      
     //xhrToDelete -&gt;  abort's the specific call
@@ -1411,7 +1478,6 @@
               <div class="label label-info radius ctx-type">function</div><span>addClass()</span>
             </p>
           </section>
-          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1424,10 +1490,11 @@
               <tr>
                 <td>className</td>
                 <td>String</td>
-                <td>Class Name to be added, use <space> to add multiple class name's to the matched element.</td>
+                <td>Class Name to be added, use &lt;space&gt; to add multiple class name's to the matched element.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function addClass(className) {
      
 	//className -&gt;  Class Name to be added and retuns an array of matching DOM object's
@@ -1447,7 +1514,6 @@
               <div class="label label-info radius ctx-type">function</div><span>after()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1464,6 +1530,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function after(htmlString) {
      
     //append's and div element as a sibling to the match DOM elements
@@ -1477,7 +1544,6 @@
               <div class="label label-info radius ctx-type">function</div><span>ajax()</span>
             </p>
           </section>
-          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1499,6 +1565,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
           <pre><code class="language-javascript">function ajax(proxy) {
 
 	//proxy as an object
@@ -1524,7 +1591,6 @@
               <div class="label label-info radius ctx-type">function</div><span>append()</span>
             </p>
           </section>
-          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1541,6 +1607,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function append(_el) {     
     //append's document fragment to the element 
     d('&lt;selector&gt;').apend(domObject);    
@@ -1552,7 +1619,6 @@
               <div class="label label-info radius ctx-type">function</div><span>attr()</span>
             </p>
           </section>
-          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1579,6 +1645,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
           <pre><code class="language-javascript">function attr(_attrName, _attrValue) {     
 
  	//get attribute value
@@ -1598,7 +1665,6 @@
               <div class="label label-info radius ctx-type">function</div><span>before()</span>
             </p>
           </section>
-          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1615,6 +1681,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function before(htmlString) {
      
     //append's and div element as a sibling to the match DOM elements
@@ -1658,7 +1725,6 @@
               <div class="label label-info radius ctx-type">function</div><span>css()</span>
             </p>
           </section>
-          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1681,10 +1747,348 @@
               <tr>
                 <td>css</td>
                 <td>String</td>
-                <td>value to be set <br><br> <b>NOTE:</b> value should be in "px" and javaScript style property notation should be used.</td>
+                <td>value to be set &lt;br&gt;&lt;br&gt; &lt;b&gt;NOTE:&lt;/b&gt; value should be in &quot;px&quot; and javaScript style property notation should be used.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
+          <pre><code class="language-javascript">function css() {
+     
+    //sets the with of 100px to the matchin elements
+    d('&lt;selector&gt;').css('width', '100');
+
+    //sets the margin-right of 10px to the matchin elements
+    d('&lt;selector&gt;').css('margin-right', '10');
+
+    //sets the margin-right of 10px and width of 100px to the matchin elements
+    d('&lt;selector&gt;').css({
+    	width: 100px,
+    	margin 0 0 10px 0
+	});    
+	
+ }</code></pre>
+          <section id="abort">
+            <h1>abort</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>abort()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>xhrToDelete</td>
+                <td>Object</td>
+                <td>dLite XHR object, if specified only the particular ajax call will be aborted.</td>
+              </tr>
+              <tr>
+                <td>xhrToDelete</td>
+                <td>Array</td>
+                <td>if xhrToDelete tends to be an Array, then all the XHR(typeof dLite XHR object) call's will be aborted.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Aborts the request if it has already been sent. &#39;Ajax.end&#39; callback will be triggered if no ajax call pending.</p> </div>
+          <pre><code class="language-javascript">function abort(xhrToDelete) {
+     
+    //xhrToDelete -&gt;  abort's the specific call
+    d.abort(xhrToDelete&lt;Object&gt;);
+    
+    //xhrToDelete -&gt; abort's all the xhr in the Array
+    d.abort(xhrToDelete&lt;Array&gt;);
+    
+    //xhrToDelete -&gt; abort's all the pending ajax call
+    d.abort();
+    
+ }</code></pre>
+          <section id="addClass">
+            <h1>addClass</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>addClass()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>className</td>
+                <td>String</td>
+                <td>Class Name to be added, use &lt;space&gt; to add multiple class name's to the matched element.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Adds the specified class(es) to each element in the set of matched elements.</p> </div>
+          <pre><code class="language-javascript">function addClass(className) {
+     
+	//className -&gt;  Class Name to be added and retuns an array of matching DOM object's
+    d('&lt;selector&gt;').addClass('clName');
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    
+    //does nothing just reurns an array of matching DOM object's
+    d('&lt;selector&gt;').addClass('clName');
+=======
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 7402a5370e0faba8fa53a78b7cf96f355d3ee9b8
+        
+ }</code></pre>
+          <section id="after">
+            <h1>after</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>after()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>htmlString</td>
+                <td>String</td>
+                <td>append as siblings.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Append an HTML String after each element in the set of matched elements.</p> </div>
+          <pre><code class="language-javascript">function after(htmlString) {
+     
+    //append's and div element as a sibling to the match DOM elements
+    d('&lt;selector&gt;').after('&lt;div&gt;&lt;/div&gt;');
+    
+ }</code></pre>
+          <section id="ajax">
+            <h1>ajax</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>ajax()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>proxy</td>
+                <td>Object</td>
+                <td>as an object contains the prop to make ajax request</td>
+              </tr>
+              <tr>
+                <td>proxy</td>
+                <td>Object</td>
+                <td>as an array of proxy object, can be used to make multiple deffered ajax request</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Perform an asynchronous HTTP (Ajax) request.<br /><br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.</p> </div>
+          <pre><code class="language-javascript">function ajax(proxy) {
+
+	//proxy as an object
+    proxy = {
+    	type: 'GET/POST', //type ajax request
+    	url: '&lt;request url&gt;', //url string
+    	async: true/false //specify is it synchronous request or asynchronous request
+    	error: '&lt;function&gt;' //callback function to handle ajax failure
+    	callBack: '&lt;function&gt;' // a success callback function
+    };
+
+    d.ajax(proxy);
+
+    // proxy as an array for deferred callback 
+    proxy = [{type: 'GET/POST' ...},{type: 'GET/POST' ...}];
+    d.ajax(proxy&lt;array&gt;, success&lt;function&gt;); 
+
+}</code></pre>
+          <section id="append">
+            <h1>append</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>append()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DOM</td>
+                <td>Object</td>
+                <td>Object needed to be appended</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Append an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
+          <pre><code class="language-javascript">function append(_el) {     
+    //append's document fragment to the element 
+    d('&lt;selector&gt;').apend(domObject);    
+ }</code></pre>
+          <section id="attr">
+            <h1>attr</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>attr()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>_attrName</td>
+                <td>String</td>
+                <td>The name of the attribute to get/set.</td>
+              </tr>
+              <tr>
+                <td>_attrValue</td>
+                <td>String</td>
+                <td>The attribute value to set.</td>
+              </tr>
+              <tr>
+                <td>A</td>
+                <td>Function</td>
+                <td>callback function which returns a value to be set</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p> </div>
+          <pre><code class="language-javascript">function attr(_attrName, _attrValue) {     
+
+ 	//get attribute value
+ 	d('&lt;selector&gt;').attr('attrName');    
+
+ 	//set's an attribute 
+    d('&lt;selector&gt;').attr('attrName', 'attrvalue');
+
+	//set's an attribute value by calling a function
+    d('&lt;selector&gt;').attr('attrName', fn);
+
+ }</code></pre>
+          <section id="before">
+            <h1>before</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>before()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>htmlString</td>
+                <td>String</td>
+                <td>append as siblings.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Append an HTML String before each element in the set of matched elements.</p> </div>
+          <pre><code class="language-javascript">function before(htmlString) {
+     
+    //append's and div element as a sibling to the match DOM elements
+    d('&lt;selector&gt;').before('&lt;div&gt;&lt;/div&gt;');
+    
+ }</code></pre>
+          <section id="children">
+            <h1>children</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>children()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the children of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
+          <pre><code class="language-javascript">function children() {
+     
+    d('&lt;selector&gt;').children();
+    //returns the children of the matching DOM.
+    
+ }</code></pre>
+          <section id="clone">
+            <h1>clone</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>clone()</span>
+            </p>
+          </section>
+          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
+          <pre><code class="language-javascript">function clone() {
+     
+    d('&lt;selector&gt;').clone();
+
+    //returns the clone of first matching &lt;div&gt; tag
+    d('div').clone();
+    
+ }</code></pre>
+          <section id="css">
+            <h1>css</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>css()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>cssObject</td>
+                <td>Object</td>
+                <td>Object to apply multiple styles </td>
+              </tr>
+              <tr>
+                <td>attr</td>
+                <td>String</td>
+                <td>string to apply particular style Eg: 'width', 'margin', 'color' etc..,. </td>
+              </tr>
+              <tr>
+                <td>css</td>
+                <td>String</td>
+                <td>value to be set &lt;br&gt;&lt;br&gt; &lt;b&gt;NOTE:&lt;/b&gt; value should be in &quot;px&quot; and javaScript style property notation should be used.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>clone the first element in the set of matched elements</p> </div>
           <pre><code class="language-javascript">function css() {
      
     //sets the with of 100px to the matchin elements
@@ -1707,7 +2111,6 @@
               <div class="label label-info radius ctx-type">function</div><span>deepExtend()</span>
             </p>
           </section>
-          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1725,10 +2128,11 @@
               <tr>
                 <td>src</td>
                 <td>Object</td>
-                <td>source Object which will be extended to the des<Object>.</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <pre><code class="language-javascript">function deepExtend() {
      
     //to merge one or more object's 
@@ -1757,7 +2161,6 @@
               <div class="label label-info radius ctx-type">function</div><span>end()</span>
             </p>
           </section>
-          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1774,6 +2177,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
           <pre><code class="language-javascript">function end() {
      
      //registering an end callback function. fn will be called at the end of ajax batch process.
@@ -1787,7 +2191,6 @@
               <div class="label label-info radius ctx-type">function</div><span>extend()</span>
             </p>
           </section>
-          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1805,10 +2208,11 @@
               <tr>
                 <td>src</td>
                 <td>Object</td>
-                <td>source Object which will be extended to the des<Object>.</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
           <pre><code class="language-javascript">function extend() {
      
     //to merge one or more object's 
@@ -1824,7 +2228,6 @@
               <div class="label label-info radius ctx-type">function</div><span>find()</span>
             </p>
           </section>
-          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1841,6 +2244,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
           <pre><code class="language-javascript">function find() {
      
  
@@ -1856,7 +2260,6 @@
               <div class="label label-info radius ctx-type">function</div><span>hasClass()</span>
             </p>
           </section>
-          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1873,6 +2276,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
           <pre><code class="language-javascript">function hasClass() {
       
     d('&lt;selector&gt;').hasClass('className');
@@ -1921,7 +2325,6 @@
               <div class="label label-info radius ctx-type">function</div><span>off()</span>
             </p>
           </section>
-          <div class="description"><p>Remove an event handler.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1943,6 +2346,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Remove an event handler.</p> </div>
           <pre><code class="language-javascript">function off() {
       
     // removes an click event handler of 'h'&lt;callback function&gt;
@@ -1958,7 +2362,6 @@
               <div class="label label-info radius ctx-type">function</div><span>on()</span>
             </p>
           </section>
-          <div class="description"><p>add an event handler.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1985,6 +2388,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>add an event handler.</p> </div>
           <pre><code class="language-javascript">function on() {
       
     // add an click event handler of 'h'&lt;callback function&gt;
@@ -2041,7 +2445,6 @@
               <div class="label label-info radius ctx-type">function</div><span>parents()</span>
             </p>
           </section>
-          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2058,6 +2461,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
           <pre><code class="language-javascript">function parents() {
     
     //will return all parent node in the form of array upto document element
@@ -2074,7 +2478,6 @@
               <div class="label label-info radius ctx-type">function</div><span>prepend()</span>
             </p>
           </section>
-          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2091,6 +2494,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function prepend() {     
     //append's document fragment to the element 
     d('&lt;selector&gt;').prepend(domObject);    
@@ -2102,7 +2506,6 @@
               <div class="label label-info radius ctx-type">function</div><span>random()</span>
             </p>
           </section>
-          <div class="description"><p>Returns an random integer number </p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2129,6 +2532,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Returns an random integer number </p> </div>
           <pre><code class="language-javascript">function random () {   
 
     //returns an random integer. Eg: 3/4/5/56/....
@@ -2144,7 +2548,6 @@
               <div class="label label-info radius ctx-type">function</div><span>ready()</span>
             </p>
           </section>
-          <div class="description"><p>stimulates document ready</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2161,6 +2564,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>stimulates document ready</p> </div>
           <pre><code class="language-javascript">function ready () {   
 
     //binds an function to the document ready.
@@ -2186,7 +2590,6 @@
               <div class="label label-info radius ctx-type">function</div><span>removeClass()</span>
             </p>
           </section>
-          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2199,10 +2602,11 @@
               <tr>
                 <td>className</td>
                 <td>String</td>
-                <td>Class Name to be removed, use <space> to add multiple class name's to the matched element.</td>
+                <td>Class Name to be removed, use &lt;space&gt; to add multiple class name's to the matched element.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function removeClass(className) {
      
     //className -&gt;  Class Name to be removed and retuns an array of matching DOM object's
@@ -2231,7 +2635,6 @@
               <div class="label label-info radius ctx-type">function</div><span>siblings()</span>
             </p>
           </section>
-          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2248,6 +2651,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
           <pre><code class="language-javascript">function siblings() {
      
     d('&lt;selector&gt;').siblings();
@@ -2264,7 +2668,6 @@
               <div class="label label-info radius ctx-type">function</div><span>start()</span>
             </p>
           </section>
-          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2281,6 +2684,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
           <pre><code class="language-javascript">function start() {
      
      //registering an start callback function. fn will be called at the start of ajax batch process.
@@ -2294,7 +2698,6 @@
               <div class="label label-info radius ctx-type">function</div><span>toggleClass()</span>
             </p>
           </section>
-          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2311,6 +2714,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
           <pre><code class="language-javascript">function toggleClass() {
  
     //toggle's class name 'cl'
@@ -2342,7 +2746,6 @@
               <div class="label label-info radius ctx-type">function</div><span>deepExtend()</span>
             </p>
           </section>
-          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2360,10 +2763,11 @@
               <tr>
                 <td>src</td>
                 <td>Object</td>
-                <td>source Object which will be extended to the des<Object>.</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <pre><code class="language-javascript">function deepExtend() {
      
     //to merge one or more object's 
@@ -2392,7 +2796,6 @@
               <div class="label label-info radius ctx-type">function</div><span>end()</span>
             </p>
           </section>
-          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2409,6 +2812,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
           <pre><code class="language-javascript">function end() {
      
      //registering an end callback function. fn will be called at the end of ajax batch process.
@@ -2422,7 +2826,6 @@
               <div class="label label-info radius ctx-type">function</div><span>extend()</span>
             </p>
           </section>
-          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2440,10 +2843,11 @@
               <tr>
                 <td>src</td>
                 <td>Object</td>
-                <td>source Object which will be extended to the des<Object>.</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
           <pre><code class="language-javascript">function extend() {
      
     //to merge one or more object's 
@@ -2459,7 +2863,6 @@
               <div class="label label-info radius ctx-type">function</div><span>find()</span>
             </p>
           </section>
-          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2476,6 +2879,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
           <pre><code class="language-javascript">function find() {
      
  
@@ -2491,7 +2895,6 @@
               <div class="label label-info radius ctx-type">function</div><span>hasClass()</span>
             </p>
           </section>
-          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2508,6 +2911,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
           <pre><code class="language-javascript">function hasClass() {
       
     d('&lt;selector&gt;').hasClass('className');
@@ -2556,7 +2960,6 @@
               <div class="label label-info radius ctx-type">function</div><span>off()</span>
             </p>
           </section>
-          <div class="description"><p>Remove an event handler.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2578,6 +2981,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Remove an event handler.</p> </div>
           <pre><code class="language-javascript">function off() {
       
     // removes an click event handler of 'h'&lt;callback function&gt;
@@ -2593,7 +2997,6 @@
               <div class="label label-info radius ctx-type">function</div><span>on()</span>
             </p>
           </section>
-          <div class="description"><p>add an event handler.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2620,6 +3023,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>add an event handler.</p> </div>
           <pre><code class="language-javascript">function on() {
       
     // add an click event handler of 'h'&lt;callback function&gt;
@@ -2676,7 +3080,6 @@
               <div class="label label-info radius ctx-type">function</div><span>parents()</span>
             </p>
           </section>
-          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2693,6 +3096,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
           <pre><code class="language-javascript">function parents() {
     
     //will return all parent node in the form of array upto document element
@@ -2709,7 +3113,6 @@
               <div class="label label-info radius ctx-type">function</div><span>prepend()</span>
             </p>
           </section>
-          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2726,6 +3129,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function prepend() {     
     //append's document fragment to the element 
     d('&lt;selector&gt;').prepend(domObject);    
@@ -2737,7 +3141,6 @@
               <div class="label label-info radius ctx-type">function</div><span>random()</span>
             </p>
           </section>
-          <div class="description"><p>Returns an random integer number </p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2764,6 +3167,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Returns an random integer number </p> </div>
           <pre><code class="language-javascript">function random () {   
 
     //returns an random integer. Eg: 3/4/5/56/....
@@ -2779,7 +3183,6 @@
               <div class="label label-info radius ctx-type">function</div><span>ready()</span>
             </p>
           </section>
-          <div class="description"><p>stimulates document ready</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2796,6 +3199,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>stimulates document ready</p> </div>
           <pre><code class="language-javascript">function ready () {   
 
     //binds an function to the document ready.
@@ -2821,7 +3225,6 @@
               <div class="label label-info radius ctx-type">function</div><span>removeClass()</span>
             </p>
           </section>
-          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2834,10 +3237,11 @@
               <tr>
                 <td>className</td>
                 <td>String</td>
-                <td>Class Name to be removed, use <space> to add multiple class name's to the matched element.</td>
+                <td>Class Name to be removed, use &lt;space&gt; to add multiple class name's to the matched element.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function removeClass(className) {
      
     //className -&gt;  Class Name to be removed and retuns an array of matching DOM object's
@@ -2866,7 +3270,6 @@
               <div class="label label-info radius ctx-type">function</div><span>siblings()</span>
             </p>
           </section>
-          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2883,6 +3286,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
           <pre><code class="language-javascript">function siblings() {
      
     d('&lt;selector&gt;').siblings();
@@ -2899,7 +3303,6 @@
               <div class="label label-info radius ctx-type">function</div><span>start()</span>
             </p>
           </section>
-          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2916,6 +3319,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
           <pre><code class="language-javascript">function start() {
      
      //registering an start callback function. fn will be called at the start of ajax batch process.
@@ -2929,7 +3333,6 @@
               <div class="label label-info radius ctx-type">function</div><span>toggleClass()</span>
             </p>
           </section>
-          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2946,6 +3349,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
           <pre><code class="language-javascript">function toggleClass() {
  
     //toggle's class name 'cl'
@@ -2977,7 +3381,6 @@
               <div class="label label-info radius ctx-type">function</div><span>deepExtend()</span>
             </p>
           </section>
-          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2995,10 +3398,11 @@
               <tr>
                 <td>src</td>
                 <td>Object</td>
-                <td>source Object which will be extended to the des<Object>.</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <pre><code class="language-javascript">function deepExtend() {
      
     //to merge one or more object's 
@@ -3027,7 +3431,6 @@
               <div class="label label-info radius ctx-type">function</div><span>end()</span>
             </p>
           </section>
-          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3044,6 +3447,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
           <pre><code class="language-javascript">function end() {
      
      //registering an end callback function. fn will be called at the end of ajax batch process.
@@ -3057,7 +3461,6 @@
               <div class="label label-info radius ctx-type">function</div><span>extend()</span>
             </p>
           </section>
-          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3075,10 +3478,11 @@
               <tr>
                 <td>src</td>
                 <td>Object</td>
-                <td>source Object which will be extended to the des<Object>.</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
           <pre><code class="language-javascript">function extend() {
      
     //to merge one or more object's 
@@ -3094,7 +3498,6 @@
               <div class="label label-info radius ctx-type">function</div><span>find()</span>
             </p>
           </section>
-          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3111,6 +3514,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
           <pre><code class="language-javascript">function find() {
      
  
@@ -3126,7 +3530,6 @@
               <div class="label label-info radius ctx-type">function</div><span>hasClass()</span>
             </p>
           </section>
-          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3143,6 +3546,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
           <pre><code class="language-javascript">function hasClass() {
       
     d('&lt;selector&gt;').hasClass('className');
@@ -3191,7 +3595,6 @@
               <div class="label label-info radius ctx-type">function</div><span>off()</span>
             </p>
           </section>
-          <div class="description"><p>Remove an event handler.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3213,6 +3616,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Remove an event handler.</p> </div>
           <pre><code class="language-javascript">function off() {
       
     // removes an click event handler of 'h'&lt;callback function&gt;
@@ -3228,7 +3632,6 @@
               <div class="label label-info radius ctx-type">function</div><span>on()</span>
             </p>
           </section>
-          <div class="description"><p>add an event handler.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3255,6 +3658,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>add an event handler.</p> </div>
           <pre><code class="language-javascript">function on() {
       
     // add an click event handler of 'h'&lt;callback function&gt;
@@ -3311,7 +3715,6 @@
               <div class="label label-info radius ctx-type">function</div><span>parents()</span>
             </p>
           </section>
-          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3328,6 +3731,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
           <pre><code class="language-javascript">function parents() {
     
     //will return all parent node in the form of array upto document element
@@ -3344,7 +3748,6 @@
               <div class="label label-info radius ctx-type">function</div><span>prepend()</span>
             </p>
           </section>
-          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3361,6 +3764,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function prepend() {     
     //append's document fragment to the element 
     d('&lt;selector&gt;').prepend(domObject);    
@@ -3372,7 +3776,6 @@
               <div class="label label-info radius ctx-type">function</div><span>random()</span>
             </p>
           </section>
-          <div class="description"><p>Returns an random integer number </p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3399,6 +3802,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Returns an random integer number </p> </div>
           <pre><code class="language-javascript">function random () {   
 
     //returns an random integer. Eg: 3/4/5/56/....
@@ -3414,7 +3818,6 @@
               <div class="label label-info radius ctx-type">function</div><span>ready()</span>
             </p>
           </section>
-          <div class="description"><p>stimulates document ready</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3431,6 +3834,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>stimulates document ready</p> </div>
           <pre><code class="language-javascript">function ready () {   
 
     //binds an function to the document ready.
@@ -3456,7 +3860,6 @@
               <div class="label label-info radius ctx-type">function</div><span>removeClass()</span>
             </p>
           </section>
-          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3469,10 +3872,11 @@
               <tr>
                 <td>className</td>
                 <td>String</td>
-                <td>Class Name to be removed, use <space> to add multiple class name's to the matched element.</td>
+                <td>Class Name to be removed, use &lt;space&gt; to add multiple class name's to the matched element.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function removeClass(className) {
      
     //className -&gt;  Class Name to be removed and retuns an array of matching DOM object's
@@ -3501,7 +3905,6 @@
               <div class="label label-info radius ctx-type">function</div><span>siblings()</span>
             </p>
           </section>
-          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3518,6 +3921,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
           <pre><code class="language-javascript">function siblings() {
      
     d('&lt;selector&gt;').siblings();
@@ -3534,7 +3938,6 @@
               <div class="label label-info radius ctx-type">function</div><span>start()</span>
             </p>
           </section>
-          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3551,6 +3954,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
           <pre><code class="language-javascript">function start() {
      
      //registering an start callback function. fn will be called at the start of ajax batch process.
@@ -3564,7 +3968,6 @@
               <div class="label label-info radius ctx-type">function</div><span>toggleClass()</span>
             </p>
           </section>
-          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3581,6 +3984,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
           <pre><code class="language-javascript">function toggleClass() {
  
     //toggle's class name 'cl'
@@ -3612,7 +4016,6 @@
               <div class="label label-info radius ctx-type">function</div><span>deepExtend()</span>
             </p>
           </section>
-          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3630,10 +4033,11 @@
               <tr>
                 <td>src</td>
                 <td>Object</td>
-                <td>source Object which will be extended to the des<Object>.</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
           <pre><code class="language-javascript">function deepExtend() {
      
     //to merge one or more object's 
@@ -3662,7 +4066,6 @@
               <div class="label label-info radius ctx-type">function</div><span>end()</span>
             </p>
           </section>
-          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3679,6 +4082,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
           <pre><code class="language-javascript">function end() {
      
      //registering an end callback function. fn will be called at the end of ajax batch process.
@@ -3692,7 +4096,6 @@
               <div class="label label-info radius ctx-type">function</div><span>extend()</span>
             </p>
           </section>
-          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3710,10 +4113,11 @@
               <tr>
                 <td>src</td>
                 <td>Object</td>
-                <td>source Object which will be extended to the des<Object>.</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
           <pre><code class="language-javascript">function extend() {
      
     //to merge one or more object's 
@@ -3729,7 +4133,6 @@
               <div class="label label-info radius ctx-type">function</div><span>find()</span>
             </p>
           </section>
-          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3746,6 +4149,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
           <pre><code class="language-javascript">function find() {
      
  
@@ -3761,7 +4165,6 @@
               <div class="label label-info radius ctx-type">function</div><span>hasClass()</span>
             </p>
           </section>
-          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3778,6 +4181,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
           <pre><code class="language-javascript">function hasClass() {
       
     d('&lt;selector&gt;').hasClass('className');
@@ -3826,7 +4230,6 @@
               <div class="label label-info radius ctx-type">function</div><span>off()</span>
             </p>
           </section>
-          <div class="description"><p>Remove an event handler.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3848,6 +4251,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Remove an event handler.</p> </div>
           <pre><code class="language-javascript">function off() {
       
     // removes an click event handler of 'h'&lt;callback function&gt;
@@ -3863,7 +4267,6 @@
               <div class="label label-info radius ctx-type">function</div><span>on()</span>
             </p>
           </section>
-          <div class="description"><p>add an event handler.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3890,6 +4293,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>add an event handler.</p> </div>
           <pre><code class="language-javascript">function on() {
       
     // add an click event handler of 'h'&lt;callback function&gt;
@@ -3946,7 +4350,6 @@
               <div class="label label-info radius ctx-type">function</div><span>parents()</span>
             </p>
           </section>
-          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3963,6 +4366,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
           <pre><code class="language-javascript">function parents() {
     
     //will return all parent node in the form of array upto document element
@@ -3979,7 +4383,6 @@
               <div class="label label-info radius ctx-type">function</div><span>prepend()</span>
             </p>
           </section>
-          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -3996,6 +4399,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function prepend() {     
     //append's document fragment to the element 
     d('&lt;selector&gt;').prepend(domObject);    
@@ -4007,7 +4411,6 @@
               <div class="label label-info radius ctx-type">function</div><span>random()</span>
             </p>
           </section>
-          <div class="description"><p>Returns an random integer number </p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -4034,6 +4437,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Returns an random integer number </p> </div>
           <pre><code class="language-javascript">function random () {   
 
     //returns an random integer. Eg: 3/4/5/56/....
@@ -4049,7 +4453,6 @@
               <div class="label label-info radius ctx-type">function</div><span>ready()</span>
             </p>
           </section>
-          <div class="description"><p>stimulates document ready</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -4066,6 +4469,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>stimulates document ready</p> </div>
           <pre><code class="language-javascript">function ready () {   
 
     //binds an function to the document ready.
@@ -4091,7 +4495,6 @@
               <div class="label label-info radius ctx-type">function</div><span>removeClass()</span>
             </p>
           </section>
-          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -4104,10 +4507,11 @@
               <tr>
                 <td>className</td>
                 <td>String</td>
-                <td>Class Name to be removed, use <space> to add multiple class name's to the matched element.</td>
+                <td>Class Name to be removed, use &lt;space&gt; to add multiple class name's to the matched element.</td>
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
           <pre><code class="language-javascript">function removeClass(className) {
      
     //className -&gt;  Class Name to be removed and retuns an array of matching DOM object's
@@ -4136,7 +4540,6 @@
               <div class="label label-info radius ctx-type">function</div><span>siblings()</span>
             </p>
           </section>
-          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -4153,6 +4556,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
           <pre><code class="language-javascript">function siblings() {
      
     d('&lt;selector&gt;').siblings();
@@ -4169,7 +4573,6 @@
               <div class="label label-info radius ctx-type">function</div><span>start()</span>
             </p>
           </section>
-          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -4186,6 +4589,7 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
           <pre><code class="language-javascript">function start() {
      
      //registering an start callback function. fn will be called at the start of ajax batch process.
@@ -4199,7 +4603,6 @@
               <div class="label label-info radius ctx-type">function</div><span>toggleClass()</span>
             </p>
           </section>
-          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -4216,6 +4619,642 @@
               </tr>
             </tbody>
           </table>
+          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
+          <pre><code class="language-javascript">function toggleClass() {
+ 
+    //toggle's class name 'cl'
+    d('&lt;selector&gt;').toggleClass('cl');
+ }</code></pre>
+          <section id="top">
+            <h1>top</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>top()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element.</p> </div>
+          <pre><code class="language-javascript">function top() {
+      
+    d('&lt;selector&gt;').top();
+
+    retuns an vertical position of the scroll bar
+
+    d('&lt;selector&gt;').top(100);
+
+    sets an vertical position of the scroll bar to the 100th px
+    
+ }</code></pre>
+          <section id="deepExtend">
+            <h1>deepExtend</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>deepExtend()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>des</td>
+                <td>Object</td>
+                <td>destination Object.</td>
+              </tr>
+              <tr>
+                <td>src</td>
+                <td>Object</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
+          <pre><code class="language-javascript">function deepExtend() {
+     
+    //to merge one or more object's 
+    d.deepExtend(des, src1, src2, src3, ....);
+
+    retuns an des&lt;Object&gt; with all the properties of src1, src2 ...
+    
+ }</code></pre>
+          <section id="empty">
+            <h1>empty</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>empty()</span>
+            </p>
+          </section>
+          <div class="description"><p>Remove all child nodes of the set of matched elements from the DOM.</p> </div>
+          <pre><code class="language-javascript">function empty() {
+    
+    d('&lt;selector&gt;').empty()
+    
+ }</code></pre>
+          <section id="end">
+            <h1>end</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>end()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Callback</td>
+                <td>Function</td>
+                <td>function to be called at the end of the last AJAX request.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>AJAX callback function which will be called at the end of all AJAX request. part of AJAX life cycle.</p> </div>
+          <pre><code class="language-javascript">function end() {
+     
+     //registering an end callback function. fn will be called at the end of ajax batch process.
+     d.ajax.end(fn);
+    
+ }</code></pre>
+          <section id="extend">
+            <h1>extend</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>extend()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>des</td>
+                <td>Object</td>
+                <td>destination Object.</td>
+              </tr>
+              <tr>
+                <td>src</td>
+                <td>Object</td>
+                <td>source Object which will be extended to the des&lt;Object&gt;.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object.</p> </div>
+          <pre><code class="language-javascript">function extend() {
+     
+    //to merge one or more object's 
+    d.extend(des, src1, src2, src3, ....);
+
+    retuns an des&lt;Object&gt; with all the properties of src1, src2 ...
+    
+ }</code></pre>
+          <section id="find">
+            <h1>find</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>find()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>selector</td>
+                <td>String</td>
+                <td>a css selector</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get the descendants of each element in the current set of matched elements, filtered by a selector</p> </div>
+          <pre><code class="language-javascript">function find() {
+     
+ 
+    d('&lt;selector1&gt;').find('&lt;selector&gt;');
+
+    retuns an list of matched elements under selector1 elements.
+    
+ }</code></pre>
+          <section id="hasClass">
+            <h1>hasClass</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>hasClass()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>className</td>
+                <td>String</td>
+                <td>name of the class to be checked, returns an boolean.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Determine whether any of the matched elements are assigned the given class.</p> </div>
+          <pre><code class="language-javascript">function hasClass() {
+      
+    d('&lt;selector&gt;').hasClass('className');
+
+    retuns true if there is a match among the filtered elements or false.
+    
+ }</code></pre>
+          <section id="hide">
+            <h1>hide</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>hide()</span>
+            </p>
+          </section>
+          <div class="description"><p>Hide the matched elements by making display none.</p> </div>
+          <pre><code class="language-javascript">function hide() {
+      
+    d('&lt;selector&gt;').hide();
+
+    retuns an list of matched element with display none set
+    
+ }</code></pre>
+          <section id="left">
+            <h1>left</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>left()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element.</p> </div>
+          <pre><code class="language-javascript">function left() {
+      
+    d('&lt;selector&gt;').left();
+
+    retuns an horizontal position of the scroll bar
+
+    d('&lt;selector&gt;').left(100);
+
+    sets an horizontal position of the scroll bar to the 100th px
+    
+ }</code></pre>
+          <section id="off">
+            <h1>off</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>off()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>eventName</td>
+                <td>String</td>
+                <td>type of event</td>
+              </tr>
+              <tr>
+                <td>eventHandler</td>
+                <td>String</td>
+                <td>function ref</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Remove an event handler.</p> </div>
+          <pre><code class="language-javascript">function off() {
+      
+    // removes an click event handler of 'h'&lt;callback function&gt;
+    d('&lt;selector&gt;').off('click', h);
+
+    // removes an click and mouseout event handler of 'h'&lt;callback function&gt;
+    d('&lt;selector&gt;').off('click, mouseout', h);    
+ }</code></pre>
+          <section id="on">
+            <h1>on</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>on()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>eventName</td>
+                <td>String</td>
+                <td>type of event</td>
+              </tr>
+              <tr>
+                <td>eventHandler</td>
+                <td>String</td>
+                <td>function ref</td>
+              </tr>
+              <tr>
+                <td>payLoad</td>
+                <td>Object</td>
+                <td>arguments can be passed and can be accessed as this .data inside event callback.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>add an event handler.</p> </div>
+          <pre><code class="language-javascript">function on() {
+      
+    // add an click event handler of 'h'&lt;callback function&gt;
+    d('&lt;selector&gt;').on('click', h, [additional param...]);
+
+    // add an click and mouseout event handler of 'h'&lt;callback function&gt;
+    d('&lt;selector&gt;').on('click, mouseout', h, [additional param...]);    
+ }</code></pre>
+          <section id="outerHeight">
+            <h1>outerHeight</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>outerHeight()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin.</p> </div>
+          <pre><code class="language-javascript">function outerHeight() {
+      
+    d('&lt;selector&gt;').outerHeight();
+    //returns an outerHeight the first element in the set of matched elements in px.
+   
+ }</code></pre>
+          <section id="outerWidth">
+            <h1>outerWidth</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>outerWidth()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the current computed width for the first element in the set of matched elements, including padding, border, and optionally margin.</p> </div>
+          <pre><code class="language-javascript">function outerWidth() {
+      
+    d('&lt;selector&gt;').outerWidth();
+    //returns an outerWidth the first element in the set of matched elements in px.
+   
+ }</code></pre>
+          <section id="parent">
+            <h1>parent</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>parent()</span>
+            </p>
+          </section>
+          <div class="description"><p>Get the parent of first element in the current set of matched elements.</p> </div>
+          <pre><code class="language-javascript">function parent() {
+      
+    d('&lt;selector&gt;').parent();
+   
+ }</code></pre>
+          <section id="parents">
+            <h1>parents</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>parents()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pClassName</td>
+                <td>String</td>
+                <td>className of the parent element. To get/check the parent node exist pass the className of the parent Node as an option parameter</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get the parents of first element in the current set of matched elements. <br><br><b>Note:</b> will return an array of parent node, parent className also can be passed to get a particular parent node.</p> </div>
+          <pre><code class="language-javascript">function parents() {
+    
+    //will return all parent node in the form of array upto document element
+    d('&lt;selector&gt;').parent()
+
+    //will return all parent node in the form of array upto element matching the given css selector
+    d('&lt;selector&gt;').parent('css_selector');
+   
+ }</code></pre>
+          <section id="prepend">
+            <h1>prepend</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>prepend()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DOM</td>
+                <td>Object</td>
+                <td>Object needed to be appended</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>prepend an content specified by the parameter, to the end of each element in the set of matched elements.</p> </div>
+          <pre><code class="language-javascript">function prepend() {     
+    //append's document fragment to the element 
+    d('&lt;selector&gt;').prepend(domObject);    
+ }</code></pre>
+          <section id="random">
+            <h1>random</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>random()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>min</td>
+                <td>Number,Float</td>
+                <td>minimum range for genrating random number</td>
+              </tr>
+              <tr>
+                <td>max</td>
+                <td>Number,Float</td>
+                <td>maximum range for genrating random number</td>
+              </tr>
+              <tr>
+                <td>discard</td>
+                <td>Array</td>
+                <td>Array of number's to be discarded</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Returns an random integer number </p> </div>
+          <pre><code class="language-javascript">function random () {   
+
+    //returns an random integer. Eg: 3/4/5/56/....
+    d.random (0, 1000);
+
+    //returns an random integer except the numbers in the descard array. Eg: 356/464/345/536/....
+    d.random (0, 1000, [0 .... 300 &lt;Array of numbers to be discarded&gt;]);
+ }</code></pre>
+          <section id="ready">
+            <h1>ready</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>ready()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ready</td>
+                <td>function</td>
+                <td>callback function to be called on document ready state</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>stimulates document ready</p> </div>
+          <pre><code class="language-javascript">function ready () {   
+
+    //binds an function to the document ready.
+    d(document).ready(fn)
+ }</code></pre>
+          <section id="remove">
+            <h1>remove</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>remove()</span>
+            </p>
+          </section>
+          <div class="description"><p>Remove the set of matched elements from the DOM.</p> </div>
+          <pre><code class="language-javascript">function remove () {   
+
+    //Remove the set of matched elements from the DOM.
+    d('&lt;selector&gt;').remove()
+ }</code></pre>
+          <section id="removeClass">
+            <h1>removeClass</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>removeClass()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>className</td>
+                <td>String</td>
+                <td>Class Name to be removed, use &lt;space&gt; to add multiple class name's to the matched element.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>remove the specified class(es) to each element in the set of matched elements.</p> </div>
+          <pre><code class="language-javascript">function removeClass(className) {
+     
+    //className -&gt;  Class Name to be removed and retuns an array of matching DOM object's
+    d('&lt;selector&gt;').removeClass('clName');
+            
+ }</code></pre>
+          <section id="show">
+            <h1>show</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>show()</span>
+            </p>
+          </section>
+          <div class="description"><p>show the matched hidden elements by making display block.</p> </div>
+          <pre><code class="language-javascript">function show() {
+      
+    d('&lt;selector&gt;').show();
+
+    retuns an list of matched element with display block set
+    
+ }</code></pre>
+          <section id="siblings">
+            <h1>siblings</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>siblings()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>clName</td>
+                <td>String</td>
+                <td>returns an sibling element matching the class name</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Get the siblings of each element in the set of matched elements, optionally filtered by a selector.</p> </div>
+          <pre><code class="language-javascript">function siblings() {
+     
+    d('&lt;selector&gt;').siblings();
+    //returns the siblings of all the matching DOM.
+
+    d('&lt;selector&gt;').siblings('clName');
+    //returns the siblings element&lt;mathcing the class name description&gt; of all the matching DOM.
+    
+ }</code></pre>
+          <section id="start">
+            <h1>start</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>start()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Callback</td>
+                <td>Function</td>
+                <td>function to be called at the start of the last AJAX request.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>AJAX callback function which will be called at the start of all AJAX request. part of AJAX life cycle.</p> </div>
+          <pre><code class="language-javascript">function start() {
+     
+     //registering an start callback function. fn will be called at the start of ajax batch process.
+     d.ajax.start(fn);
+    
+ }</code></pre>
+          <section id="toggleClass">
+            <h1>toggleClass</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>toggleClass()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>clName</td>
+                <td>String</td>
+                <td>class name to be toggled</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Add or remove one or more classes from each element in the set of matched elements, depending on either the class&#39;s presence or the value of the state argument.</p> </div>
           <pre><code class="language-javascript">function toggleClass() {
  
     //toggle's class name 'cl'
@@ -4243,32 +5282,21 @@
         </div>
       </div>
     </div>
-    <footer class="footer hide">
+    <footer class="footer">
       <div class="container">
-        <p>Documentation generated with <a href="https://github.com/FGRibreau/doxx">Doxx </a> created by <a href="https://twitter.com/FGRibreau" data-show-count="false" class="twitter-follow-button">Francois-Guillaume Ribreau </a></p>
-        <p>Doxx is sponsored by <a href="http://bringr.net/?btt" title="Outil d'analyse des réseaux sociaux" class="bringr">Bringr </a> and <a href="https://redsmin.com/?btt" title="Full Redis GUI" class="redsmin">Redsmin</a></p>
+        <p>Documentation generated with<a href="https://github.com/FGRibreau/doxx">Doxx</a>created by<a href="https://twitter.com/FGRibreau" data-show-count="false" class="twitter-follow-button">Francois-Guillaume Ribreau</a></p>
+        <p>Doxx is sponsored by<a href="http://bringr.net/?btt" title="Outil d'analyse des réseaux sociaux" class="bringr">Bringr</a>and<a href="https://redsmin.com/?btt" title="Full Redis GUI" class="redsmin">Redsmin</a></p>
         <p>Theme borrowed from Twitter Bootstrap</p>
       </div>
     </footer>
-    <script src="../scripts/widgets.js"></script>
-    <script src="../scripts/jquery.min.js"></script>
-    <script src="../scripts/prefixfree.js"></script>
-    <script src="../scripts/bootstrap-transition.js"></script>
-    <script src="../scripts/bootstrap-scrollspy.js"></script>
-    <script src="../scripts/bootstrap-dropdown.js"></script>
-    <script src="../scripts/bootstrap-collapse.js"></script>
-    <script src="../scripts/bootstrap-affix.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
-      ga('create', 'UA-64084250-1', 'auto');
-      ga('send', 'pageview')
-      
-      
-    </script>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="http://leaverou.github.com/prefixfree/prefixfree.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-transition.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-dropdown.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-affix.js"></script>
     <script>
       /**
        * Prism: Lightweight, robust, elegant syntax highlighting
