@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean');
     paths = {
       sample_doxx: ['./docs/scripts/doxx_sample/*'],
-      create_docs: ['*.js', 'README.md', 'docs/scripts/doxx_sample/dLite'],
+      create_doxx: ['docs/scripts/doxx_sample/dLite'],
       des_docs: 'docs/doxx_docs',
       jade_template_doxx: 'docs/doxx_template/dLiteDoxx.jade',
       move_des: 'docs/doxx_docs/',
@@ -29,7 +29,7 @@ gulp.task('concat_docs_samples', function() {
 });
  
 gulp.task('docs', function() {
-  gulp.src(paths.create_docs)
+  gulp.src(paths.create_doxx)
     .pipe(gulpDoxx({
       title: 'dLite',
       template: paths.jade_template_doxx
