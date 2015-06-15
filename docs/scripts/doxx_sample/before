@@ -1,0 +1,11 @@
+/**
+ * Append an HTML String before each element in the set of matched elements.
+ * @param {String}  htmlString append as siblings.
+ */
+ 
+ function before(htmlString) {
+     
+    //append's and div element as a sibling to the match DOM elements
+    d('<selector>').before('<div></div>');
+    
+ }

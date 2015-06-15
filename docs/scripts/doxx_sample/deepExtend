@@ -1,0 +1,14 @@
+/**
+ * Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance
+ * @param {Object}  des destination Object.
+ * @param {Object}  src source Object which will be extended to the des<Object>.
+ */
+ 
+ function deepExtend() {
+     
+    //to merge one or more object's 
+    d.deepExtend(des, src1, src2, src3, ....);
+
+    retuns an des<Object> with all the properties of src1, src2 ...
+    
+ }

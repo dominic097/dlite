@@ -1,6 +1,6 @@
 /**
- * Helper function to add Class to the respective DOM.
- * @param {String} className Class Name to be added, use <space> to add multiple class name's
+ * Adds the specified class(es) to each element in the set of matched elements.
+ * @param {String} className Class Name to be added, use <space> to add multiple class name's to the matched element.
  */
  
  function addClass(className) {
@@ -10,8 +10,5 @@
     
     //does nothing just reurns an array of matching DOM object's
     d('<selector>').addClass('clName');
-    
-    //xhrToDelete -> abort's all the pending ajax call
-    d.abort();
-    
+        
  }

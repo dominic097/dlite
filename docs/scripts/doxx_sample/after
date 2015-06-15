@@ -1,5 +1,5 @@
 /**
- * Append an HTML String after the current element as a sibling.
+ * Append an HTML String after each element in the set of matched elements.
  * @param {String}  htmlString append as siblings.
  */
  

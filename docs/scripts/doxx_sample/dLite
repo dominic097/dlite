@@ -1,0 +1,167 @@
+/**
+ * Aborts the request if it has already been sent. 'Ajax.end' callback will be triggered if no ajax call pending.
+ * @param      {Object} xhrToDelete dLite XHR object, if specified only the particular ajax call will be aborted.
+ * @param      {Array}  xhrToDelete if xhrToDelete tends to be an Array, then all the XHR(typeof dLite XHR object) call's will be aborted.
+ */
+ 
+ function abort(xhrToDelete) {
+     
+    //xhrToDelete ->  abort's the specific call
+    d.abort(xhrToDelete<Object>);
+    
+    //xhrToDelete -> abort's all the xhr in the Array
+    d.abort(xhrToDelete<Array>);
+    
+    //xhrToDelete -> abort's all the pending ajax call
+    d.abort();
+    
+ }
+/**
+ * Adds the specified class(es) to each element in the set of matched elements.
+ * @param {String} className Class Name to be added, use <space> to add multiple class name's to the matched element.
+ */
+ 
+ function addClass(className) {
+     
+    //className ->  Class Name to be added
+    d('<selector>').addClass('clName');
+    
+    //does nothing just reurns an array of matching DOM object's
+    d('<selector>').addClass('clName');
+        
+ }
+/**
+ * Append an HTML String after each element in the set of matched elements.
+ * @param {String}  htmlString append as siblings.
+ */
+ 
+ function after(htmlString) {
+     
+    //append's and div element as a sibling to the match DOM elements
+    d('<selector>').after('<div></div>');
+    
+ }
+/**
+ * Perform an asynchronous HTTP (Ajax) request.
+ * <br><br><b>NOTE:</b> At the start of a batch request ajax.start will be called, same as the ajax.end which will be called at the end of batch request. As for as the deferred callback, error callback function can be given as a part of proxy object. however success callback function have to passed as a diff parameter to the ajax function.
+ * @param {Object}  proxy as an object contains the prop to make ajax request
+ * @param {Object}  proxy as an array of proxy object, can be used to make multiple deffered ajax request
+ */
+
+function ajax(proxy) {
+
+	//proxy as an object
+    proxy = {
+    	type: 'GET/POST', //type ajax request
+    	url: '<request url>', //url string
+    	async: true/false //specify is it synchronous request or asynchronous request
+    	error: '<function>' //callback function to handle ajax failure
+    	callBack: '<function>' // a success callback function
+    };
+
+    d.ajax(proxy);
+
+    // proxy as an array for deferred callback 
+    proxy = [{type: 'GET/POST' ...},{type: 'GET/POST' ...}];
+    d.ajax(proxy<array>, success<function>); 
+
+}
+
+/**
+ * Append an content specified by the parameter, to the end of each element in the set of matched elements.
+ * @param {Object}  DOM Object needed to be appended
+ */
+ 
+ function append(_el) {     
+    //append's document fragment to the element 
+    d('<selector>').apend(domObject);    
+ }
+/**
+ * Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+ * @param {String} _attrName The name of the attribute to get/set.
+ * @param {String} _attrValue The attribute value to set.
+ * @param {Function} A callback function which returns a value to be set
+ */
+ 
+ function attr(_attrName, _attrValue) {     
+
+ 	//get attribute value
+ 	d('<selector>').attr('attrName');    
+
+ 	//set's an attribute 
+    d('<selector>').attr('attrName', 'attrvalue');
+
+	//set's an attribute value by calling a function
+    d('<selector>').attr('attrName', fn);
+
+ }
+/**
+ * Append an HTML String before each element in the set of matched elements.
+ * @param {String}  htmlString append as siblings.
+ */
+ 
+ function before(htmlString) {
+     
+    //append's and div element as a sibling to the match DOM elements
+    d('<selector>').before('<div></div>');
+    
+ }
+/**
+ * Get the children of each element in the set of matched elements, optionally filtered by a selector.
+ */
+ 
+ function children() {
+     
+    d('<selector>').children();
+    //returns the children of the matching DOM.
+    
+ }
+/**
+ * clone the first element in the set of matched elements
+ */
+ 
+ function clone() {
+     
+    d('<selector>').clone();
+
+    //returns the clone of first matching <div> tag
+    d('div').clone();
+    
+ }
+/**
+ * clone the first element in the set of matched elements
+ * @param {Object} cssObject Object to apply multiple styles 
+ * @param {String} attr string to apply particular style Eg: 'width', 'margin', 'color' etc..,. 
+ * @param {String} css value to be set
+ * <br><br> <b>NOTE:</b> value should be in "px" and javaScript style property notation should be used.
+ */
+ 
+ function css() {
+     
+    //sets the with of 100px to the matchin elements
+    d('<selector>').css('width', '100');
+
+    //sets the margin-right of 10px to the matchin elements
+    d('<selector>').css('margin-right', '10');
+
+    //sets the margin-right of 10px and width of 100px to the matchin elements
+    d('<selector>').css({
+    	width: 100px,
+    	margin 0 0 10px 0
+	});    
+	
+ }
+/**
+ * Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance
+ * @param {Object}  des destination Object.
+ * @param {Object}  src source Object which will be extended to the des<Object>.
+ */
+ 
+ function deepExtend() {
+     
+    //to merge one or more object's 
+    d.deepExtend(des, src1, src2, src3, ....);
+
+    retuns an des<Object> with all the properties of src1, src2 ...
+    
+ }

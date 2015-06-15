@@ -75,7 +75,7 @@
             <li><a href="index.html">Main</a></li>
             <li><a href="dlite.js.html">dlite.js</a></li>
             <li><a href="gulpfile.js.html">gulpfile.js</a></li>
-            <li class="active"><a href="index.js.html">index.js</a></li>
+            <li><a href="index.js.html">index.js</a></li>
             <li><a href="README.md.html">README.md</a></li>
             <li><a href="abort.html">abort</a></li>
             <li><a href="addClass.html">addClass</a></li>
@@ -88,25 +88,53 @@
             <li><a href="clone.html">clone</a></li>
             <li><a href="css.html">css</a></li>
             <li><a href="dLite.html">dLite</a></li>
-            <li><a href="deepExtend.html">deepExtend</a></li>
+            <li class="active"><a href="deepExtend.html">deepExtend</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
+              <li><a href="#deepExtend"><i class="alert alert-info"></i><span>deepExtend</span></a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="span9">
-          <div class="description"> </div>
-          <pre><code class="language-javascript">, function(request, response) {
-	console.log(request.url);
-	response.sendFile(request.url, { root: path.join(__dirname, '/docs/doxx_docs' )});
-	// response.sendFile(request.url, { root: __dirname + '/docs/doxx_docs' });
-  
-});
+          <section id="deepExtend">
+            <h1>deepExtend</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>deepExtend()</span>
+            </p>
+          </section>
+          <div class="description"><p>Merge the contents of two or more objects together into the first object. <br><br><b> NOTE:</b> to performe deepExtend use extend function for improved performance</p> </div>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>des</td>
+                <td>Object</td>
+                <td>destination Object.</td>
+              </tr>
+              <tr>
+                <td>src</td>
+                <td>Object</td>
+                <td>source Object which will be extended to the des<Object>.</td>
+              </tr>
+            </tbody>
+          </table>
+          <pre><code class="language-javascript">function deepExtend() {
+     
+    //to merge one or more object's 
+    d.deepExtend(des, src1, src2, src3, ....);
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});</code></pre>
+    retuns an des&lt;Object&gt; with all the properties of src1, src2 ...
+    
+ }</code></pre>
         </div>
       </div>
     </div>
