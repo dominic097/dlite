@@ -44,4 +44,4 @@ gulp.task('watch', function() {
   gulp.watch(paths.sample_doxx, ['concat_docs_samples', 'docs', 'move', 'clean']);
 });
 
-gulp.task('default', ['watch', 'docs', 'concat_docs_samples']);
+gulp.task('default', ['concat_docs_samples', 'docs', 'move', 'clean']);
