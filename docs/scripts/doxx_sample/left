@@ -1,0 +1,15 @@
+/**
+ * Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element.
+ */
+ 
+ function left() {
+      
+    d('<selector>').left();
+
+    retuns an horizontal position of the scroll bar
+
+    d('<selector>').left(100);
+
+    sets an horizontal position of the scroll bar to the 100th px
+    
+ }

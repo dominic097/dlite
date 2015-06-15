@@ -1,0 +1,14 @@
+/**
+ * Remove an event handler.
+ * @param {String} eventName type of event
+ * @param {String} eventHandler function ref
+ */
+ 
+ function off() {
+      
+    // removes an click event handler of 'h'<callback function>
+    d('<selector>').off('click', h);
+
+    // removes an click and mouseout event handler of 'h'<callback function>
+    d('<selector>').off('click, mouseout', h);    
+ }	

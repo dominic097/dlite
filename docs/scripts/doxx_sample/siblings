@@ -1,0 +1,14 @@
+/**
+ * Get the siblings of each element in the set of matched elements, optionally filtered by a selector.
+ * @param {String} clName returns an sibling element matching the class name
+ */
+ 
+ function siblings() {
+     
+    d('<selector>').siblings();
+    //returns the siblings of all the matching DOM.
+
+    d('<selector>').siblings('clName');
+    //returns the siblings element<mathcing the class name description> of all the matching DOM.
+    
+ }

@@ -1,0 +1,10 @@
+/**
+ * stimulates document ready
+ * @param {function} ready callback function to be called on document ready state
+ */
+ 
+ function ready () {   
+
+    //binds an function to the document ready.
+    d(document).ready(fn)
+ }

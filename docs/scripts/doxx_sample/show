@@ -1,0 +1,11 @@
+/**
+ * show the matched hidden elements by making display block.
+ */
+ 
+ function show() {
+      
+    d('<selector>').show();
+
+    retuns an list of matched element with display block set
+    
+ }

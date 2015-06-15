@@ -28,7 +28,7 @@ gulp.task('concat_docs_samples', function() {
     .pipe(gulp.dest('./docs/scripts/doxx_sample/'));
 });
  
-gulp.task('docs', function() {
+gulp.task('docs', ['move', 'clean'], function() {
   gulp.src(paths.create_docs)
     .pipe(gulpDoxx({
       title: 'dLite',
@@ -38,10 +38,10 @@ gulp.task('docs', function() {
  
 });
 
-// Rerun the task when a file changes
-gulp.task('watch', function() {
-  gulp.watch(paths.create_docs, ['concat_docs_samples', 'docs', 'move', 'clean']);
-  gulp.watch(paths.sample_doxx, ['concat_docs_samples', 'docs', 'move', 'clean']);
-});
+// // Rerun the task when a file changes
+// gulp.task('watch', function() {
+//   gulp.watch(paths.create_docs, ['concat_docs_samples', 'docs', 'move', 'clean']);
+//   gulp.watch(paths.sample_doxx, ['concat_docs_samples', 'docs', 'move', 'clean']);
+// });
 
-gulp.task('default', ['concat_docs_samples', 'docs', 'move', 'clean']);
+gulp.task('default', ['concat_docs_samples', 'docs']);

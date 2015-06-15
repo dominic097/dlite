@@ -1,0 +1,11 @@
+/**
+ * Hide the matched elements by making display none.
+ */
+ 
+ function hide() {
+      
+    d('<selector>').hide();
+
+    retuns an list of matched element with display none set
+    
+ }

@@ -1,0 +1,14 @@
+/**
+ * Merge the contents of two or more objects together into the first object.
+ * @param {Object}  des destination Object.
+ * @param {Object}  src source Object which will be extended to the des<Object>.
+ */
+ 
+ function extend() {
+     
+    //to merge one or more object's 
+    d.extend(des, src1, src2, src3, ....);
+
+    retuns an des<Object> with all the properties of src1, src2 ...
+    
+ }

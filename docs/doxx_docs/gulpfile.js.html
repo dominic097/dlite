@@ -89,6 +89,29 @@
             <li><a href="css.html">css</a></li>
             <li><a href="dLite.html">dLite</a></li>
             <li><a href="deepExtend.html">deepExtend</a></li>
+            <li><a href="empty.html">empty</a></li>
+            <li><a href="end.html">end</a></li>
+            <li><a href="extend.html">extend</a></li>
+            <li><a href="find.html">find</a></li>
+            <li><a href="hasclass.html">hasclass</a></li>
+            <li><a href="hide.html">hide</a></li>
+            <li><a href="left.html">left</a></li>
+            <li><a href="off.html">off</a></li>
+            <li><a href="on.html">on</a></li>
+            <li><a href="outerHeight.html">outerHeight</a></li>
+            <li><a href="outerWidth.html">outerWidth</a></li>
+            <li><a href="parent.html">parent</a></li>
+            <li><a href="parents.html">parents</a></li>
+            <li><a href="prepend.html">prepend</a></li>
+            <li><a href="random.html">random</a></li>
+            <li><a href="ready.html">ready</a></li>
+            <li><a href="remove.html">remove</a></li>
+            <li><a href="removeClass.html">removeClass</a></li>
+            <li><a href="show.html">show</a></li>
+            <li><a href="siblings.html">siblings</a></li>
+            <li><a href="start.html">start</a></li>
+            <li><a href="toggleClass.html">toggleClass</a></li>
+            <li><a href="top.html">top</a></li>
           </ul>
           <div class="scrollspy">
             <ul class="nav nav-list bs-docs-sidenav affix-top">
@@ -121,7 +144,7 @@ gulp.task('concat_docs_samples', function() {
     .pipe(gulp.dest('./docs/scripts/doxx_sample/'));
 });
  
-gulp.task('docs', function() {
+gulp.task('docs', ['move', 'clean'], function() {
   gulp.src(paths.create_docs)
     .pipe(gulpDoxx({
       title: 'dLite',
@@ -131,13 +154,13 @@ gulp.task('docs', function() {
  
 });
 
-// Rerun the task when a file changes
-gulp.task('watch', function() {
-  gulp.watch(paths.create_docs, ['concat_docs_samples', 'docs', 'move', 'clean']);
-  gulp.watch(paths.sample_doxx, ['concat_docs_samples', 'docs', 'move', 'clean']);
-});
+// // Rerun the task when a file changes
+// gulp.task('watch', function() {
+//   gulp.watch(paths.create_docs, ['concat_docs_samples', 'docs', 'move', 'clean']);
+//   gulp.watch(paths.sample_doxx, ['concat_docs_samples', 'docs', 'move', 'clean']);
+// });
 
-gulp.task('default', ['concat_docs_samples', 'docs', 'move', 'clean']);</code></pre>
+gulp.task('default', ['concat_docs_samples', 'docs']);</code></pre>
         </div>
       </div>
     </div>
